@@ -128,7 +128,7 @@ class AdminRoomController extends Controller
             'price'=>'required|min:0',
             'discount'=>'numeric|min:0|max:100',
         ]);
-        $images = $request->images;
+        
         $room = Room::find($id);
         $room->room_code = $request->room_code;
         $room->room_type_id = $request->room_type_id;
