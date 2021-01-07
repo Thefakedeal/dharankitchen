@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $rooms = Room::take(4)->get();
     $rooms->load('images','room_type');
-    return view('welcome', compact('rooms'));
+    return view('frontend.welcome', compact('rooms'));
 });
 
 Route::get('/admin', function(){

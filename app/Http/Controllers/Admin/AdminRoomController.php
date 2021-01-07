@@ -43,7 +43,7 @@ class AdminRoomController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'room_code'=> 'required',
+            'room_code'=> 'required|unique:rooms',
             'room_type_id'=>'required|exists:room_types,id',
             'beds'=> 'numeric|required',
             'price'=>'required|min:0',
@@ -105,7 +105,11 @@ class AdminRoomController extends Controller
      */
     public function edit($id)
     {
-        //
+        $room = Room::find($id);
+        $roomtypes = RoomType::all();
+        $rooms = Room::all();
+        $rooms->load('room_type');
+        return view('admin.room.edit',compact('roomtypes','rooms','room'));
     }
 
     /**
@@ -117,7 +121,38 @@ class AdminRoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'room_code'=> 'required|unique:rooms,room_code,'.$id,
+            'room_type_id'=>'required|exists:room_types,id',
+            'beds'=> 'numeric|required',
+            'price'=>'required|min:0',
+            'discount'=>'numeric|min:0|max:100',
+        ]);
+        $images = $request->images;
+        $room = Room::find($id);
+        $room->room_code = $request->room_code;
+        $room->room_type_id = $request->room_type_id;
+        $room->beds = $request->beds;
+        $room->ac= $request->ac;
+        $room->fridge = $request->fridge;
+        $room->pickup = $request->pickup;
+        $room->wardrobe = $request->wardrobe;
+        $room->sofa = $request->sofa;
+        $room->tv = $request->tv;
+        $room->hot_cold_shower = $request->hot_cold_shower;
+        $room->wifi = $request->wifi;
+        $room->bottled_water = $request->bottled_water;
+        $room->offer = $request->offer;
+        $room->price = $request->price;
+        $discount = 0;
+        if($request->discount){
+            $room->discount = $request->discount;
+            $discount = (int)($request->price * ($request->discount/100));
+        }
+        $room->room_charge = $room->price - $discount;
+        $room->description = $request->description;
+        $room->save();
+        return redirect()->back()->with('success',"Room Updated");
     }
 
     /**
