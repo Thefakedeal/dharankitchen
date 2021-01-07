@@ -378,7 +378,7 @@
                           <h3 class="text-red-500 mb-0 font-bold">Rs. {{ $room->room_charge }}</h3>
                           @if ($room->discount>0)
                           <p class="line-through text-sm">Rs. {{ $room->price }}</p>
-                          <p class="text-red-500 text-sm">{{ $room->discount }}% off</p>
+                          <p class="text-red-500 text-sm">-{{ $room->discount }}% off</p>
                           @endif
                       </div>
                       <p class="font-light mt-0 text-sm">per room per night</p>
