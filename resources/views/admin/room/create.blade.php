@@ -144,7 +144,15 @@
                                 </span>
                             @enderror
                         </div>
-                       
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" class="form-control" rows="5"></textarea>
+                            @error('discription')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                        </div>
                         <div class="form-group">
                             <input type="file" name="images[]" accept="image/*" multiple>
                         </div>

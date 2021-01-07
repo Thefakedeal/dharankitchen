@@ -71,6 +71,7 @@ class AdminRoomController extends Controller
             $discount = (int)($request->price * ($request->discount/100));
         }
         $room->room_charge = $room->price - $discount;
+        $room->description = $request->description;
         $room->save();
         
         if($request->hasFile('images')){

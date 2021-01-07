@@ -351,7 +351,7 @@
        <!-- Our Room -->
         <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-4">
             <!-- Room Card Start -->
-            <a href="" class="no-underline text-gray-800 hover:text-gray-800">
+            {{-- <a href="" class="no-underline text-gray-800 hover:text-gray-800">
                 <div class="shadow-2xl h-auto">
                     <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-48 w-full object-cover object-center">
                     <div class="p-2">
@@ -365,9 +365,30 @@
                         <p class="font-light mt-0 text-sm">per room per night</p>
                     </div>
                 </div>
-            </a>
-
+            </a> --}}
+            @foreach ($rooms as $room)
             <a href="" class="no-underline text-gray-800 hover:text-gray-800">
+              <div class="shadow-2xl h-auto">
+                  <img src="{{ $room->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center">
+                  <div class="p-2">
+                      <h1 class="text-2xl mb-2 mt-2 font-weight-bold">{{ $room->room_type->name??'Room' }}</h1>
+                      <p class="font-light">{{ \Illuminate\Support\Str::limit($room->description, 50, $end='...') }}
+                      </p>
+                      <div class=" flex justify-between items-center">
+                          <h3 class="text-red-500 mb-0 font-bold">Rs. {{ $room->room_charge }}</h3>
+                          @if ($room->discount>0)
+                          <p class="line-through text-sm">Rs. {{ $room->price }}</p>
+                          <p class="text-red-500 text-sm">{{ $room->discount }}% off</p>
+                          @endif
+                      </div>
+                      <p class="font-light mt-0 text-sm">per room per night</p>
+                  </div>
+              </div>
+            </a>  
+            @endforeach
+            
+
+            {{-- <a href="" class="no-underline text-gray-800 hover:text-gray-800">
                 <div class="shadow-2xl h-auto">
                     <img src="https://images.pexels.com/photos/271643/pexels-photo-271643.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-48 w-full object-cover object-center">
                     <div class="p-2">
@@ -375,15 +396,13 @@
                         <p class="font-light">Lorem ipsum dolor sit amet.</p>
                         <div class=" flex justify-between items-center">
                             <h3 class="text-red-500 mb-0 font-bold">NPR5000</h3>
-                            {{-- <p class="line-through text-sm">NPR7000</p>
-                            <p class="text-red-500 text-sm">28% off</p> --}}
                         </div>
                         <p class="font-light mt-0 text-sm">per room per night</p>
                     </div>
                 </div>
-            </a>
+            </a> --}}
 
-            <a href="" class="no-underline text-gray-800 hover:text-gray-800">
+            {{-- <a href="" class="no-underline text-gray-800 hover:text-gray-800">
                 <div class="shadow-2xl h-auto">
                     <img src="https://images.pexels.com/photos/3754595/pexels-photo-3754595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-48 w-full object-cover object-center">
                     <div class="p-2">
@@ -397,9 +416,9 @@
                         <p class="font-light mt-0 text-sm">per room per night</p>
                     </div>
                 </div>
-            </a>
+            </a> --}}
 
-            <a href="" class="no-underline text-gray-800 hover:text-gray-800">
+            {{-- <a href="" class="no-underline text-gray-800 hover:text-gray-800">
                 <div class="shadow-2xl h-auto">
                     <img src="https://images.pexels.com/photos/2029722/pexels-photo-2029722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-48 w-full object-cover object-center">
                     <div class="p-2">
@@ -413,7 +432,7 @@
                         <p class="font-light mt-0 text-sm">per room per night</p>
                     </div>
                 </div>
-            </a>
+            </a> --}}
 
             
             <!-- End of Room Card -->

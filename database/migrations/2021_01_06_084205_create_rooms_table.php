@@ -30,6 +30,7 @@ class CreateRoomsTable extends Migration
             $table->boolean('offer')->default(FALSE);
             $table->integer('price');
             $table->integer('discount')->default(0);
+            $table->text('description')->nullable();
             $table->integer('room_charge');
             $table->timestamps();
         });
