@@ -31,43 +31,45 @@
         <div class="col-md-6">
             <div class="card shadow">
                 <div class="card-header">Room Types</div>
-                <table class="table tamle-sm ">
-                    <thead>
-                        <th>
-                            S.N
-                        </th>
-                        <th>
-                            Name
-                        </th>
-                        <th>
-                            Actions
-                        </th>
-                    </thead>
-                    @foreach ($roomtypes as $index => $roomtype)
-                        <tr>
-                            <td>
-                                {{ ++$index }}
-                            </td>
-                            <td>
-                                {{ $roomtype->name }}
-                            </td>
-                            <td>
-                                <form action="{{ route('roomtype.destroy', $roomtype->id) }}" method="post"
-                                    onsubmit="return confirm('Are You Sure You Want To Delete {{ $roomtype->name }} ?')">
-                                    <a href="{{ route('roomtype.edit', $roomtype->id) }}"
-                                        title="Edit {{ $roomtype->name }}">
-                                        <i class="fas fa-pen"></i>
-                                    </a>
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $roomtype->name }}">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </table>
+                <div class="card-body">
+                    <table class="table table-sm ">
+                        <thead>
+                            <th>
+                                S.N
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </thead>
+                        @foreach ($roomtypes as $index => $roomtype)
+                            <tr>
+                                <td>
+                                    {{ ++$index }}
+                                </td>
+                                <td>
+                                    {{ $roomtype->name }}
+                                </td>
+                                <td>
+                                    <form action="{{ route('roomtype.destroy', $roomtype->id) }}" method="post"
+                                        onsubmit="return confirm('Are You Sure You Want To Delete {{ $roomtype->name }} ?')">
+                                        <a href="{{ route('roomtype.edit', $roomtype->id) }}"
+                                            title="Edit {{ $roomtype->name }}">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $roomtype->name }}">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
             </div>
         </div>
     </div>
