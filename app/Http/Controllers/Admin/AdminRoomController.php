@@ -163,6 +163,8 @@ class AdminRoomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $room = Room::findOrFail($id);
+        $room->delete();
+        return redirect(route('room.create'))->with('success','Room Deleted');
     }
 }
