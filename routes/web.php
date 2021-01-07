@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
@@ -37,6 +38,7 @@ Route::group([
     Route::resource('menu',AdminMenuController::class);
     Route::resource('roomtype',AdminRoomTypeController::class);
     Route::resource('room',AdminRoomController::class);
+    Route::delete('image',AdminDeleteImage::class)->name('image.delete');
 });
 
 Auth::routes();

@@ -108,7 +108,7 @@ class AdminRoomController extends Controller
         $room = Room::find($id);
         $roomtypes = RoomType::all();
         $rooms = Room::all();
-        $rooms->load('room_type');
+        $rooms->load('room_type','images');
         return view('admin.room.edit',compact('roomtypes','rooms','room'));
     }
 
@@ -128,7 +128,7 @@ class AdminRoomController extends Controller
             'price'=>'required|min:0',
             'discount'=>'numeric|min:0|max:100',
         ]);
-        
+        $images = $request->images;
         $room = Room::find($id);
         $room->room_code = $request->room_code;
         $room->room_type_id = $request->room_type_id;
@@ -151,6 +151,15 @@ class AdminRoomController extends Controller
         }
         $room->room_charge = $room->price - $discount;
         $room->description = $request->description;
+        if($request->hasFile('images')){
+            foreach($images as $image){
+                $roomimage = new RoomImage();
+                $roomimage->room_id = $room->id;
+                $imagelink = SavePhoto::SaveImage($image);
+                $roomimage->image = $imagelink;
+                $roomimage->save();
+            }
+        }
         $room->save();
         return redirect()->back()->with('success',"Room Updated");
     }
