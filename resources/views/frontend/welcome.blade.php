@@ -369,7 +369,11 @@
             @foreach ($rooms as $room)
             <a href="" class="no-underline text-gray-800 hover:text-gray-800">
               <div class="shadow-2xl h-auto">
-                  <img src="{{ $room->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center">
+                @if (count($room->images)>0)
+                <img src="{{ $room->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center">
+                @else
+                <img src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="" class="h-48 w-full object-cover object-center">
+                @endif
                   <div class="p-2">
                       <h1 class="text-2xl mb-2 mt-2 font-weight-bold">{{ $room->room_type->name??'Room' }}</h1>
                       <p class="font-light">{{ \Illuminate\Support\Str::limit($room->description, 50, $end='...') }}
