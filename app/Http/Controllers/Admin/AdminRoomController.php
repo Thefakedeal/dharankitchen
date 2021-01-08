@@ -63,7 +63,7 @@ class AdminRoomController extends Controller
         $room->hot_cold_shower = $request->hot_cold_shower;
         $room->wifi = $request->wifi;
         $room->bottled_water = $request->bottled_water;
-        $room->offer = $request->offer;
+        $room->parking = $request->parking;
         $room->price = $request->price;
         $discount = 0;
         if($request->discount){
@@ -105,7 +105,7 @@ class AdminRoomController extends Controller
      */
     public function edit($id)
     {
-        $room = Room::find($id);
+        $room = Room::findOrFail($id);
         $roomtypes = RoomType::all();
         $rooms = Room::all();
         $rooms->load('room_type','images');
@@ -142,7 +142,7 @@ class AdminRoomController extends Controller
         $room->hot_cold_shower = $request->hot_cold_shower;
         $room->wifi = $request->wifi;
         $room->bottled_water = $request->bottled_water;
-        $room->offer = $request->offer;
+        $room->parking = $request->parking;
         $room->price = $request->price;
         $discount = 0;
         if($request->discount){

@@ -117,10 +117,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="offer">Offer</label>
-                            <select name="offer" id='offer' class="form-control">
-                                <option value=0 {{ $room->offer == 0 ? 'selected' : '' }}>Not Available</option>
-                                <option value=1 {{ $room->offer == 1 ? 'selected' : '' }}>Available</option>
+                            <label for="parking">Parking</label>
+                            <select name="parking" id='parking' class="form-control">
+                                <option value=0 {{ $room->parking == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $room->parking == 1 ? 'selected' : '' }}>Available</option>
                             </select>
                         </div>
 

@@ -91,9 +91,18 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('room.create') }}" class="nav-link">
-              <i class="fas fa-hotel"></i>
+              <i class="fas fa-bed"></i>
               <p class="ml-2">
                   Add Room
+                {{-- <span class="right badge badge-danger">New</span> --}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-calendar-alt"></i>
+              <p class="ml-2">
+                  Events
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>

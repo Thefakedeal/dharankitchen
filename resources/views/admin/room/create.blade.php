@@ -116,8 +116,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="offer">Offer</label>
-                            <select name="offer" id='offer' class="form-control">
+                            <label for="parking">Parking</label>
+                            <select name="parking" id='parking' class="form-control">
                                 <option value=0>Not Available</option>
                                 <option value=1>Available</option>
                             </select>
