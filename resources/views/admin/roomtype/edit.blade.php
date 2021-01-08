@@ -8,7 +8,7 @@
                     Add Room Type
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('roomtype.update',$roomtype->id) }}" method="post">
+                    <form action="{{ route('roomtype.update',$roomtype->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="form-group">
@@ -21,10 +21,177 @@
                                 </span>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <label for="avaibable">Available Rooms</label>
+                            <input type="number" class="form-control @error('available_rooms') is-invalid @enderror" name="available" min="0" value="{{ $roomtype->available }}"
+                                id="avaibable">
+                            @error('available_rooms')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="beds">No. Of Beds</label>
+                            <input type="number" class="form-control" name="beds" min="1" value="{{ $roomtype->beds }}"
+                                id="beds">
+                            @error('beds')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="ac">AC</label>
+                            <select name="ac" id='ac' class="form-control">
+                                <option value=0 {{ $roomtype->ac == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->ac == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fridge">Fridge</label>
+                            <select name="fridge" id='fridge' class="form-control">
+                                <option value=0 {{ $roomtype->fridge == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->fridge == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickup">Pick Up</label>
+                            <select name="pickup" id='pickup' class="form-control">
+                                <option value=0 {{ $roomtype->pickup == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->pickup == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wardrobe">Wardrobe</label>
+                            <select name="wardrobe" id='wardrobe' class="form-control">
+                                <option value=0 {{ $roomtype->wardrobe == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->wardrobe == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sofa">Sofa</label>
+                            <select name="sofa" id='sofa' class="form-control">
+                                <option value=0 {{ $roomtype->sofa == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->sofa == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tv">T.V.</label>
+                            <select name="tv" id='tv' class="form-control">
+                                <option value=0 {{ $roomtype->tv == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->tv == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hot_cold_shower">Hot & Cold Shower</label>
+                            <select name="hot_cold_shower" id='hot_cold_shower' class="form-control">
+                                <option value=0 {{ $roomtype->hot_cold_shower == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->hot_cold_shower == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wifi">Wifi</label>
+                            <select name="wifi" id='wifi' class="form-control">
+                                <option value=0 {{ $roomtype->wifi == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->wifi == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bottled_water">Bottled Water</label>
+                            <select name="bottled_water" id='bottled_water' class="form-control">
+                                <option value=0 {{ $roomtype->bottled_water == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->bottled_water == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parking">Parking</label>
+                            <select name="parking" id='parking' class="form-control">
+                                <option value=0 {{ $roomtype->parking == 0 ? 'selected' : '' }}>Not Available</option>
+                                <option value=1 {{ $roomtype->parking == 1 ? 'selected' : '' }}>Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ $roomtype->price }}" id="price"
+                                min="1" required>
+                            @error('price')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="discount">Discount % </label>
+                            <input type="number" class="form-control @error('discount') is-invalid @enderror" name="discount" value="{{ $roomtype->discount }}"
+                                id="discount" min="0" max="100" required>
+                            @error('discount')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" class="form-control" rows="5"> {{ $roomtype->description }}</textarea>
+                            @error('discription')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input type="file" name="images[]" accept="image/*" multiple>
+                        </div>
                         <button type="submit" class="btn btn-primary">
                         Edit Type
                         </button>
                     </form>
+
+                    <!-- Images -->   
+                    <div class="row">
+                        @foreach ($roomtype->images as $image)
+                        <div class="col-sm-4 col-md-3 mt-2">
+                            <!-- Button trigger modal -->
+                            <img  src="{{ $image->image }}" class="image-fluid" style="width: 100%;height: 5rem; object-fit: cover; " data-toggle="modal"
+                                data-target="#img{{ $image->id }}">
+                            <!-- Modal -->
+                            <div class="modal fade" id="img{{ $image->id }}" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img  src="{{ $image->image }}" class="image-fluid" style="max-width: 100%;height: auto;" data-toggle="modal">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form action="{{ route('image.delete') }}" onsubmit="return confirm('Do Ypu Want To Delete This Photo?')" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <input type="hidden" name="id" value="{{ $image->id }}">
+                                                <button type="submit" class="btn btn-danger">Delete Image</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <!-- End Images -->
                 </div>
 
             </div>

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RoomType extends Model
 {
     use HasFactory;
+    public function images(){
+        return $this->hasMany(RoomImage::class);
+    }
 }

@@ -15,23 +15,8 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->string('room_code')->unique();
+            $table->string('room_number')->unique();
             $table->foreignId('room_type_id');
-            $table->integer('beds');
-            $table->boolean('ac')->default(FALSE);
-            $table->boolean('fridge')->default(FALSE);
-            $table->boolean('pickup')->default(FALSE);
-            $table->boolean('wardrobe')->default(FALSE);
-            $table->boolean('sofa')->default(FALSE);
-            $table->boolean('tv')->default(FALSE);
-            $table->boolean('hot_cold_shower')->default(FALSE);
-            $table->boolean('wifi')->default(FALSE);
-            $table->boolean('bottled_water')->default(FALSE);
-            $table->boolean('parking')->default(FALSE);
-            $table->integer('price');
-            $table->integer('discount')->default(0);
-            $table->text('description')->nullable();
-            $table->integer('room_charge');
             $table->timestamps();
         });
     }
