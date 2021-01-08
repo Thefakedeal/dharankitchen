@@ -44,11 +44,11 @@
     <form action="">
         <div class="lg:flex justify-center bg-gray-100 w-full mx-auto my-auto items-end mt-10">
             <div class="p-4 ">
-                <h1 class="font-medium text-xl">Arrival</h1>
+                <h1 class="font-medium text-xl">Check in</h1>
                 <input type="date" name="" id="" class="p-2 w-60">
             </div>
             <div class="p-4">
-                <h1 class="text-xl">Depature</h1>
+                <h1 class="text-xl">Check out</h1>
                 <input type="date" name="" id="" class="p-2 w-60">
             </div>  
             <button type="submit" class="bg-blue-500 px-10 py-2 m-4 text-white rounded hover:bg-blue-600">Book Now</button>
@@ -97,8 +97,8 @@
                       </div>
                       <p class="font-light mt-0 text-sm">per room per night</p>
                   </div>
-                  <p class="font-light mt-0 text-sm">per room per night</p>
-              </div>
+                 
+              
           </div>
         </a>  
         @endforeach

@@ -49,6 +49,7 @@ class AdminRoomTypeController extends Controller
         $roomtype = new RoomType();
         $roomtype->name = $request->name;
         $roomtype->beds = $request->beds;
+        $roomtype->available_rooms = $request->available;
         $roomtype->ac= $request->ac;
         $roomtype->fridge = $request->fridge;
         $roomtype->pickup = $request->pickup;
@@ -125,7 +126,7 @@ class AdminRoomTypeController extends Controller
         $roomtype = RoomType::findOrFail($id);
         $roomtype->name = $request->name;
         $roomtype->beds = $request->beds;
-        $roomtype->available = $request->available;
+        $roomtype->available_rooms = $request->available;
         $roomtype->ac= $request->ac;
         $roomtype->fridge = $request->fridge;
         $roomtype->pickup = $request->pickup;

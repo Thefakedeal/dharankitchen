@@ -32,14 +32,14 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="checkin" class="font-bold">Check in</label>
-                                        <input id="checkin" class="form-control" type="date" name="checkin">
+                                        <input id="checkin" class="form-control" type="date" name="checkin" min="{{ now()->toDateString() }}">
                                     </div>
                                 </div>
         
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="checkout" class="font-bold">Check out</label>
-                                        <input id="checkout" class="form-control" type="date" name="checkout">
+                                        <input id="checkout" class="form-control" type="date" name="checkout" min="{{ now()->toDateString() }}">
                                     </div>
                                 </div>
                             </div>

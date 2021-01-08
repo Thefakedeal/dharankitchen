@@ -30,12 +30,17 @@ Route::get('/', function () {
 
 // All Rooms
 Route::get('/rooms',function(){
-    return view('frontend.rooms');
+    $roomtypes = RoomType::all();
+    $roomtypes->load('images');
+    return view('frontend.rooms',compact('roomtypes'));
 });
 
 //Room Profile
-Route::get('/room-profile',function(){
-    return view('frontend.room-profile');
+Route::get('/room-profile/{id}',function($id){
+    $roomtype = RoomType::findOrFail($id);
+    $roomtypes = RoomType::all();
+    $roomtypes->load('images');
+    return view('frontend.room-profile',compact('roomtype','roomtypes'));
 });
 
 //Booking Page
