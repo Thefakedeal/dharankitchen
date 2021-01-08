@@ -26,6 +26,21 @@ Route::get('/', function () {
     return view('frontend.welcome', compact('rooms'));
 });
 
+// All Rooms
+Route::get('/rooms',function(){
+    return view('frontend.rooms');
+});
+
+//Room Profile
+Route::get('/room-profile',function(){
+    return view('frontend.room-profile');
+});
+
+//Booking Page
+Route::get('/booking',function(){
+    return view('frontend.booking');
+});
+
 Route::get('/admin', function(){
     return view('admin.admin');
 });
