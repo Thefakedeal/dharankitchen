@@ -13,9 +13,9 @@
                         @method('put')
                         <div class="form-group">
                             <label for="room_code">Room Code</label>
-                            <input type="text" class="form-control" name="room_code" value="{{ $room->room_code }}"
+                            <input type="text" class="form-control @error('room_code') is-invalid @enderror" name="room_code" value="{{ $room->room_code }}"
                                 id="room_code" required>
-                            @error('room_code')
+                            @error("room_code")
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label for="room_type">Room Type</label>
-                            <select name="room_type_id" id='room_type' class="form-control" required>
+                            <select name="room_type_id" id='room_type' class="form-control @error('room_type_id') is-invalid @enderror" required>
                                 @foreach ($roomtypes as $roomtype)
                                     <option value="{{ $roomtype->id }}" {{ $room->room_type_id ? 'selected' : '' }}>
                                         {{ $roomtype->name }}</option>
@@ -126,7 +126,7 @@
 
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="number" class="form-control" name="price" value="{{ $room->price }}" id="price"
+                            <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ $room->price }}" id="price"
                                 min="1" required>
                             @error('price')
                                 <span class="invalid-feedback" role="alert">
@@ -137,7 +137,7 @@
 
                         <div class="form-group">
                             <label for="discount">Discount % </label>
-                            <input type="number" class="form-control" name="discount" value="{{ $room->discount }}"
+                            <input type="number" class="form-control @error('discount') is-invalid @enderror" name="discount" value="{{ $room->discount }}"
                                 id="discount" min="0" max="100" required>
                             @error('discount')
                                 <span class="invalid-feedback" role="alert">

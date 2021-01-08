@@ -13,7 +13,7 @@
                         
                         <div class="form-group">
                             <label for="room_code">Room Code</label>
-                            <input type="text" class="form-control" name="room_code" value="{{ old('room_code') }}"
+                            <input type="text" class="form-control @error('room_code') is-invalid @enderror" name="room_code" value="{{ old('room_code') }}"
                                 id="room_code" required>
                             @error('room_code')
                                 <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label for="room_type">Room Type</label>
-                            <select name="room_type_id" id='room_type' class="form-control" required>
+                            <select name="room_type_id" id='room_type' class="form-control @error('room_type_id') is-invalid @enderror" required>
                                 @foreach ($roomtypes as $roomtype)
                                     <option value="{{ $roomtype->id }}"> {{ $roomtype->name }}</option>
                                 @endforeach
