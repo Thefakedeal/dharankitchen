@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
 use App\Http\Controllers\Admin\AdminVenueController;
 use App\Models\Room;
+use App\Models\RoomType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +23,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $rooms = Room::take(4)->get();
-    $rooms->load('images','room_type');
-    return view('frontend.welcome', compact('rooms'));
+    $roomtypes = RoomType::take(4)->get();
+    $roomtypes->load('images');
+    return view('frontend.welcome', compact('roomtypes'));
 });
 
 // All Rooms
@@ -52,6 +54,7 @@ Route::group([
     Route::resource('menu',AdminMenuController::class);
     Route::resource('roomtype',AdminRoomTypeController::class);
     Route::resource('room',AdminRoomController::class);
+    Route::delete('image',AdminDeleteImage::class)->name('image.delete');
 });
 
 Auth::routes();

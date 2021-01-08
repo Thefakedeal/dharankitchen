@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RoomType extends Model
+class EventImage extends Model
 {
     use HasFactory;
-    public function images(){
-        return $this->hasMany(RoomImage::class);
-    }
 }

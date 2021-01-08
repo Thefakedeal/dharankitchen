@@ -75,26 +75,27 @@
                     </div>
                     <p class="font-light mt-0 text-sm">per room per night</p>
                 </div>
-            </div>
-        </a> --}}
-        @foreach ($rooms as $room)
-        <a href="" class="no-underline text-gray-800 hover:text-gray-800">
-          <div class="shadow-2xl h-auto">
-            @if (count($room->images)>0)
-            <img src="{{ $room->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center">
-            @else
-            <img src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="" class="h-48 w-full object-cover object-center">
-            @endif
-              <div class="p-2">
-                  <h1 class="text-2xl mb-2 mt-2 font-weight-bold">{{ $room->room_type->name??'Room' }}</h1>
-                  <p class="font-light">{{ \Illuminate\Support\Str::limit($room->description, 50, $end='...') }}
-                  </p>
-                  <div class=" flex justify-between items-center">
-                      <h3 class="text-red-500 mb-0 font-bold">Rs. {{ $room->room_charge }}</h3>
-                      @if ($room->discount>0)
-                      <p class="line-through text-sm">Rs. {{ $room->price }}</p>
-                      <p class="text-red-500 text-sm">-{{ $room->discount }}% off</p>
-                      @endif
+            </a> --}}
+            @foreach ($roomtypes as $roomtype)
+            <a href="" class="no-underline text-gray-800 hover:text-gray-800">
+              <div class="shadow-2xl h-auto">
+                @if (count($roomtype->images)>0)
+                <img src="{{ $roomtype->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center">
+                @else
+                <img src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="" class="h-48 w-full object-cover object-center">
+                @endif
+                  <div class="p-2">
+                      <h1 class="text-2xl mb-2 mt-2 font-weight-bold">{{ $roomtype->name??'Room' }}</h1>
+                      <p class="font-light">{{ \Illuminate\Support\Str::limit($roomtype->description, 50, $end='...') }}
+                      </p>
+                      <div class=" flex justify-between items-center">
+                          <h3 class="text-red-500 mb-0 font-bold">Rs. {{ $roomtype->room_charge }}</h3>
+                          @if ($roomtype->discount>0)
+                          <p class="line-through text-sm">Rs. {{ $roomtype->price }}</p>
+                          <p class="text-red-500 text-sm">-{{ $roomtype->discount }}% off</p>
+                          @endif
+                      </div>
+                      <p class="font-light mt-0 text-sm">per room per night</p>
                   </div>
                   <p class="font-light mt-0 text-sm">per room per night</p>
               </div>
