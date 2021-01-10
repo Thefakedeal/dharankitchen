@@ -8,29 +8,29 @@
 {{-- Main Section --}}
 @section('main')
      <!-- Highlights -->
-   <div class="text-center mt-10">
-    <h1 class="text-4xl mt-10 font-bold font-serif">Highlights</h1>
-    <p class="text-gray-600 font-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, cum.</p>
-    
-    <div class="container mx-auto grid sm:grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
-        <!-- Highlights -->
-        <div class="shadow-2xl h-auto ">
-            <img src="https://lh5.googleusercontent.com/p/AF1QipNiI8jU5Mmz1QCYBTy6dzoA_uGx5i0vW7D1zU4s=s1600-w400" alt="" class="h-62 w-full object-cover object-center">
-            
-        </div>
+    <div class="text-center mt-10">
+        <h1 class="text-4xl mt-10 font-bold font-serif">Highlights</h1>
+        <p class="text-gray-600 font-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, cum.</p>
+        
+            <div class="container mx-auto grid sm:grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
+                <!-- Highlights -->
+                <div class="shadow-2xl h-auto ">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipNiI8jU5Mmz1QCYBTy6dzoA_uGx5i0vW7D1zU4s=s1600-w400" alt="" class="h-62 w-full object-cover object-center">
+                    
+                </div>
 
-        <div class="shadow-2xl h-auto ">
-            <img src="https://mk0hotrodum5xf2n5ib6.kinstacdn.com/wp-content/uploads/2018/04/honey-barbecue-sriracha-wings.jpeg" alt="" class="h-62 w-full object-cover object-center">
-           
-        </div>
+                <div class="shadow-2xl h-auto ">
+                    <img src="https://mk0hotrodum5xf2n5ib6.kinstacdn.com/wp-content/uploads/2018/04/honey-barbecue-sriracha-wings.jpeg" alt="" class="h-62 w-full object-cover object-center">
+                
+                </div>
 
-        <div class="shadow-2xl h-auto ">
-          <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-62 w-full object-cover object-center">
-          
-      </div>
-        <!-- End of Room Card -->
+                <div class="shadow-2xl h-auto ">
+                <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-62 w-full object-cover object-center">
+                
+                </div>
+                <!-- End of Room Card -->
+            </div>
     </div>
-</div>
 <!-- Highlight Ends -->
 
 
@@ -77,7 +77,7 @@
                 </div>
             </a> --}}
             @foreach ($roomtypes as $roomtype)
-            <a href="" class="no-underline text-gray-800 hover:text-gray-800">
+            <a href="/room-profile/{{ $roomtype->id }}" class="no-underline text-gray-800 hover:text-gray-800">
               <div class="shadow-2xl h-auto">
                 @if (count($roomtype->images)>0)
                 <img src="{{ $roomtype->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center">

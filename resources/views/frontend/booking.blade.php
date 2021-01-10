@@ -64,6 +64,12 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
+                                        <label for="totalroom" class="font-bold">Total Room</label>
+                                        <input id="totalroom" class="form-control" type="number" name="mobile" placeholder="Total Room">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
                                         <label for="mobile" class="font-bold">Mobile Number</label>
                                         <input id="mobile" class="form-control" type="number" name="mobile" placeholder="Mobile Number">
                                     </div>
@@ -135,4 +141,9 @@
         </div>
         
     </div>
+    <script>
+        $(document).ready(
+            alert('hello World');
+        );
+    </script>
 @endsection

@@ -1,5 +1,4 @@
 @extends('frontend.templates.app')
-
 @section('main')
    <div class="container mx-auto">
     

@@ -39,16 +39,16 @@
                 <div>
                     <ul class="flex flex-wrap justify-items-auto">
                         
-                        <li class="m-2"><i class="fas fa-bed"></i> Bed(s): {{ $roomtype->beds }}</li>   
-                        <li class="m-2"><i class="fas fa-thermometer-empty"></i> Aircondition: {{ $roomtype->ac == 1 ? "Yes" : 'n/a' }}</li>
-                        <li class="m-2"><i class="fas fa-shower" aria-hidden="true"></i> Hot & Cold Water: {{ $roomtype->hot_cold_shower == 1 ? "Yes" : 'n/a' }}</li>
-                        <li class="m-2"><i class="fas fa-tv" aria-hidden="true"></i> Tv: {{ $roomtype->tv == 1 ? "Yes" : 'n/a' }}</li>    
-                        <li class="m-2"><i class="fas fa-user-tie" aria-hidden="true"></i> Wardrobe: {{ $roomtype->wardrobe == 1 ? "Yes" : 'n/a' }}</li>    
-                        <li class="m-2"><i class="fas fa-couch" aria-hidden="true"></i> Sofa: {{ $roomtype->sofa == 1 ? "Yes" : 'n/a' }}</li>    
-                        <li class="m-2"><i class="fas fa-tint" aria-hidden="true"></i> Bottle Water: {{ $roomtype->bottled_water == 1 ? "Yes" : 'n/a' }}</li>    
-                        <li class="m-2"><i class="fas fa-parking" aria-hidden="true"></i> Parking: {{ $roomtype->parking == 1 ? "Yes" : 'n/a' }}</li>   
-                        <li class="m-2"><i class="fas fa-wifi" aria-hidden="true"></i> Wifi: {{ $roomtype->wifi == 1 ? "Yes" : 'n/a' }}</li>  
-                        <li class="m-2"><i class="fas fa-taxi" aria-hidden="true"></i> Pickup: {{ $roomtype->pickup == 1 ? "Yes" : 'n/a' }}</li>  
+                        <li class="m-2"><i class="fa fa-bed" aria-hidden="true"></i> Bed(s): {{ $roomtype->beds }}</li>   
+                        <li class="m-2"><i class="fa fa-thermometer-empty" aria-hidden="true"></i> Aircondition: {{ $roomtype->ac == 1 ? "Yes" : 'n/a' }}</li>
+                        <li class="m-2"><i class="fa fa-shower" aria-hidden="true"></i> Hot & Cold Water: {{ $roomtype->hot_cold_shower == 1 ? "Yes" : 'n/a' }}</li>
+                        <li class="m-2"><i class="fa fa-tv" aria-hidden="true"></i> Tv: {{ $roomtype->tv == 1 ? "Yes" : 'n/a' }}</li>    
+                        <li class="m-2"><i class="fa fa-user-tie" aria-hidden="true"></i> Wardrobe: {{ $roomtype->wardrobe == 1 ? "Yes" : 'n/a' }}</li>    
+                        <li class="m-2"><i class="fa fa-couch" aria-hidden="true"></i> Sofa: {{ $roomtype->sofa == 1 ? "Yes" : 'n/a' }}</li>    
+                        <li class="m-2"><i class="fa fa-tint" aria-hidden="true"></i> Bottle Water: {{ $roomtype->bottled_water == 1 ? "Yes" : 'n/a' }}</li>    
+                        <li class="m-2"><i class="fa fa-parking" aria-hidden="true"></i> Parking: {{ $roomtype->parking == 1 ? "Yes" : 'n/a' }}</li>   
+                        <li class="m-2"><i class="fa fa-wifi" aria-hidden="true"></i> Wifi: {{ $roomtype->wifi == 1 ? "Yes" : 'n/a' }}</li>  
+                        <li class="m-2"><i class="fa fa-taxi" aria-hidden="true"></i> Pickup: {{ $roomtype->pickup == 1 ? "Yes" : 'n/a' }}</li>  
                     </ul>
                 </div>
 
@@ -116,12 +116,17 @@
                         @endif
                     </div>
 
+                    <div>
+                        
+                    </div>
+
                     <div class="flex justify-center block pb-4">
                         <a href="/booking" class="px-6 py-2 bg-green-500 text-white no-underline hover:bg-green-600">Continue to Book</a>
                     </div>
                       
                 </div>
 
+                {{-- Hotel Policies --}}
                 <div class="card mt-4">
                     <div class="card-header">
                        <i class="fas fa-shield-alt"></i> <strong>Hotel Policies</strong>
