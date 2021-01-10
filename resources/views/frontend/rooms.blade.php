@@ -63,7 +63,7 @@
           
         <div class="flex justify-center">
           <a href="/room-profile/{{ $room->id }}" class="btn btn-outline-primary m-1">View Details</a>
-          <a href="/booking" class="btn btn-success m-1">Book Now</a>
+          <a href="/booking/{{ $room->id }}" class="btn btn-success m-1">Book Now</a>
         </div>
 
         </div>

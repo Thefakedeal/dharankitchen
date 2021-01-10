@@ -91,7 +91,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-10">
-                                <h5>Deluxe Double Room</h5>
+                                <h5>{{ $roomtype->name }}</h5>
                                 <p class="font-bold text-sm"><span id="nights"> 1 </span> Night</p>
                             </div>
                             <div class="col-md-2">

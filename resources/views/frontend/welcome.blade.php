@@ -89,9 +89,9 @@
                       <p class="font-light">{{ \Illuminate\Support\Str::limit($roomtype->description, 50, $end='...') }}
                       </p>
                       <div class=" flex justify-between items-center">
-                          <h3 class="text-red-500 mb-0 font-bold">Rs. {{ $roomtype->room_charge }}</h3>
+                          <h3 class="text-red-500 mb-0 font-bold">NRS{{ $roomtype->room_charge }}</h3>
                           @if ($roomtype->discount>0)
-                          <p class="line-through text-sm">Rs. {{ $roomtype->price }}</p>
+                          <p class="line-through text-sm">NRS{{ $roomtype->price }}</p>
                           <p class="text-red-500 text-sm">-{{ $roomtype->discount }}% off</p>
                           @endif
                       </div>
