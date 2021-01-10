@@ -44,8 +44,9 @@ Route::get('/room-profile/{id}',function($id){
 });
 
 //Booking Page
-Route::get('/booking',function(){
-    return view('frontend.booking');
+Route::get('/booking/{id}',function($id){
+    $roomtype = RoomType::findOrFail($id);
+    return view('frontend.booking', compact('roomtype'));
 });
 
 Route::get('/admin', function(){

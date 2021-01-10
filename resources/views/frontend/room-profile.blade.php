@@ -121,7 +121,7 @@
                     </div>
 
                     <div class="flex justify-center block pb-4">
-                        <a href="/booking" class="px-6 py-2 bg-green-500 text-white no-underline hover:bg-green-600">Continue to Book</a>
+                        <a href="/booking/{{ $roomtype->id }}" class="px-6 py-2 bg-green-500 text-white no-underline hover:bg-green-600">Continue to Book</a>
                     </div>
                       
                 </div>

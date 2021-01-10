@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <p class="text-gray-700">We will use these details to share your booking information</p>
         
-                        <form action="" method="post">
+                        <form action="" onsubmit="return formValidate()" method="post">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
@@ -32,14 +32,14 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="checkin" class="font-bold">Check in</label>
-                                        <input id="checkin" class="form-control" type="date" name="checkin" min="{{ now()->toDateString() }}">
+                                        <input id="checkin" class="form-control" type="date" name="checkin" value="{{ now()->toDateString() }}" min="{{ now()->toDateString() }}">
                                     </div>
                                 </div>
         
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="checkout" class="font-bold">Check out</label>
-                                        <input id="checkout" class="form-control" type="date" name="checkout" min="{{ now()->toDateString() }}">
+                                        <input id="checkout" class="form-control" type="date" name="checkout" value="{{ now()->addDays(1)->toDateString() }}" min="{{ now()->addDays(1)->toDateString() }}">
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="totalroom" class="font-bold">Total Room</label>
-                                        <input id="totalroom" class="form-control" type="number" name="mobile" placeholder="Total Room">
+                                        <input id="totalroom" class="form-control" type="number" value="1" min="1" name="mobile" placeholder="Total Room">
                                     </div>
                                 </div>
                                 <div class="col">
@@ -79,7 +79,7 @@
                             <div class="row mt-4">
                                 <div class="col">
                                     <label for=""></label>
-                                   <button type="submit" class="btn btn-primary form-control" >Send Passcode</button>
+                                   <button type="submit" id='submit' class="btn btn-primary form-control" >Send Passcode</button>
                                 </div>
                             </div>
                         </form>
@@ -92,29 +92,25 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <h5>Deluxe Double Room</h5>
-                                <p class="font-bold text-sm">1 Night</p>
+                                <p class="font-bold text-sm"><span id="nights"> 1 </span> Night</p>
                             </div>
                             <div class="col-md-2">
                                 <img src="https://images.pexels.com/photos/3659683/pexels-photo-3659683.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" width="60" height="60">
                             </div>
                         </div>
 
-                        <p><span class="font-semibold text-sm">Fri,8 Jan - Wed,12 Jan </span></p>
+                        <p><span class="font-semibold text-sm"> <span id='checkindate'> Fri,8 Jan </span>  - <span id='checkoutdate'> Wed,12 Jan </span>  </span></p>
                         <hr>
                         <p>Deluxe(2x)</p>
 
                         <table class="table table-sm table-borderless">
                             <tr>
-                                <td class="text-gray-600 text-sm">Room price for 5 Nights X 1 Guest </td>
-                                <td class="text-gray-600 text-sm">NRP2500</td>
+                                <td class="text-gray-600 text-sm">Room price for <span id="numofnights"> 1 </span> Nights X <span id="rooms"> 1 </span> Room(s) </td>
+                                <td class="text-gray-600 text-sm"> NRS<span id="price"> {{ $roomtype->price }} </span></td>
                             </tr>
                             <tr>
                                 <td class="text-gray-600 text-sm">Price Drop </td>
-                                <td class="text-gray-600 text-sm">-NPR500</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-600 text-sm">25% Coupon Discount </td>
-                                <td class="text-gray-600 text-sm">-NPR500</td>
+                                <td class="text-gray-600 text-sm" > -NRS<span id="discount"> {{ $roomtype->price - $roomtype->room_charge }} </span> </td>
                             </tr>
                         </table>
 
@@ -131,7 +127,7 @@
                                     </div>
                                 </td>
                                 <td class="text-gray-600 text-xl text-center">
-                                    NRS2000
+                                    NRS<span id='payable'> {{ $roomtype->room_charge }} </span>
                                 </td>
                             </tr>
                         </table>
@@ -142,8 +138,77 @@
         
     </div>
     <script>
-        $(document).ready(
-            alert('hello World');
-        );
+
+        //HTML ELEMENTS
+        const checkinelem = document.getElementById('checkin');
+        const checkoutelem = document.getElementById('checkout');
+        const nightsElem = document.getElementById('nights');
+        const checkinDateElem = document.getElementById('checkindate')
+        const checkoutDateElem = document.getElementById('checkoutdate')
+        const numOfNightsElem = document.getElementById('numofnights');
+        const priceElem = document.getElementById('price');
+        const roomsDiv = document.getElementById('rooms');
+        const totalRoomElem = document.getElementById('totalroom');
+        const discountElem = document.getElementById('discount');
+        const payableElem = document.getElementById('payable');
+        const submit = document.getElementById('submit');
+
+        //Values
+        const price = {{ $roomtype->price }}
+        const discount= {{ $roomtype->price - $roomtype->room_charge }}
+        const charge = {{ $roomtype->room_charge }}
+
+        //EVENTS 
+        document.onload = changePricing();
+
+        checkoutelem.addEventListener('change',(e)=>{
+            changePricing();
+        })
+        checkinelem.addEventListener('change',(e)=>{
+            changePricing();
+        })
+        totalRoomElem.addEventListener('change',(e)=>{
+            changePricing();
+        })
+
+        //Function 
+
+        //Changes Value Of An Element
+        function displayValue(value, element){
+            element.innerText = value;
+        }
+
+        //Form Validation
+        function formValidate(){
+            const checkindate = new Date(checkinelem.value);
+            const checkoutdate = new Date(checkoutelem.value);
+            const totalRooms = parseInt(totalRoomElem.value);
+            if(checkindate >= checkoutdate || totalRooms<1 ){
+                return false;
+            }
+        }
+        
+        //Updates Date & Prices in DOM and Disables the  submit button
+        function changePricing(){
+            submit.disabled = false;
+            const checkindate = new Date(checkinelem.value);
+            const checkoutdate = new Date(checkoutelem.value);
+            const totalRooms = parseInt(totalRoomElem.value);
+            if(checkindate >= checkoutdate){
+                submit.disabled = true;
+                return false;
+            }
+            const diff = checkoutdate - checkindate;
+            const nights = diff / (1000*60*60*24);
+            displayValue(checkindate.toDateString(),checkinDateElem)
+            displayValue(checkoutdate.toDateString(),checkoutDateElem)
+            displayValue(price*nights*totalRooms, priceElem)
+            displayValue(discount*nights*totalRooms, discountElem)
+            displayValue(charge*nights*totalRooms, payableElem)
+            displayValue(totalRooms,roomsDiv)
+            displayValue(nights,numOfNightsElem)
+            displayValue(nights, nightsElem);
+        }
+
     </script>
-@endsection
+@endsection 
