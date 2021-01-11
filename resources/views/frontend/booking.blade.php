@@ -1,6 +1,11 @@
 @extends('frontend.templates.app')
 
 @section('main')
+    @if (session('success'))
+      <div class="alert alert-primary m-2">
+          {{ session('success') }}
+      </div>
+    @endif
     <div class="container mx-auto mt-10">
         <div class="row">
             <div class="col-md-6">
@@ -92,7 +97,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="totalroom" class="font-bold">Total Room</label>
-                                        <input id="totalroom" value="{{ old('totalroom') }}" class="form-control @error('totalroom')  is-invalid @enderror" type="number" value="1" min="1" max="{{ $roomtype->available_rooms }}" name="totalroom" placeholder="Total Room" required>
+                                        <input id="totalroom" value="{{ old('totalroom') ?? 1 }}" class="form-control @error('totalroom')  is-invalid @enderror" type="number" value="1" min="1" max="{{ $roomtype->available_rooms }}" name="totalroom" placeholder="Total Room" required>
                                         @error('totalroom')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

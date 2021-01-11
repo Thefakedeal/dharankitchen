@@ -44,6 +44,6 @@ class BookingController extends Controller
         $booking->mobile = $request->mobile;
         $booking->total = $request->totalroom * $roomtype->room_charge * $days;
         $booking->save();
-        return redirect('/');
+        return redirect()->back()->with('success','Hello '.$request->name.','.'Your Request Has Been Sent We Will Contact You Within 45 minutes.');
     }
 }
