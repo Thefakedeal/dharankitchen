@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\RoomType;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -15,6 +16,7 @@ class BookingController extends Controller
      */
     public function __invoke(Request $request)
     {
+        $roomtype = RoomType::findOrFail($request->room_type_id);
         $request->validate([
             'room_type_id'=>'required|exists:room_types,id',
             'name'=>'required',
@@ -22,7 +24,7 @@ class BookingController extends Controller
             'checkin'=>'required|date|before:checkout|after_or_equal:'.now()->toDateString(),
             'checkout'=>'required|date|after:checkin',
             'guests'=>'required',
-            'totalroom'=>'required|min:1',
+            'totalroom'=>'required|min:1|max:'.$roomtype->available_rooms,
             'mobile'=>'required|digits:10',
         ]);
         $booking = new Booking();

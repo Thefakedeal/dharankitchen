@@ -92,7 +92,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="totalroom" class="font-bold">Total Room</label>
-                                        <input id="totalroom" value="{{ old('totalroom') }}" class="form-control @error('totalroom')  is-invalid @enderror" type="number" value="1" min="1" name="totalroom" placeholder="Total Room" required>
+                                        <input id="totalroom" value="{{ old('totalroom') }}" class="form-control @error('totalroom')  is-invalid @enderror" type="number" value="1" min="1" max="{{ $roomtype->available_rooms }}" name="totalroom" placeholder="Total Room" required>
                                         @error('totalroom')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -190,8 +190,8 @@
         const discountElem = document.getElementById('discount');
         const payableElem = document.getElementById('payable');
         const submit = document.getElementById('submit');
-
         //Values
+        const available_rooms = {{ $roomtype->available_rooms }}
         const price = {{ $roomtype->price }}
         const discount= {{ $roomtype->price - $roomtype->room_charge }}
         const charge = {{ $roomtype->room_charge }}
@@ -221,7 +221,7 @@
             const checkindate = new Date(checkinelem.value);
             const checkoutdate = new Date(checkoutelem.value);
             const totalRooms = parseInt(totalRoomElem.value);
-            if(checkindate >= checkoutdate || totalRooms<1 ){
+            if(checkindate >= checkoutdate || totalRooms<1 || available_rooms<totalRooms){
                 return false;
             }
         }
@@ -232,7 +232,7 @@
             const checkindate = new Date(checkinelem.value);
             const checkoutdate = new Date(checkoutelem.value);
             const totalRooms = parseInt(totalRoomElem.value);
-            if(checkindate >= checkoutdate){
+            if(checkindate >= checkoutdate || available_rooms<totalRooms){
                 submit.disabled = true;
                 return false;
             }
