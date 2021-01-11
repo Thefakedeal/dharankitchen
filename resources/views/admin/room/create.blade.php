@@ -1,8 +1,8 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card shadow">
                 <div class="card-header">
                     Add Room
@@ -35,12 +35,12 @@
                             @enderror
                         </div>
                      
-                        <button type="submit" class="btn btn-primary">Add Room</button>
+                        <button type="submit" class="btn btn-primary float-right">Save</button>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="card shadow">
                 <div class="card-header">
                     Rooms
@@ -102,6 +102,6 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection

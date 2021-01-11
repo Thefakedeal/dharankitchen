@@ -1,36 +1,10 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="row justify-content-center">
+    <div class="col-md-8">
             <div class="card shadow">
-                <div class="card-header">
-                    Add Venue
-                </div>
-                <div class="card-body">
-                    <form action="{{ route('venue.store') }}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="name">{{ __('Name') }}</label>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            Save
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-        {{-- <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-header">Venues</div>
+                <div class="card-header">Venue List</div>
                 <div class="card-body">
                     <table class="table table-sm ">
                         <thead>
@@ -69,8 +43,9 @@
                             </tr>
                         @endforeach
                     </table>
+                    {{ $venues->render('pagination::bootstrap-4') }}
                 </div>
             </div>
-        </div> --}}
-    </div>
+        </div>
+</div>
 @endsection

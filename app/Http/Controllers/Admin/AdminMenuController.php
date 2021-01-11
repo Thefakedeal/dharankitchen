@@ -16,9 +16,15 @@ class AdminMenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $menuequery = Menu::query();
+        if($request->has('venue_id')){
+            $menuequery->where('venue_id',$request->venue_id);
+        }
+        $venues = Venue::all();
+        $menues = $menuequery->paginate(15);
+        return view('admin.menu.index',compact('menues','venues'));
     }
 
     /**
@@ -30,9 +36,7 @@ class AdminMenuController extends Controller
     {
         $categories = Category::all();
         $venues = Venue::all();
-        $menues = Menu::all();
-        $menues->load('category','venue');
-        return view('admin.menu.create',compact('venues','categories','menues'));
+        return view('admin.menu.create',compact('venues','categories'));
     }
 
     /**
@@ -85,9 +89,7 @@ class AdminMenuController extends Controller
         $menu = Menu::findOrFail($id);
         $categories = Category::all();
         $venues = Venue::all();
-        $menues = Menu::all();
-        $menues->load('category','venue');
-        return view('admin.menu.edit',compact('venues','categories','menues','menu'));
+        return view('admin.menu.edit',compact('venues','categories','menu'));
     }
 
     /**
@@ -129,6 +131,6 @@ class AdminMenuController extends Controller
     {
         $menu = Menu::findOrFail($id);
         $menu->delete();
-        return redirect(route('menu.create'))->with('success','Menu Item Deleted');
+        return redirect()->back()->with('success','Menu Item Deleted');
     }
 }

@@ -17,7 +17,9 @@ class AdminRoomTypeController extends Controller
      */
     public function index()
     {
-        //
+        $roomtypequery = RoomType::query();
+        $roomtypes = $roomtypequery->paginate(10);
+        return view('admin.roomtype.index',compact('roomtypes'));
     }
 
     /**
@@ -27,8 +29,7 @@ class AdminRoomTypeController extends Controller
      */
     public function create()
     {
-        $roomtypes = RoomType::all();
-        return view('admin.roomtype.create',compact('roomtypes'));
+        return view('admin.roomtype.create');
     }
 
     /**
@@ -102,9 +103,8 @@ class AdminRoomTypeController extends Controller
     public function edit($id)
     {
         $roomtype = RoomType::findOrFail($id);
-        $roomtypes = RoomType::all();
         $roomtype->load('images');
-        return view('admin.roomtype.edit',compact('roomtypes','roomtype'));
+        return view('admin.roomtype.edit',compact('roomtype'));
     }
 
     /**
@@ -170,6 +170,6 @@ class AdminRoomTypeController extends Controller
     {
         $roomtype = RoomType::findOrFail($id);
         $roomtype->delete();
-        return redirect(route('roomtype.create'))->with('success','Room Type Deleted');
+        return redirect()->back()->with('success','Room Type Deleted');
     }
 }
