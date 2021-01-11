@@ -37,8 +37,8 @@
 
                 <h5>Facilities</h5>
                 <div>
-                    <ul class="flex flex-wrap justify-items-auto">
-                        
+                    <ul class="flex flex-wrap justify-self-auto">
+                       
                         <li class="m-2"><i class="fa fa-bed" aria-hidden="true"></i> Bed(s): {{ $roomtype->beds }}</li>   
                         <li class="m-2"><i class="fa fa-thermometer-empty" aria-hidden="true"></i> Aircondition: {{ $roomtype->ac == 1 ? "Yes" : 'n/a' }}</li>
                         <li class="m-2"><i class="fa fa-shower" aria-hidden="true"></i> Hot & Cold Water: {{ $roomtype->hot_cold_shower == 1 ? "Yes" : 'n/a' }}</li>

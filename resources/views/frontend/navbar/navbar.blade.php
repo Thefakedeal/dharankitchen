@@ -19,27 +19,17 @@
             </ul>
           </li>
 
-           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Room
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/rooms">All Room</a></li>
-              <li><a class="dropdown-item" href="#">Deluxe Triple Room</a></li>
-              <li><a class="dropdown-item" href="#">Deluxe Double Room</a></li>
-              <li><a class="dropdown-item" href="#">Standard Double Room</a></li>
-              <li><a class="dropdown-item" href="#">Normal Double</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/rooms">Rooms</a>
           </li>
+           
           <li class="nav-item">
             <a class="nav-link" href="#">Packages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Galery</a>
+            <a class="nav-link" href="#">Gallery</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Booking</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="#">Services</a>
           </li>
@@ -58,7 +48,6 @@
             </ul>
           </li> -->
         </ul>
-        <a href="" class="px-6 py-2 text-white rounded no-underline bg-gray-600 hover:bg-gray-700">Book</a>
         
       </div>
     </div>

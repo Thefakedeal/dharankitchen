@@ -79,7 +79,7 @@
                             <div class="row mt-4">
                                 <div class="col">
                                     <label for=""></label>
-                                   <button type="submit" id='submit' class="btn btn-primary form-control" >Send Passcode</button>
+                                   <button type="submit" id='submit' class="btn btn-success form-control" >Send Passcode</button>
                                 </div>
                             </div>
                         </form>
