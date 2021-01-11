@@ -1,6 +1,11 @@
 @extends('frontend.templates.app')
 
 @section('main')
+    @if (session('success'))
+      <div class="alert alert-primary m-2">
+          {{ session('success') }}
+      </div>
+    @endif
     <div class="container mx-auto mt-10">
         <div class="row">
             <div class="col-md-6">
@@ -11,19 +16,31 @@
                     <div class="card-body">
                         <p class="text-gray-700">We will use these details to share your booking information</p>
         
-                        <form action="" onsubmit="return formValidate()" method="post">
+                        <form action="{{ route('book') }}" onsubmit="return formValidate()" method="post">
+                            @csrf
+                            <input type="hidden" name="room_type_id" value="{{ $roomtype->id }}">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="name" class="font-bold">Full Name</label>
-                                        <input id="name" class="form-control" type="text" name="name" placeholder="Enter first and last name">
+                                        <input id="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Enter first and last name" required>
+                                        @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
                                 </div>
         
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="email" class="font-bold">Email</label>
-                                        <input id="email" class="form-control" type="email" name="email" placeholder="name@domain.com">
+                                        <input id="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="name@domain.com" required>
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
                                 </div>
                             </div>
@@ -32,14 +49,24 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="checkin" class="font-bold">Check in</label>
-                                        <input id="checkin" class="form-control" type="date" name="checkin" value="{{ now()->toDateString() }}" min="{{ now()->toDateString() }}">
+                                        <input id="checkin"  class="form-control @error('checkin') is-invalid @enderror" type="date" name="checkin" value="{{ now()->toDateString() }}" min="{{ now()->toDateString() }}" required>
+                                        @error('checkin')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
                                 </div>
         
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="checkout" class="font-bold">Check out</label>
-                                        <input id="checkout" class="form-control" type="date" name="checkout" value="{{ now()->addDays(1)->toDateString() }}" min="{{ now()->addDays(1)->toDateString() }}">
+                                        <input id="checkout" class="form-control @error('checkout') is-invalid @enderror" type="date" name="checkout" value="{{ now()->addDays(1)->toDateString() }}" min="{{ now()->addDays(1)->toDateString() }}" required>
+                                        @error('ckeckout')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +75,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="guest" class="font-bold">No of guests</label>
-                                        <select id="guest" class="form-control" name="guests">
+                                        <select id="guest" value="{{ old('guests') }}" class="form-control @error('guests') is-invalid @enderror" name="guests" required >
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -60,19 +87,35 @@
                                             <option value="9">9</option>
                                             <option value="10+">10+</option>
                                         </select>
+                                        @error('guests')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="totalroom" class="font-bold">Total Room</label>
-                                        <input id="totalroom" class="form-control" type="number" value="1" min="1" name="mobile" placeholder="Total Room">
+                                        <input id="totalroom" value="{{ old('totalroom') ?? 1 }}" class="form-control @error('totalroom')  is-invalid @enderror" type="number" value="1" min="1" max="{{ $roomtype->available_rooms }}" name="totalroom" placeholder="Total Room" required>
+                                        @error('totalroom')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="mobile" class="font-bold">Mobile Number</label>
-                                        <input id="mobile" class="form-control" type="number" name="mobile" placeholder="Mobile Number">
+                                        <input id="mobile" value="{{ old('mobile') }}" class="form-control @error('mobile') is-invalid @enderror" type="number" name="mobile" placeholder="Mobile Number" required>
+                                        @error('mobile')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     </div>
+                                
                                 </div>
                             </div>
 
@@ -152,8 +195,8 @@
         const discountElem = document.getElementById('discount');
         const payableElem = document.getElementById('payable');
         const submit = document.getElementById('submit');
-
         //Values
+        const available_rooms = {{ $roomtype->available_rooms }}
         const price = {{ $roomtype->price }}
         const discount= {{ $roomtype->price - $roomtype->room_charge }}
         const charge = {{ $roomtype->room_charge }}
@@ -183,7 +226,7 @@
             const checkindate = new Date(checkinelem.value);
             const checkoutdate = new Date(checkoutelem.value);
             const totalRooms = parseInt(totalRoomElem.value);
-            if(checkindate >= checkoutdate || totalRooms<1 ){
+            if(checkindate >= checkoutdate || totalRooms<1 || available_rooms<totalRooms){
                 return false;
             }
         }
@@ -194,7 +237,7 @@
             const checkindate = new Date(checkinelem.value);
             const checkoutdate = new Date(checkoutelem.value);
             const totalRooms = parseInt(totalRoomElem.value);
-            if(checkindate >= checkoutdate){
+            if(checkindate >= checkoutdate || available_rooms<totalRooms){
                 submit.disabled = true;
                 return false;
             }

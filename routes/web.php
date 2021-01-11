@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
 use App\Http\Controllers\Admin\AdminVenueController;
+use App\Http\Controllers\BookingController;
 use App\Models\Room;
 use App\Models\RoomType;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +53,9 @@ Route::get('/booking/{id}',function($id){
 Route::get('/admin', function(){
     return view('admin.admin');
 });
+
+Route::post('/book',BookingController::class)->name('book');
+
 Route::group([
     'prefix' => 'admin'
 ], function ($router) {
