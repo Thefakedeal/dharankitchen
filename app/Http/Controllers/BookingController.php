@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\RoomType;
+use Carbon\Carbon;
+use DateTime;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -27,6 +29,10 @@ class BookingController extends Controller
             'totalroom'=>'required|min:1|max:'.$roomtype->available_rooms,
             'mobile'=>'required|digits:10',
         ]);
+       
+        $checkin = new Carbon($request->checkin);
+        $checkout = new Carbon($request->checkout);
+        $days = $checkin->diffInDays($checkout);
         $booking = new Booking();
         $booking->room_type_id = $request->room_type_id;
         $booking->name = $request->name;
@@ -36,7 +42,7 @@ class BookingController extends Controller
         $booking->guests = $request->guests;
         $booking->totalroom = $request->totalroom;
         $booking->mobile = $request->mobile;
-
+        $booking->total = $request->totalroom * $roomtype->room_charge * $days;
         $booking->save();
         return redirect('/');
     }

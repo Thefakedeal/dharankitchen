@@ -23,6 +23,9 @@ class CreateBookingsTable extends Migration
             $table->foreignId('room_type_id');
             $table->integer('totalroom')->default(1);
             $table->string('mobile');
+            $table->integer('total');
+            $table->boolean('confirmed')->default(FALSE);
+            $table->boolean('paid')->default(FALSE);
             $table->timestamps();
         });
     }
