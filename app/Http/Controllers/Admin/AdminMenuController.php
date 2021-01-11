@@ -19,12 +19,13 @@ class AdminMenuController extends Controller
     public function index(Request $request)
     {
         $menuequery = Menu::query();
-        if($request->has('venue_id')){
+        if($request->has('venue_id') && $request->venue_id!=0){
             $menuequery->where('venue_id',$request->venue_id);
         }
         $venues = Venue::all();
         $menues = $menuequery->paginate(15);
         return view('admin.menu.index',compact('menues','venues'));
+        
     }
 
     /**

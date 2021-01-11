@@ -9,6 +9,7 @@
                         <div class="row justify-content-center">
                             <div class="form-group m-2">
                                 <select name="venue_id" id="venue_id"  class="form-control" >
+                                    <option value="0"> All </option>
                                     @foreach ($venues as $venue)
                                         <option value="{{ $venue->id }}"> {{ $venue->name }}</option>
                                     @endforeach
@@ -86,7 +87,7 @@
                             </tr>
                         @endforeach
                     </table>
-                    {{ $menues->render('pagination::bootstrap-4') }}
+                    {{-- {{ $menues->render('pagination::bootstrap-4') }} --}}
                 </div>
             </div>
         </div>
