@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Helpers\SavePhoto;
+
 use App\Http\Controllers\Controller;
 use App\Models\Room;
-use App\Models\RoomImage;
 use App\Models\RoomType;
 use Illuminate\Http\Request;
 
@@ -18,7 +17,9 @@ class AdminRoomController extends Controller
      */
     public function index()
     {   
-        
+       $roomquery = Room::query();
+       $rooms = $roomquery->paginate(10);
+       return view('admin.room.index',compact('rooms')); 
     }
 
     /**
@@ -29,9 +30,7 @@ class AdminRoomController extends Controller
     public function create()
     {
         $roomtypes = RoomType::all();
-        $rooms = Room::all();
-        $rooms->load('room_type');
-        return view('admin.room.create',compact('roomtypes','rooms'));
+        return view('admin.room.create',compact('roomtypes'));
     }
 
     /**
@@ -76,8 +75,7 @@ class AdminRoomController extends Controller
     {
         $room = Room::findOrFail($id);
         $roomtypes = RoomType::all();
-        $rooms = Room::all();
-        return view('admin.room.edit',compact('roomtypes','rooms','room'));
+        return view('admin.room.edit',compact('roomtypes','room'));
     }
 
     /**
@@ -112,6 +110,6 @@ class AdminRoomController extends Controller
     {
         $room = Room::findOrFail($id);
         $room->delete();
-        return redirect(route('room.create'))->with('success','Room Deleted');
+        return redirect()->back()->with('success','Room Deleted');
     }
 }

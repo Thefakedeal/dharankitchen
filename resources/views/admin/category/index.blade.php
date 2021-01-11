@@ -2,35 +2,9 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 ">
             <div class="card shadow">
-                <div class="card-header">
-                    Add Category
-                </div>
-                <div class="card-body">
-                    <form action="{{ route('category.store') }}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="name">{{ __('Name') }}</label>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-primary float-right">
-                            Save
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-        {{-- <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-header">Categories</div>
+                <div class="card-header">Category List</div>
                 <div class="card-body">
                     <table class="table table-sm ">
                         <thead>
@@ -69,8 +43,9 @@
                             </tr>
                         @endforeach
                     </table>
+                    {{ $categories->render('pagination::bootstrap-4') }}
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 @endsection

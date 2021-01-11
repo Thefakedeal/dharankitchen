@@ -1,69 +1,84 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
             <div class="card shadow">
                 <div class="card-header">
-                    Add Menu
+                    Add Item
                 </div>
                 <div class="card-body">
                     
                     <form action="{{ route('menu.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group">
-                            <label for="name">{{ __('Name') }}</label>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">{{ __('Name') }}</label>
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                        name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="price">{{ __('Price (Rs.)') }}</label>
+                                    <input id="price" type="number" class="form-control @error('price') is-invalid @enderror"
+                                        name="price" value="{{ old('price') }}" required autocomplete="price" autofocus min="0">
+                                    @error('price')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="price">{{ __('Price (Rs.)') }}</label>
-                            <input id="price" type="number" class="form-control @error('price') is-invalid @enderror"
-                                name="price" value="{{ old('price') }}" required autocomplete="price" autofocus min="0">
-                            @error('price')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="venue">Venue</label>
+                                    <select id="venue" name="venue_id" class="form-control @error('venue_id') is-invalid @enderror"
+                                        required>
+                                        @foreach ($venues as $venue)
+                                            <option value="{{ $venue->id }}">
+                                                {{ $venue->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    @error('venue_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="category">Category</label>
+                                    <select id="category" name="category_id"
+                                        class="form-control @error('category_id') is-invalid @enderror" required>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    @error('category_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="venue">Venue</label>
-                            <select id="venue" name="venue_id" class="form-control @error('venue_id') is-invalid @enderror"
-                                required>
-                                @foreach ($venues as $venue)
-                                    <option value="{{ $venue->id }}">
-                                        {{ $venue->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            @error('venue_id')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
+                        
+                        
 
-                        <div class="form-group">
-                            <label for="category">Category</label>
-                            <select id="category" name="category_id"
-                                class="form-control @error('category_id') is-invalid @enderror" required>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">
-                                        {{ $category->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            @error('category_id')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
+                        
 
                         <div class="form-group">
                             <label for="image">Image</label>
@@ -79,16 +94,16 @@
                             <label for="description">Description</label>
                             <textarea name="description" class="form-control" rows="5"> {{ old('description') }} </textarea>
                         </div>
-
-                        <button type="submit" class="btn btn-primary">
-                            Add Menu
+                        <button type="submit" class="btn btn-primary float-right">
+                            Save
                         </button>
+                        <button type="reset" class="btn btn-secondary float-right mr-2"> Reset </button>
                     </form>
                 </div>
 
             </div>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="card shadow">
                 <div class="card-header">Menu Items</div>
                 <div class="card-body">
@@ -149,6 +164,6 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection

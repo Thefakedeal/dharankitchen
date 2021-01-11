@@ -49,55 +49,136 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-               <li class="nav-item">
-                <a href="{{ route('venue.create') }}" class="nav-link">
-                  <i class="fas fa-hotel"></i>
-                  <p class="ml-2">
-                     Venues
-                    {{-- <span class="right badge badge-danger">New</span> --}}
+              
+              {{-- Venue Menu --}}
+               <li class="nav-item has-treeview">
+                <a href="{{ route('venue.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-hotel"></i>
+                  <p>
+                    Venues
+                    <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('venue.create') }}" class="nav-link">
+                      <i class="fas fa-key nav-icon"></i>
+                      <p>Add Venues</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('venue.index') }}" class="nav-link">
+                      <i class="fas fa-suitcase-rolling nav-icon"></i>
+                      <p>Venue List </p>
+                    </a>
+                  </li>
+                </ul>
               </li>
-               <li class="nav-item">
-            <a href="{{ route('category.create') }}" class="nav-link">
-              <i class="fas fa-cubes"></i>
-              <p class="ml-2">
-                 Food Category
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
+              {{-- End Venue Menu --}}
 
-          
+              {{-- Category Menu --}}
+              <div  class="nav-item has-treeview">
+                <a href="{{ route('category.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-utensils"></i>
+                  <p>
+                    Menu Category
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('category.create') }}" class="nav-link">
+                      <i class="fas fa-drumstick-bite nav-icon"></i>
+                      <p>Add Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('category.index') }}" class="nav-link">
+                      <i class="fas fa-hotdog nav-icon"></i>
+                      <p>Category List</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {{-- End Category Menu --}}
 
-          <li class="nav-item">
-            <a href="{{ route('menu.create') }}" class="nav-link">
-              <i class="fas fa-hamburger"></i>
-              <p class="ml-2">
-                 Add Menu
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('roomtype.create') }}" class="nav-link">
-              <i class="fas fa-concierge-bell"></i>
-              <p class="ml-2">
-                 Room Type
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('room.create') }}" class="nav-link">
-              <i class="fas fa-bed"></i>
-              <p class="ml-2">
-                  Add Room
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
+              {{-- Food Menu --}}
+              <div  class="nav-item has-treeview">
+                <a href="{{ route('menu.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-hamburger"></i>
+                  <p>
+                      Menu Item
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('menu.create') }}" class="nav-link">
+                      <i class="fas fa-cocktail nav-icon"></i>
+                      <p>Add Item</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('menu.index') }}" class="nav-link">
+                      <i class="fas fa-pizza-slice nav-icon"></i>
+                      <p>Item List</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {{-- End Food Menu --}}
+
+              {{-- Room Type Menu --}}
+              <div  class="nav-item has-treeview">
+                <a href="{{ route('roomtype.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-person-booth"></i>
+                  <p>
+                      Room Category
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('roomtype.create') }}" class="nav-link">
+                      <i class="fas fa-door-closed nav-icon"></i>
+                      <p>Add Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('roomtype.index') }}" class="nav-link">
+                      <i class="fas fa-door-open nav-icon"></i>
+                      <p>Category List</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {{-- End Room Type Menu --}}
+              
+              {{-- Room Menu --}}
+              <div  class="nav-item has-treeview">
+                <a href="{{ route('room.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-bed"></i>
+                  <p>
+                      Room
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('room.create') }}" class="nav-link">
+                      <i class="fas fa-hot-tub nav-icon"></i>
+                      <p>Add Room</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('room.index') }}" class="nav-link">
+                      <i class="fas fa-concierge-bell nav-icon"></i>
+                      <p>Room List</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {{-- End Room Menu --}}
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="fas fa-calendar-alt"></i>

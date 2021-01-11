@@ -15,7 +15,9 @@ class AdminVenueController extends Controller
      */
     public function index()
     {
-        //
+        $venuesquery = Venue::query();
+        $venues = $venuesquery->paginate(10);
+        return view('admin.venue.index',compact('venues'));
     }
 
     /**
@@ -25,8 +27,7 @@ class AdminVenueController extends Controller
      */
     public function create()
     {
-        $venues = Venue::all();
-        return view('admin.venue.create',compact('venues'));
+        return view('admin.venue.create');
     }
 
     /**
@@ -66,10 +67,9 @@ class AdminVenueController extends Controller
     public function edit($id)
     {
         $venue = Venue::findOrFail($id);
-        $venues = Venue::all();
         $menues = $venue->menues;
         $menues->load('category');
-        return view('admin.venue.edit',compact(['venue','venues','menues']));
+        return view('admin.venue.edit',compact(['venue','menues']));
     }
 
     /**
@@ -100,6 +100,6 @@ class AdminVenueController extends Controller
     {
         $venue = Venue::findOrFail($id);
         $venue->delete();
-        return redirect(route('venue.create'))->with('success','Venue Deleted');
+        return redirect()->back()->with('success','Venue Deleted');
     }
 }
