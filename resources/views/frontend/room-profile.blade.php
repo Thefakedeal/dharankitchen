@@ -115,9 +115,12 @@
                             <p class="text-red-400 text-sm font-bold">-{{ $roomtype->discount }}% off</p>
                         @endif
                     </div>
+                    
 
-                    <div>
-                        
+                    <div class="mx-4 text-red-500">
+                        @if ($roomtype->available_rooms <= 10)
+                            <p>Only {{ $roomtype->available_rooms }} Room(s) available</p>
+                        @endif
                     </div>
 
                     <div class="flex justify-center block pb-4">

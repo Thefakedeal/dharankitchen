@@ -8,7 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    {{-- <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"> --}}
+    <script src="https://kit.fontawesome.com/9330877283.js" crossorigin="anonymous"></script>
   </head>
 <body>
   <!-- Navigation Bar -->
