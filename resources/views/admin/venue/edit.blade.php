@@ -1,11 +1,11 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card shadow">
                 <div class="card-header">
-                    Add Venue
+                    Update Venue
                 </div>
                 <div class="card-body">
                     <form action="{{ route('venue.update', $venue->id) }}" method="post">
@@ -22,14 +22,14 @@
                             @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">
-                            Update Venue
+                            Update
                         </button>
                     </form>
                 </div>
 
             </div>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="card shadow">
                 <div class="card-header">Venues</div>
                 <table class="table tamle-sm ">
@@ -69,10 +69,10 @@
                     @endforeach
                 </table>
             </div>
-        </div>
+        </div> --}}
     </div>
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card shadow">
                 <div class="card-header">
                     Menu
