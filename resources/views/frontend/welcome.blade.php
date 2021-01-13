@@ -7,25 +7,41 @@
 
 {{-- Main Section --}}
 @section('main')
+
+    {{-- Welcome Message --}}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="text-2xl">Welcome to <span class="text-red-500">Hotel Dharan Kitchen</span></h1>
+                <p class="text-gray-600">Nestled within 10 acres of exquisitely landscaped grounds, Hotel Himalaya is conveniently located 8 km away from the Tribhuban International Airport and only 2 km from the Kathmandu city centre. We have always been an ideal haven for business and leisure travelers alike, offering resort ambience with an intimate touch. Since many of the distinguished NGO’s and INGO’s in Kathmandu are in the vicinity and the UN head office is only a few minutes walking distance.</p>
+
+                <a href="#" class="btn btn-primary">[+] Readmore</a>
+            </div>
+
+            <div class="col-md-4 mt-2">
+                <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="md:w-96">
+            </div>
+        </div>
+    </div>
+   
      <!-- Highlights -->
-    <div class="text-center mt-10">
-        <h1 class="text-4xl mt-10 font-bold font-serif">Highlights</h1>
+    <div class="text-center mt-10 bg-gray-100 py-4">
+        <h1 class="text-4xl mt-2 font-bold font-serif">Highlights</h1>
         <p class="text-gray-600 font-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, cum.</p>
         
             <div class="container mx-auto grid sm:grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
                 <!-- Highlights -->
-                <div class="shadow-2xl h-auto ">
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipNiI8jU5Mmz1QCYBTy6dzoA_uGx5i0vW7D1zU4s=s1600-w400" alt="" class="h-62 w-full object-cover object-center">
-                    
+                <div class="shadow-2xl h-auto overflow-hidden ">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipNiI8jU5Mmz1QCYBTy6dzoA_uGx5i0vW7D1zU4s=s1600-w400" alt="" class="h-62 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
                 </div>
 
-                <div class="shadow-2xl h-auto ">
-                    <img src="https://mk0hotrodum5xf2n5ib6.kinstacdn.com/wp-content/uploads/2018/04/honey-barbecue-sriracha-wings.jpeg" alt="" class="h-62 w-full object-cover object-center">
+                <div class="shadow-2xl h-auto overflow-hidden ">
+                    <img src="https://mk0hotrodum5xf2n5ib6.kinstacdn.com/wp-content/uploads/2018/04/honey-barbecue-sriracha-wings.jpeg" alt="" class="h-62 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
                 
                 </div>
 
-                <div class="shadow-2xl h-auto ">
-                <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-62 w-full object-cover object-center">
+                <div class="shadow-2xl h-auto overflow-hidden ">
+                <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-62 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
                 
                 </div>
                 <!-- End of Room Card -->
@@ -36,12 +52,12 @@
 
 <!-- Book a Room -->
 <div class="text-center">
-    <h1 class="text-4xl mt-10 font-bold font-serif">OUR ROOMS</h1>
+    <h1 class="text-4xl mt-10 font-bold font-serif">ACCOMMODATION</h1>
     <p class="text-gray-600 font-light"> 
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur obcaecati 
     </p>
     <div class="w-10 h-2 border-red-500 border-blue-50"></div>
-    <form action="">
+    {{-- <form action="">
         <div class="lg:flex justify-center bg-gray-100 w-full mx-auto my-auto items-end mt-10">
             <div class="p-4 ">
                 <h1 class="font-medium text-xl">Check in</h1>
@@ -53,7 +69,7 @@
             </div>  
             <button type="submit" class="bg-blue-500 px-10 py-2 m-4 text-white rounded hover:bg-blue-600">Book Now</button>
         </div>
-    </form>
+    </form> --}}
 </div>
 <!-- Book a Room Ends -->
 
@@ -78,11 +94,11 @@
             </a> --}}
             @foreach ($roomtypes as $roomtype)
             <a href="/room-profile/{{ $roomtype->id }}" class="no-underline text-gray-800 hover:text-gray-800">
-              <div class="shadow-2xl h-auto">
+              <div class="shadow-2xl h-auto overflow-hidden">
                 @if (count($roomtype->images)>0)
-                <img src="{{ $roomtype->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center">
+                <img src="{{ $roomtype->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
                 @else
-                <img src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="" class="h-48 w-full object-cover object-center">
+                <img src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="" class="h-48 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
                 @endif
                   <div class="p-2">
                       <h1 class="text-2xl mb-2 mt-2 font-weight-bold">{{ $roomtype->name??'Room' }}</h1>

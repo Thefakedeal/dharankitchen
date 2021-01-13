@@ -1,17 +1,20 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pt-2">
         <div class="col-md-12">
             <div class="card shadow">
                 <div class="card-header">
-                    Booking List
+                   <strong> New Booking</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm">
+                    <table class="table table-sm text-sm">
                         <thead>
                             <th>
                                 S.N
+                            </th>
+                            <th>
+                                Requested
                             </th>
                             <th>
                                 Name
@@ -23,29 +26,27 @@
                                 Room Type
                             </th>
                             <th>
+                                Qty
+                            </th>
+                            <th>
                                 Guests
                             </th>
                             <th>
-                                Rooms
+                                Arrival
                             </th>
                             <th>
-                                Total
+                                Departure
                             </th>
                             <th>
-                                Confirmed
+                                Amount
+                            </th>
+                            <th>
+                                Status
                             </th>
                             <th>
                                 Paid
                             </th>
-                            <th>
-                                Check In 
-                            </th>
-                            <th>
-                                Check Out
-                            </th>
-                            <th>
-                                Requested
-                            </th>
+                           
                             <th>
                                 Action
                             </th>
@@ -57,6 +58,9 @@
                                         {{ ++$index }}
                                     </td>
                                     <td>
+                                        {{ $booking->created_at->diffForHumans() }}
+                                    </td>
+                                    <td>
                                         {{ $booking->name }}
                                     </td>
                                     <td>
@@ -66,19 +70,10 @@
                                         {{ $booking->roomtype->name??'' }}
                                     </td>
                                     <td>
-                                        {{ $booking->guests }}
-                                    </td>
-                                    <td>
                                         {{ $booking->totalroom }}
                                     </td>
                                     <td>
-                                        {{ $booking->total }}
-                                    </td>
-                                    <td>
-                                        {{ $booking->confirmed==0?'No':'Yes' }}
-                                    </td>
-                                    <td>
-                                        {{ $booking->paid==0?'No':'Yes' }}
+                                        {{ $booking->guests }}
                                     </td>
                                     <td>
                                         {{ $booking->checkin }}
@@ -86,15 +81,27 @@
                                     <td>
                                         {{ $booking->checkout }}
                                     </td>
+                                    
                                     <td>
-                                        {{ $booking->created_at->diffForHumans() }}
+                                       NRs {{ $booking->total }}
                                     </td>
+                                    <td>
+                                        {{ $booking->confirmed==0?'Pending  ':'Comfirmed' }}
+                                    </td>
+                                    <td>
+                                        {{ $booking->paid==0?'No':'Yes' }}
+                                    </td>
+                                    
+                                   
                                     <td>
                                         <form action="{{ route('admin.booking.confirm') }}" onsubmit="return confirm('Do You Want To Confirm This Booking?')" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $booking->id }}">
-                                            <button  type='submit' class="btn btn-link">
+                                            <button  type='submit' class="btn btn-sm btn-primary">
                                                 Confirm
+                                            </button>
+                                            <button  type='submit' class="btn btn-sm btn-danger">
+                                                Cancel
                                             </button>
                                         </form>
                                     </td>

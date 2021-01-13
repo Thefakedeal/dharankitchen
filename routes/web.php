@@ -55,10 +55,20 @@ Route::get('/booking/{id}',function($id){
 
 //Menues
 
-Route::get('/menues-hotel',function(){
-    $categories = Category::all();
-    $menues = Menu::where('venue_id',3)->get();
-    return view('frontend.menues-hotel',compact('categories','menues'));
+Route::get('/menues/{id}',function($id){
+    // $categories = Category::all();
+    // $menues = Menu::where('venue_id',$id)->get();
+
+    $categoriesQuery = Category::query();
+    $categoriesQuery->whereHas('menues',function($query) use($id){
+        $query->where('venue_id',$id);
+    });
+
+   $categories =  $categoriesQuery->with('menues',function($query) use($id){
+        $query->where('venue_id',$id);
+    })->get();
+    
+    return view('frontend.menues',compact('categories'));
 });
 
 Route::get('/admin', function(){
