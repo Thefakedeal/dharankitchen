@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
 use App\Http\Controllers\Admin\AdminVenueController;
 use App\Http\Controllers\BookingController;
+use App\Models\Category;
+use App\Models\Menu;
 use App\Models\Room;
 use App\Models\RoomType;
 use Illuminate\Support\Facades\Auth;
@@ -49,6 +51,14 @@ Route::get('/room-profile/{id}',function($id){
 Route::get('/booking/{id}',function($id){
     $roomtype = RoomType::findOrFail($id);
     return view('frontend.booking', compact('roomtype'));
+});
+
+//Menues
+
+Route::get('/menues-hotel',function(){
+    $categories = Category::all();
+    $menues = Menu::where('venue_id',3)->get();
+    return view('frontend.menues-hotel',compact('categories','menues'));
 });
 
 Route::get('/admin', function(){
