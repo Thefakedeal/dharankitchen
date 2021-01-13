@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminBookingController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminCheckinController;
 use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminRoomController;
@@ -88,6 +89,8 @@ Route::group([
     Route::delete('image',AdminDeleteImage::class)->name('image.delete');
     Route::get('/bookings',[AdminBookingController::class,'index'])->name('admin.booking');
     Route::post('/bookings/confirm',[AdminBookingController::class,'confirm'])->name('admin.booking.confirm');
+    Route::post('/checkin/checkout',[AdminCheckinController::class,'checkout'])->name('checkin.checkout');
+    Route::resource('checkin',AdminCheckinController::class);
 });
 
 Auth::routes();
