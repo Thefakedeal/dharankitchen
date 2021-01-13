@@ -31,13 +31,9 @@ class AdminBookingController extends Controller
             ]
         );
         $booking = Booking::findOrFail($request->id);
-        $roomtype = $booking->roomtype;
         if($booking->confirmed == TRUE){
             return redirect()->back()->with('fail','Booking Already Confirmed');
         }
-        $booking->confirmed = TRUE;
-        $roomtype->available_rooms -= $booking->totalroom; 
-        $roomtype->update();
         $booking->update();
         return redirect()->back()->with('success','Booking Confirmed');
     }

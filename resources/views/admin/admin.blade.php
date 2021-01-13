@@ -215,6 +215,43 @@
                             </ul>
                         </div>
                         {{-- End Booking Menu --}}
+
+                        {{-- Check In Menu --}}
+                        <div class="nav-item has-treeview">
+                            <a href="{{ route('checkin.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-person-booth"></i>
+                                <p>
+                                    Checkin
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('checkin.index') }}" class="nav-link">
+                                        <i class="fas fa-bookmark nav-icon"></i>
+                                        <p>All</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('checkin.index') }}?checkedout=0" class="nav-link">
+                                        <i class="far fa-bookmark nav-icon"></i>
+                                        <p>Active</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('checkin.index') }}?checkedout=1" class="nav-link">
+                                        <i class="fas fa-sign-out-alt nav-icon"></i>
+                                        <p>Checked Out</p>
+                                    </a>
+                                </li> <li class="nav-item">
+                                    <a href="{{ route('checkin.create') }}" class="nav-link">
+                                        <i class="fas fa-plus nav-icon"></i>
+                                        <p>Add Checkin</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {{-- End Check In Menu --}}
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-calendar-alt"></i>
