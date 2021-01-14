@@ -186,7 +186,7 @@
                         {{-- End Room Menu --}}
                         {{-- Booking Menu --}}
                         <div class="nav-item has-treeview">
-                            <a href="{{ route('admin.booking') }}" class="nav-link">
+                            <a href="{{route('admin.booking.new')}}" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Bookings
@@ -195,23 +195,23 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('admin.booking') }}" class="nav-link">
+                                    <a href="{{route('admin.booking.new')}}" class="nav-link">
                                         <i class="fas fa-book-open nav-icon"></i>
-                                        <p>All</p>
+                                        <p>New</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('admin.booking') . '?confirmed=' . '1' }}" class="nav-link">
+                                    <a href="{{route('admin.booking.confirmed')}}" class="nav-link">
                                         <i class="fas fa-atlas nav-icon"></i>
                                         <p>Confirmed</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="{{ route('admin.booking') . '?confirmed=' . '0' }}" class="nav-link">
                                         <i class="fas fa-atlas nav-icon"></i>
                                         <p>Not Confirmed</p>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                         {{-- End Booking Menu --}}

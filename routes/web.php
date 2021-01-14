@@ -87,8 +87,11 @@ Route::group([
     Route::resource('roomtype',AdminRoomTypeController::class);
     Route::resource('room',AdminRoomController::class);
     Route::delete('image',AdminDeleteImage::class)->name('image.delete');
-    Route::get('/bookings',[AdminBookingController::class,'index'])->name('admin.booking');
+    Route::get('/bookings/new',[AdminBookingController::class,'new_bookings'])->name('admin.booking.new');
+    Route::get('/bookings/confirmed',[AdminBookingController::class,'confirmed_bookings'])->name('admin.booking.confirmed');
     Route::post('/bookings/confirm',[AdminBookingController::class,'confirm'])->name('admin.booking.confirm');
+    Route::delete('/bookings/cancel',[AdminBookingController::class,'cancel'])->name('admin.booking.cancel');
+    Route::post('/bookings/checkin',[AdminBookingController::class,'checkin'])->name('admin.booking.checkin');
     Route::post('/checkin/checkout',[AdminCheckinController::class,'checkout'])->name('checkin.checkout');
     Route::resource('checkin',AdminCheckinController::class);
 });
