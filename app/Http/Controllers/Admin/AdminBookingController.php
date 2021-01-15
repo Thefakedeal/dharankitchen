@@ -13,6 +13,7 @@ class AdminBookingController extends Controller
         // $bookings = Booking::all();
         $bookingquery = Booking::query();
         $bookingquery->where('confirmed',FALSE);
+        $bookingquery->where('cancelled',FALSE);
         $bookingquery->orderBy('checkin','DESC')->orderBy('checkout','DESC');
         $bookings = $bookingquery->paginate(10);
         // $bookings = BookingResource::collection($bookingspage);
@@ -25,6 +26,7 @@ class AdminBookingController extends Controller
     public function confirmed_bookings(Request $request){
         $bookingquery = Booking::query();
         $bookingquery->where('confirmed',TRUE);
+        $bookingquery->where('cancelled',FALSE);
         $bookingquery->orderBy('checkin','DESC')->orderBy('checkout','DESC');
         $bookings = $bookingquery->paginate(10);
         $bookings->load('roomtype');
@@ -53,8 +55,9 @@ class AdminBookingController extends Controller
             ]
         );
         $booking = Booking::findOrFail($request->id);
-        $booking->delete();
-        return redirect()->back()->with('success','Booking Deleted');
+        $booking->cancelled = TRUE;
+        $booking->save();
+        return redirect()->back()->with('success','Booking Cancelled');
     }
     
     public function checkin(Request $request){
