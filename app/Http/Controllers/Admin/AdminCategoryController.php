@@ -27,7 +27,8 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $categories = Category::all();
+        return view('admin.category.create',compact('categories'));
     }
 
     /**
@@ -67,7 +68,8 @@ class AdminCategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        return view('admin.category.edit',compact('category'));
+        $categories = Category::all();
+        return view('admin.category.edit',compact('category','categories'));
     }
 
     /**

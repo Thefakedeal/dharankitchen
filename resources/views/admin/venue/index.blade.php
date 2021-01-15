@@ -1,12 +1,15 @@
 @extends('admin.admin')
 
 @section('content')
-<div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="row justify-content-center pt-4">
+        <div class="col-md-12">
             <div class="card shadow">
-                <div class="card-header">Venue List</div>
+                <div class="card-header">
+                    <strong> Venues
+                    </strong>
+                </div>
                 <div class="card-body">
-                    <table class="table table-sm ">
+                    <table class="table table-sm">
                         <thead>
                             <th>
                                 S.N
@@ -29,15 +32,17 @@
                                 <td>
                                     <form action="{{ route('venue.destroy', $venue->id) }}" method="post"
                                         onsubmit="return confirm('Are You Sure You Want To Delete {{ $venue->name }} ?')">
-                                        <a href="{{ route('venue.edit', $venue->id) }}"
-                                            title="Edit {{ $venue->name }}">
+                                        <a href="{{ route('venue.edit', $venue->id) }}" title="Edit {{ $venue->name }}"
+                                            class="btn btn-outline-primary btn-sm">
                                             <i class="fas fa-pen"></i>
+                                            Edit
                                         </a>
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $venue->name }}">
+                                        {{-- @csrf
+                                        @method('delete') --}}
+                                        {{-- <button type="submit" class="btn btn-danger ml-2"
+                                            title="Delete {{ $venue->name }}">
                                             <i class="fas fa-trash"></i>
-                                        </button>
+                                        </button> --}}
                                     </form>
                                 </td>
                             </tr>
@@ -47,5 +52,5 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
 @endsection

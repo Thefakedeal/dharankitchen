@@ -100,24 +100,29 @@
 
                                     <td>
                                         <div class="row">
-                                            <form action="{{ route('admin.booking.confirm') }}"
+                                            <div class="col">
+                                                <form action="{{ route('admin.booking.confirm') }}"
                                                 onsubmit="return confirm('Do You Want To Confirm This Booking?')" method="post">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $booking->id }}">
-                                                <button type="submit" class="btn btn-primary">
+                                                <button type="submit" class="btn btn-sm btn-primary" title="Confirm Booking">
                                                     <i class="fas fa-user-check"></i>
-                                                    Confirm
+                                                    {{-- Confirm --}}
                                                 </button>
                                             </form>
-                                            <form action="{{ route('admin.booking.cancel') }}" onsubmit="return confirm('Do You Want To Cancel This Booking?')"
+                                            </div>
+                                            <div class="col">
+                                                <form action="{{ route('admin.booking.cancel') }}" onsubmit="return confirm('Do You Want To Cancel This Booking?')"
                                             method="post" >
                                             @csrf
                                             @method('delete')
                                                 <input type="hidden" name="id" value="{{ $booking->id }}">
-                                                <button type='submit' title='cancel booking' class="btn btn-sm btn-danger">
+                                                <button type='submit' title='Cancel booking' class="btn btn-sm btn-danger">
                                                     <i class="fas fa-ban"></i>
                                                 </button>
-                                            </form>
+                                            </form> 
+                                            </div>
+                                           
                                         </div>
                                     </td>
                                 </tr>

@@ -1,8 +1,8 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center pt-4">
+        <div class="col-md-6 ">
             <div class="card shadow">
                 <div class="card-header">
                     Add Venue
@@ -20,15 +20,15 @@
                                 </span>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">
-                            Save
+                        <button type="submit" class="btn btn-primary float-right">
+                           <i class="fa fa-save"></i> Save
                         </button>
                     </form>
                 </div>
 
             </div>
         </div>
-        {{-- <div class="col-md-6">
+        <div class="col-md-6">
             <div class="card shadow">
                 <div class="card-header">Venues</div>
                 <div class="card-body">
@@ -56,14 +56,14 @@
                                     <form action="{{ route('venue.destroy', $venue->id) }}" method="post"
                                         onsubmit="return confirm('Are You Sure You Want To Delete {{ $venue->name }} ?')">
                                         <a href="{{ route('venue.edit', $venue->id) }}"
-                                            title="Edit {{ $venue->name }}">
-                                            <i class="fas fa-pen"></i>
+                                            title="Edit {{ $venue->name }}" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-pen"></i> Edit
                                         </a>
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $venue->name }}">
+                                        {{-- @csrf
+                                        @method('delete') --}}
+                                        {{-- <button type="submit" class="btn btn-danger btn-sm ml-2" title="Delete {{ $venue->name }}">
                                             <i class="fas fa-trash"></i>
-                                        </button>
+                                        </button> --}}
                                     </form>
                                 </td>
                             </tr>
@@ -71,6 +71,6 @@
                     </table>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 @endsection

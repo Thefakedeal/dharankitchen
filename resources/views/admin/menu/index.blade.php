@@ -74,12 +74,12 @@
                                     <form action="{{ route('menu.destroy', $menu->id) }}" method="post"
                                         onsubmit="return confirm('Are You Sure You Want To Delete {{ $menu->name }} ?')">
                                         <a href="{{ route('menu.edit', $menu->id) }}"
-                                            title="Edit {{ $menu->name }}">
-                                            <i class="fas fa-pen"></i>
+                                            title="Edit {{ $menu->name }}" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-pen"></i> Edit
                                         </a>
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $menu->name }}">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm ml-2" title="Delete {{ $menu->name }}">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>

@@ -4,7 +4,10 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card shadow">
-                <div class="card-header">Details</div>
+                <div class="card-header">
+                  <strong>Details
+                    </strong>  
+                </div>
                 <div class="card-body">
                     <form action="{{ route('checkin.store') }}" method="post">
                         @csrf
@@ -148,13 +151,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="details">Details</label>
+                                    <label for="details">Rooms</label>
                                     <textarea name="details" id="details" class="form-control" rows="5">{{ old('details') }}</textarea>
                                 </div>
                             </div>
                         </div>
                         {{-- End Row 5 --}}
-                        <button type="submit" class="btn btn-primary float-right">Save</button>
+                        <button type="submit" class="btn btn-primary float-right">
+                            <i class="fas fa-save"></i> Save</button>
                     </form>
                 </div>
             </div>

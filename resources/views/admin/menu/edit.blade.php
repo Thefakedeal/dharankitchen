@@ -5,7 +5,7 @@
         <div class="col-md-10 ">
             <div class="card shadow">
                 <div class="card-header">
-                    Update Item
+                    <strong>Update Item</strong>
                 </div>
                 <div class="card-body">
                     @if ($menu->image)
@@ -119,7 +119,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary float-right">
-                            Update
+                            <i class="fa fa-sync-alt"></i> Update
                         </button>
                     </form>
                 </div>
