@@ -3,14 +3,9 @@
 @section('content')
     <div class="row justify-content-center pt-2">
         <div class="col-md-12">
-            @if (count($bookings) == 0)
-                <div class="alert alert-warning m-2 text-center">
-                    No New Bookings
-                </div>
-            @endif
             <div class="card shadow">
                 <div class="card-header">
-                    <strong>New Bookings</strong>
+                    <strong>Confirmed Bookings</strong>
                 </div>
                 <div class="card-body">
                     <table class="table table-sm text-sm">
@@ -101,29 +96,30 @@
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <form action="{{ route('admin.booking.confirm') }}"
-                                                onsubmit="return confirm('Do You Want To Confirm This Booking?')" method="post">
-                                                @csrf
-                                                <input type="hidden" name="id" value="{{ $booking->id }}">
-                                                <button type="submit" class="btn btn-sm btn-primary" title="Confirm Booking">
-                                                    <i class="fas fa-user-check"></i>
-                                                    {{-- Confirm --}}
-                                                </button>
-                                            </form>
+                                                <form action="{{ route('admin.booking.checkin') }}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $booking->id }}">
+                                            <button type="submit" class="btn btn-sm btn-primary" title="Check In">
+                                                <i class="fas fa-sign-in-alt"></i>
+                                                {{-- Check In --}}
+                                            </button>
+                                        </form>
+
                                             </div>
                                             <div class="col">
                                                 <form action="{{ route('admin.booking.cancel') }}" onsubmit="return confirm('Do You Want To Cancel This Booking?')"
-                                            method="post" >
-                                            @csrf
-                                            @method('delete')
+                                                method="post">
+                                                @csrf
+                                                @method('delete')
                                                 <input type="hidden" name="id" value="{{ $booking->id }}">
                                                 <button type='submit' title='Cancel booking' class="btn btn-sm btn-danger">
                                                     <i class="fas fa-ban"></i>
                                                 </button>
-                                            </form> 
+                                            </form>
                                             </div>
-                                           
+                                            
                                         </div>
+
                                     </td>
                                 </tr>
                             @endforeach

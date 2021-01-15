@@ -442,7 +442,7 @@
                             <input type="file" name="images[]" accept="image/*" multiple>
                         </div>
                         <button type="submit" class="btn btn-success float-right ml-2">
-                            Update Record
+                            <i class="fa fa-sync-alt"></i> Update
                         </button>
                         
                     </form>

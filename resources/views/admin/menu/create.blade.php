@@ -5,7 +5,7 @@
         <div class="col-md-10">
             <div class="card shadow">
                 <div class="card-header">
-                    Add Item
+                    <strong>Add Item</strong>
                 </div>
                 <div class="card-body">
                     
@@ -95,9 +95,11 @@
                             <textarea name="description" class="form-control" rows="5"> {{ old('description') }} </textarea>
                         </div>
                         <button type="submit" class="btn btn-primary float-right">
-                            Save
+                            <i class="fa fa-save"></i> Save
                         </button>
-                        <button type="reset" class="btn btn-secondary float-right mr-2"> Reset </button>
+                        <button type="reset" class="btn btn-secondary float-right mr-2">
+                          <i class="fa fa-undo"></i>  Reset
+                        </button>
                     </form>
                 </div>
 

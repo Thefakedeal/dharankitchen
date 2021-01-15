@@ -18,6 +18,8 @@
                             <th>Check In</th>
                             <th>Check Out</th>
                             <th>Room Type</th>
+                            <th>Qty</th>
+                            <th>Room(s)</th>
                             <th>Actions</th>
                         </thead>
                         <tbody>
@@ -42,10 +44,17 @@
                                         {{ $checkin->room_type->name??'N/A' }}
                                     </td>
                                     <td>
+                                        {{ $checkin->totalrooms }}
+                                    </td>
+                                    <td>
+                                        {{ $checkin->details }}
+                                    </td>
+                                    <td>
                                         <form action="{{ route('checkin.checkout') }}" onsubmit="return confirm('Are You Sure You Want To Check Out?')" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $checkin->id }}">
-                                            <button type="submit" class="btn btn-primary" @if($checkin->checkout) disabled @endif >Check Out</button>
+                                            <button type="submit" class="btn btn-outline-primary" @if($checkin->checkout) disabled @endif >
+                                                <i class="fas fa-sign-out-alt"></i> Check Out</button>
                                         </form>
                                     </td>
                                 </tr>

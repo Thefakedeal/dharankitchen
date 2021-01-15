@@ -1,11 +1,11 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
             <div class="card shadow">
                 <div class="card-header">
-                    Update Venue
+                   <strong> Update Venue </strong> 
                 </div>
                 <div class="card-body">
                     <form action="{{ route('venue.update', $venue->id) }}" method="post">
@@ -21,21 +21,25 @@
                                 </span>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">
-                            Update
+                        <button type="submit" class="btn btn-primary float-right">
+                            <i class="fas fa-sync-alt"></i> Update
                         </button>
                     </form>
                 </div>
 
             </div>
         </div>
-        {{-- <div class="col-md-6">
+        <div class="col-md-6">
             <div class="card shadow">
-                <div class="card-header">Venues</div>
-                <table class="table tamle-sm ">
+                <div class="card-header">
+                   <strong> Venues
+                    </strong> 
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm ">
                     <thead>
                         <th>
-                            S.N
+                            #
                         </th>
                         <th>
                             Name
@@ -55,23 +59,26 @@
                             <td>
                                 <form action="{{ route('venue.destroy', $venue->id) }}" method="post"
                                     onsubmit="return confirm('Are You Sure You Want To Delete {{ $venue->name }} ?')">
-                                    <a href="{{ route('venue.edit', $venue->id) }}" title="Edit {{ $venue->name }}">
-                                        <i class="fas fa-pen"></i>
+                                    <a href="{{ route('venue.edit', $venue->id) }}"
+                                        title="Edit {{ $venue->name }}" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-pen"></i> Edit
                                     </a>
-                                    @csrf
+                                    {{-- @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $venue->name }}">
                                         <i class="fas fa-trash"></i>
-                                    </button>
+                                    </button> --}}
                                 </form>
                             </td>
                         </tr>
                     @endforeach
                 </table>
+                </div>
+                
             </div>
-        </div> --}}
+        </div>
     </div>
-    <div class="row justify-content-center">
+    {{-- <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow">
                 <div class="card-header">
@@ -120,5 +127,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

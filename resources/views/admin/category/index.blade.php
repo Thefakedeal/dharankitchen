@@ -1,7 +1,7 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pt-4">
         <div class="col-md-8 ">
             <div class="card shadow">
                 <div class="card-header">Category List</div>
@@ -30,12 +30,12 @@
                                     <form action="{{ route('category.destroy', $category->id) }}" method="post"
                                         onsubmit="return confirm('Are You Sure You Want To Delete {{ $category->name }} ?')">
                                         <a href="{{ route('category.edit', $category->id) }}"
-                                            title="Edit {{ $category->name }}">
-                                            <i class="fas fa-pen"></i>
+                                            title="Edit {{ $category->name }}" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-pen"></i> Edit
                                         </a>
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $category->name }}">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm ml-2" title="Delete {{ $category->name }}">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>

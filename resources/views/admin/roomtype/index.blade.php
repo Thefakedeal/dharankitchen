@@ -60,12 +60,12 @@
                                     <form action="{{ route('roomtype.destroy', $roomtype->id) }}" method="post"
                                         onsubmit="return confirm('Are You Sure You Want To Delete {{ $roomtype->name }} ?')">
                                         <a href="{{ route('roomtype.edit', $roomtype->id) }}"
-                                            title="Edit {{ $roomtype->name }}">
-                                            <i class="fas fa-pen"></i>
+                                            title="Edit {{ $roomtype->name }}" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-pen"></i> Edit
                                         </a>
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $roomtype->name }}">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm ml-2" title="Delete {{ $roomtype->name }}">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>

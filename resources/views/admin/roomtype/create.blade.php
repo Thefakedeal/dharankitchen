@@ -196,9 +196,11 @@
                             <input type="file" name="images[]" accept="image/*" multiple>
                         </div>
                         <button type="submit" class="btn btn-success float-right ml-2">
-                            Save Record
+                            <i class="fa fa-save"></i> Save
                         </button>
-                        <button type="reset" class="btn btn-primary float-right">New Record</button>
+                        <button type="reset" class="btn btn-primary float-right">
+                            <i class="fa fa-undo"></i> Reset
+                        </button>
                         
                     </form>
                 </div>

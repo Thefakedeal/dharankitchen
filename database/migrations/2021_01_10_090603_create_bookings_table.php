@@ -26,6 +26,7 @@ class CreateBookingsTable extends Migration
             $table->integer('total');
             $table->boolean('confirmed')->default(FALSE);
             $table->boolean('paid')->default(FALSE);
+            $table->boolean('cancelled')->default(FALSE);
             $table->timestamps();
         });
     }
