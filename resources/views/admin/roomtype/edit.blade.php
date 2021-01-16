@@ -474,7 +474,7 @@
                         <img  src="{{ $image->image }}" class="image-fluid" style="max-width: 100%;height: auto;" data-toggle="modal">
                     </div>
                     <div class="modal-footer">
-                        <form action="{{ route('image.delete') }}" onsubmit="return confirm('Do Ypu Want To Delete This Photo?')" method="post">
+                        <form action="{{ route('room.image.delete') }}" onsubmit="return confirm('Do Ypu Want To Delete This Photo?')" method="post">
                             @csrf
                             @method('delete')
                             <input type="hidden" name="id" value="{{ $image->id }}">
