@@ -61,6 +61,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $checkins->render('pagination::bootstrap-4') }}
                 </div>
             </div>
         </div>
