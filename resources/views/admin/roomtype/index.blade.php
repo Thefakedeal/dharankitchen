@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card shadow">
-                <div class="card-header">Category List</div>
+                <div class="card-header"><strong>Room List</strong></div>
                 <div class="card-body">
                     <table class="table table-sm ">
                         <thead>
@@ -24,7 +24,7 @@
                                 Price
                             </th>
                             <th>
-                                Discount 
+                                Dis(%)
                             </th>
                             <th>
                                 Charge
@@ -48,13 +48,13 @@
                                     {{ $roomtype->available_rooms }}
                                 </td>
                                 <td>
-                                    {{ $roomtype->price }}
+                                    NRs {{ number_format($roomtype->price) }}.00
                                 </td>
                                 <td> 
-                                    {{ $roomtype->discount }} %
+                                    {{ $roomtype->discount }}%
                                 </td>
                                 <td>
-                                    {{ $roomtype->room_charge }}
+                                    NRs {{ number_format($roomtype->room_charge) }}.00
                                 </td>
                                 <td>
                                     <form action="{{ route('roomtype.destroy', $roomtype->id) }}" method="post"

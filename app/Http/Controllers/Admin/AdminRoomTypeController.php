@@ -61,6 +61,7 @@ class AdminRoomTypeController extends Controller
         $roomtype->wifi = $request->wifi;
         $roomtype->bottled_water = $request->bottled_water;
         $roomtype->parking = $request->parking;
+        $roomtype->hot_drinking_water = $request->hot_drinking_water;
         $roomtype->price = $request->price;
         $discount = 0;
         if($request->discount){

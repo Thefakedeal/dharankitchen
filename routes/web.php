@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminBookingController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminCheckinController;
 use App\Http\Controllers\Admin\AdminDeleteImage;
+use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
@@ -94,6 +95,7 @@ Route::group([
     Route::post('/bookings/checkin',[AdminBookingController::class,'checkin'])->name('admin.booking.checkin');
     Route::post('/checkin/checkout',[AdminCheckinController::class,'checkout'])->name('checkin.checkout');
     Route::resource('checkin',AdminCheckinController::class);
+    Route::resource('/events', AdminEventController::class);
 });
 
 Auth::routes();
