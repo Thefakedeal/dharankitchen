@@ -275,30 +275,18 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                {{-- <li class="nav-item">
-                                    <a href="{{ route('checkin.index') }}" class="nav-link">
-                                        <i class="fas fa-bookmark nav-icon"></i>
-                                        <p>All</p>
+                                <li class="nav-item">
+                                    <a href="{{ route('events.index') }}" class="nav-link">
+                                        <i class="fas fa-calendar nav-icon"></i>
+                                        <p>All Events</p>
                                     </a>
-                                </li> --}}
-                                {{-- <li class="nav-item">
-                                    <a href="{{ route('checkin.index') }}?checkedout=0" class="nav-link">
-                                        <i class="far fa-bookmark nav-icon"></i>
-                                        <p>Active</p>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('events.create') }}" class="nav-link">
+                                        <i class="far fa-calendar-plus nav-icon"></i>
+                                        <p>Add Event</p>
                                     </a>
-                                </li> --}}
-                                {{-- <li class="nav-item">
-                                    <a href="{{ route('checkin.index') }}?checkedout=1" class="nav-link">
-                                        <i class="fas fa-sign-out-alt nav-icon"></i>
-                                        <p>Checked Out</p>
-                                    </a>
-                                </li> --}}
-                                {{-- <li class="nav-item">
-                                    <a href="{{ route('checkin.create') }}" class="nav-link">
-                                        <i class="fas fa-plus nav-icon"></i>
-                                        <p>Add Checkin</p>
-                                    </a>
-                                </li> --}}
+                                </li>
                             </ul>
                         </div>
                         {{-- End Events Menu --}}
