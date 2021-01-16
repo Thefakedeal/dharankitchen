@@ -4,7 +4,7 @@
     <div class="row justify-content-center pt-4">
         <div class="col-md-8 ">
             <div class="card shadow">
-                <div class="card-header">Category List</div>
+                <div class="card-header"><strong>Categories</strong></div>
                 <div class="card-body">
                     <table class="table table-sm ">
                         <thead>

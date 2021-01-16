@@ -28,6 +28,7 @@ class CreateRoomTypesTable extends Migration
             $table->boolean('wifi')->default(FALSE);
             $table->boolean('bottled_water')->default(FALSE);
             $table->boolean('parking')->default(FALSE);
+            $table->boolean('hot_drinking_water')->default(FALSE);
             $table->integer('price');
             $table->integer('discount')->default(0);
             $table->text('description')->nullable();

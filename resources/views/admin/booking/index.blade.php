@@ -10,7 +10,7 @@
             @endif
             <div class="card shadow">
                 <div class="card-header">
-                    <strong>New Bookings</strong>
+                    <strong>Online Bookings</strong>
                 </div>
                 <div class="card-body">
                     <table class="table table-sm text-sm">

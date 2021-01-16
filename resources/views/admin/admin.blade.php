@@ -55,9 +55,17 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+               <li class="nav-item">
+                <a href="/admin/" class="nav-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <p class="ml-2">
+                        Dashboard     
+                    </p>
+                </a>
+            </li>
                         {{-- Venue Menu --}}
                         <li class="nav-item has-treeview">
-                            <a href="{{ route('venue.index') }}" class="nav-link">
+                            <a href="{{ route('venue.index') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-hotel"></i>
                                 <p>
                                     Venues
@@ -83,7 +91,7 @@
 
                         {{-- Category Menu --}}
                         <div class="nav-item has-treeview">
-                            <a href="{{ route('category.index') }}" class="nav-link">
+                            <a href="{{ route('category.index') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-utensils"></i>
                                 <p>
                                     Menu Category
@@ -109,10 +117,10 @@
 
                         {{-- Food Menu --}}
                         <div class="nav-item has-treeview">
-                            <a href="{{ route('menu.index') }}" class="nav-link">
+                            <a href="{{ route('menu.index') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-hamburger"></i>
                                 <p>
-                                    Menu Item
+                                    Menu Item(s)
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -126,7 +134,7 @@
                                 <li class="nav-item">
                                     <a href="{{ route('menu.index') }}" class="nav-link">
                                         <i class="fas fa-pizza-slice nav-icon"></i>
-                                        <p>Item List</p>
+                                        <p>Item(s) List</p>
                                     </a>
                                 </li>
                             </ul>
@@ -135,10 +143,10 @@
 
                         {{-- Room Type Menu --}}
                         <div class="nav-item has-treeview">
-                            <a href="{{ route('roomtype.index') }}" class="nav-link">
+                            <a href="{{ route('roomtype.index') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-person-booth"></i>
                                 <p>
-                                    Room Category
+                                    Room(s)
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -146,13 +154,13 @@
                                 <li class="nav-item">
                                     <a href="{{ route('roomtype.create') }}" class="nav-link">
                                         <i class="fas fa-door-closed nav-icon"></i>
-                                        <p>Add Category</p>
+                                        <p>Add Room</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('roomtype.index') }}" class="nav-link">
                                         <i class="fas fa-door-open nav-icon"></i>
-                                        <p>Category List</p>
+                                        <p>Room(s) List</p>
                                     </a>
                                 </li>
                             </ul>
@@ -160,7 +168,7 @@
                         {{-- End Room Type Menu --}}
 
                         {{-- Room Menu --}}
-                        <div class="nav-item has-treeview">
+                        {{-- <div class="nav-item has-treeview">
                             <a href="{{ route('room.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-bed"></i>
                                 <p>
@@ -182,14 +190,14 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                         {{-- End Room Menu --}}
                         {{-- Booking Menu --}}
                         <div class="nav-item has-treeview">
-                            <a href="{{route('admin.booking.new')}}" class="nav-link">
+                            <a href="{{route('admin.booking.new')}}" class="nav-link active">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
-                                    Bookings
+                                    Online Bookings
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -197,13 +205,13 @@
                                 <li class="nav-item">
                                     <a href="{{route('admin.booking.new')}}" class="nav-link">
                                         <i class="fas fa-book-open nav-icon"></i>
-                                        <p>New</p>
+                                        <p>New Bookings</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('admin.booking.confirmed')}}" class="nav-link">
                                         <i class="fas fa-atlas nav-icon"></i>
-                                        <p>Confirmed</p>
+                                        <p>Confirmed Bookings</p>
                                     </a>
                                 </li>
                                 {{-- <li class="nav-item">
@@ -218,24 +226,18 @@
 
                         {{-- Check In Menu --}}
                         <div class="nav-item has-treeview">
-                            <a href="{{ route('checkin.index') }}" class="nav-link">
+                            <a href="{{ route('checkin.index') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-person-booth"></i>
                                 <p>
-                                    Checkin
+                                    Hotel Checkin
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('checkin.index') }}" class="nav-link">
-                                        <i class="fas fa-bookmark nav-icon"></i>
-                                        <p>All</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('checkin.index') }}?checkedout=0" class="nav-link">
-                                        <i class="far fa-bookmark nav-icon"></i>
-                                        <p>Active</p>
+                                    <a href="{{ route('checkin.create') }}" class="nav-link">
+                                        <i class="fas fa-plus nav-icon"></i>
+                                        <p>New Checkin</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -243,25 +245,72 @@
                                         <i class="fas fa-sign-out-alt nav-icon"></i>
                                         <p>Checked Out</p>
                                     </a>
-                                </li> <li class="nav-item">
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('checkin.index') }}?checkedout=0" class="nav-link">
+                                        <i class="far fa-bookmark nav-icon"></i>
+                                        <p>Active Guests</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('checkin.index') }}" class="nav-link">
+                                        <i class="fas fa-bookmark nav-icon"></i>
+                                        <p>All Guests</p>
+                                    </a>
+                                </li>
+                                
+                                
+                                
+                            </ul>
+                        </div>
+                        {{-- End Check In Menu --}}
+
+                        {{-- Events Menu --}}
+                        <div class="nav-item has-treeview">
+                            <a href="#" class="nav-link active">
+                                <i class="fas fa-calendar-alt"></i>
+                                <p>
+                                    Events
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('checkin.index') }}" class="nav-link">
+                                        <i class="fas fa-bookmark nav-icon"></i>
+                                        <p>All</p>
+                                    </a>
+                                </li> --}}
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('checkin.index') }}?checkedout=0" class="nav-link">
+                                        <i class="far fa-bookmark nav-icon"></i>
+                                        <p>Active</p>
+                                    </a>
+                                </li> --}}
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('checkin.index') }}?checkedout=1" class="nav-link">
+                                        <i class="fas fa-sign-out-alt nav-icon"></i>
+                                        <p>Checked Out</p>
+                                    </a>
+                                </li> --}}
+                                {{-- <li class="nav-item">
                                     <a href="{{ route('checkin.create') }}" class="nav-link">
                                         <i class="fas fa-plus nav-icon"></i>
                                         <p>Add Checkin</p>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
-                        {{-- End Check In Menu --}}
-                        <li class="nav-item">
+                        {{-- End Events Menu --}}
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-calendar-alt"></i>
                                 <p class="ml-2">
                                     Events
-                                    {{-- <span class="right badge badge-danger">New</span>
-                                    --}}
+                                    
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
