@@ -25,6 +25,9 @@ class AdminBookingController extends Controller
 
     public function confirmed_bookings(Request $request){
         $bookingquery = Booking::query();
+        if($request->has('name')){
+            $bookingquery->where('name','LIKE','%'.$request->name.'%');
+        }
         $bookingquery->where('confirmed',TRUE);
         $bookingquery->where('cancelled',FALSE);
         $bookingquery->orderBy('checkin','DESC')->orderBy('checkout','DESC');

@@ -1,7 +1,7 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pt-4">
         <div class="col-md-12">
             <div class="card shadow">
                 <div class="card-header">
