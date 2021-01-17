@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminBookingController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminCheckinController;
+use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDeleteEventPhoto;
 use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminEventController;
@@ -74,15 +75,13 @@ Route::get('/menues/{id}',function($id){
     return view('frontend.menues',compact('categories'));
 });
 
-Route::get('/admin', function(){
-    return view('admin.admin');
-});
 
 Route::post('/book',BookingController::class)->name('book');
 
 Route::group([
     'prefix' => 'admin'
 ], function ($router) {
+    Route::get('/',AdminDashboardController::class);
     Route::resource('category',AdminCategoryController::class);
     Route::resource('venue',AdminVenueController::class);
     Route::resource('menu',AdminMenuController::class);
