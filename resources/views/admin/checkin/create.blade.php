@@ -151,7 +151,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="details">Rooms</label>
+                                    <label for="details">Room Numbers</label>
                                     <textarea name="details" id="details" class="form-control" rows="5">{{ old('details') }}</textarea>
                                 </div>
                             </div>
