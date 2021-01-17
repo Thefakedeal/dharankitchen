@@ -57,7 +57,7 @@
 
                <li class="nav-item">
                 <a href="/admin/" class="nav-link">
-                    <i class="fas fa-calendar-alt"></i>
+                    <i class="fas fa-chart-line"></i>
                     <p class="ml-2">
                         Dashboard     
                     </p>
