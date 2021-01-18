@@ -81,7 +81,7 @@ Route::post('/book',BookingController::class)->name('book');
 
 Route::group([
     'prefix' => 'admin',
-    // 'middleware'=> 'admin'
+    'middleware'=> 'admin'
 ], function ($router) {
     Route::resource('/user',AdminUserController::class);
     Route::get('/',AdminDashboardController::class)->name('admin.dashboard');

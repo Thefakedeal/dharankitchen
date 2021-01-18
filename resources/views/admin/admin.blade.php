@@ -317,6 +317,15 @@
                                 </li>
                             </ul>
                         </div>
+                        @auth
+                            <form action="{{ route('logout') }}" onsubmit="return confirm('Do You Want To Logout?')"
+                                method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-block mt-2">
+                                    Logout
+                                </button>
+                            </form>
+                        @endauth
                         {{-- End Events Menu --}}
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
