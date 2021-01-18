@@ -57,14 +57,40 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-               <li class="nav-item">
-                <a href="/admin/" class="nav-link">
-                    <i class="fas fa-chart-line"></i>
-                    <p class="ml-2">
-                        Dashboard     
-                    </p>
-                </a>
-            </li>
+                        <li class="nav-item">
+                            <a href="/admin/" class="nav-link">
+                                <i class="fas fa-chart-line"></i>
+                                <p class="ml-2">
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        {{-- User Menu --}}
+                        <li class="nav-item has-treeview">
+                            <a href="{{ route('venue.index') }}" class="nav-link active">
+                                <i class="nav-icon fas fa-user-tie"></i>
+                                <p>
+                                    User
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('user.create') }}" class="nav-link">
+                                        <i class="fas fa-user-plus nav-icon"></i>
+                                        <p>Add User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('user.index') }}" class="nav-link">
+                                        <i class="fas fa-suitcase-rolling nav-icon"></i>
+                                        <p>User List </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{-- End User Menu --}}
+
                         {{-- Venue Menu --}}
                         <li class="nav-item has-treeview">
                             <a href="{{ route('venue.index') }}" class="nav-link active">
@@ -196,7 +222,7 @@
                         {{-- End Room Menu --}}
                         {{-- Booking Menu --}}
                         <div class="nav-item has-treeview">
-                            <a href="{{route('admin.booking.new')}}" class="nav-link active">
+                            <a href="{{ route('admin.booking.new') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Online Bookings
@@ -205,13 +231,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.booking.new')}}" class="nav-link">
+                                    <a href="{{ route('admin.booking.new') }}" class="nav-link">
                                         <i class="fas fa-book-open nav-icon"></i>
                                         <p>New Bookings</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.booking.confirmed')}}" class="nav-link">
+                                    <a href="{{ route('admin.booking.confirmed') }}" class="nav-link">
                                         <i class="fas fa-atlas nav-icon"></i>
                                         <p>Confirmed Bookings</p>
                                     </a>
@@ -260,9 +286,9 @@
                                         <p>All Guests</p>
                                     </a>
                                 </li>
-                                
-                                
-                                
+
+
+
                             </ul>
                         </div>
                         {{-- End Check In Menu --}}
@@ -297,7 +323,7 @@
                                 <i class="fas fa-calendar-alt"></i>
                                 <p class="ml-2">
                                     Events
-                                    
+
                                 </p>
                             </a>
                         </li> --}}
