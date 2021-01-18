@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminVenueController;
 use App\Http\Controllers\BookingController;
 use App\Models\Category;
@@ -79,9 +80,11 @@ Route::get('/menues/{id}',function($id){
 Route::post('/book',BookingController::class)->name('book');
 
 Route::group([
-    'prefix' => 'admin'
+    'prefix' => 'admin',
+    'middleware'=> 'admin'
 ], function ($router) {
-    Route::get('/',AdminDashboardController::class);
+    Route::resource('/user',AdminUserController::class);
+    Route::get('/',AdminDashboardController::class)->name('admin.dashboard');
     Route::resource('category',AdminCategoryController::class);
     Route::resource('venue',AdminVenueController::class);
     Route::resource('menu',AdminMenuController::class);
