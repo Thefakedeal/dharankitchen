@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDeleteEventPhoto;
 use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminEventController;
+use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
@@ -100,6 +101,7 @@ Route::group([
     Route::post('/checkin/checkout',[AdminCheckinController::class,'checkout'])->name('checkin.checkout');
     Route::resource('checkin',AdminCheckinController::class);
     Route::resource('/events', AdminEventController::class);
+    Route::resource('/gallery', AdminGalleryController::class);
 });
 
 Auth::routes();
