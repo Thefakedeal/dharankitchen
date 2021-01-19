@@ -24,7 +24,7 @@
                                     <td>{{ $event->date }}</td>
                                     <td>{{ $event->created_at->toDateString() }}</td>
                                     <td>
-                                        <form action="{{ route('events.destroy',$event->id) }}" method="post">
+                                        <form action="{{ route('events.destroy',$event->id) }}" onsubmit="return confirm('Are You Sure You Want To Delete?')" method="post">
                                             <a href="{{ route('events.edit', $event->id) }}"
                                                 class="btn btn-outline-primary btn-sm">
                                                 <i class="fas fa-pen"></i> Edit
