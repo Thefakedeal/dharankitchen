@@ -89,7 +89,7 @@ Route::group([
     Route::resource('venue',AdminVenueController::class);
     Route::resource('menu',AdminMenuController::class);
     Route::resource('roomtype',AdminRoomTypeController::class);
-    Route::resource('room',AdminRoomController::class);
+    // Route::resource('room',AdminRoomController::class);
     Route::delete('image/room',AdminDeleteImage::class)->name('room.image.delete');
     Route::delete('image/event',AdminDeleteEventPhoto::class)->name('event.image.delete');
     Route::get('/bookings/new',[AdminBookingController::class,'new_bookings'])->name('admin.booking.new');
