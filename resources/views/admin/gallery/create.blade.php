@@ -63,7 +63,7 @@
                                         {{ $gallery->name }}
                                     </td>
                                     <td>
-                                        <form action="{{ route('gallery.destroy',$gallery->id) }}" method="post">
+                                        <form action="{{ route('gallery.destroy',$gallery->id) }}" method="post" onsubmit="return confirm('Are You Sure You Want To Delete?')">
                                             <a href="{{ route('gallery.edit', $gallery->id) }}"
                                                 class="btn btn-outline-primary btn-sm">
                                                 <i class="fas fa-pen"></i> Edit
