@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminCheckinController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDeleteEventPhoto;
+use App\Http\Controllers\Admin\AdminDeleteGalleryPhoto;
 use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminGalleryController;
@@ -93,6 +94,7 @@ Route::group([
     // Route::resource('room',AdminRoomController::class);
     Route::delete('image/room',AdminDeleteImage::class)->name('room.image.delete');
     Route::delete('image/event',AdminDeleteEventPhoto::class)->name('event.image.delete');
+    Route::delete('image/gallery',AdminDeleteGalleryPhoto::class)->name('gallery.image.delete');
     Route::get('/bookings/new',[AdminBookingController::class,'new_bookings'])->name('admin.booking.new');
     Route::get('/bookings/confirmed',[AdminBookingController::class,'confirmed_bookings'])->name('admin.booking.confirmed');
     Route::post('/bookings/confirm',[AdminBookingController::class,'confirm'])->name('admin.booking.confirm');
