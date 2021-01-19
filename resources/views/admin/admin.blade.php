@@ -318,6 +318,32 @@
                             </ul>
                         </div>
                         @auth
+                        {{-- End Events Menu --}}
+                        {{-- Gallery Menu --}}
+                        <div class="nav-item has-treeview">
+                            <a href="#" class="nav-link active">
+                                <i class="fas fa-images"></i>
+                                <p>
+                                    Gallery
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('gallery.index') }}" class="nav-link">
+                                        <i class="far fa-images nav-icon"></i>
+                                        <p>Galleries</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('gallery.create') }}" class="nav-link">
+                                        <i class="fas fa-camera-retro nav-icon"></i>
+                                        <p>Add Gallery</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {{-- End Gallery Menu --}}
                             <form action="{{ route('logout') }}" onsubmit="return confirm('Do You Want To Logout?')"
                                 method="post">
                                 @csrf
@@ -326,7 +352,6 @@
                                 </button>
                             </form>
                         @endauth
-                        {{-- End Events Menu --}}
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-calendar-alt"></i>

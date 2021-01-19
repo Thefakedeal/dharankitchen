@@ -5,8 +5,10 @@ use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminCheckinController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDeleteEventPhoto;
+use App\Http\Controllers\Admin\AdminDeleteGalleryPhoto;
 use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminEventController;
+use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
@@ -89,9 +91,10 @@ Route::group([
     Route::resource('venue',AdminVenueController::class);
     Route::resource('menu',AdminMenuController::class);
     Route::resource('roomtype',AdminRoomTypeController::class);
-    Route::resource('room',AdminRoomController::class);
+    // Route::resource('room',AdminRoomController::class);
     Route::delete('image/room',AdminDeleteImage::class)->name('room.image.delete');
     Route::delete('image/event',AdminDeleteEventPhoto::class)->name('event.image.delete');
+    Route::delete('image/gallery',AdminDeleteGalleryPhoto::class)->name('gallery.image.delete');
     Route::get('/bookings/new',[AdminBookingController::class,'new_bookings'])->name('admin.booking.new');
     Route::get('/bookings/confirmed',[AdminBookingController::class,'confirmed_bookings'])->name('admin.booking.confirmed');
     Route::post('/bookings/confirm',[AdminBookingController::class,'confirm'])->name('admin.booking.confirm');
@@ -100,6 +103,7 @@ Route::group([
     Route::post('/checkin/checkout',[AdminCheckinController::class,'checkout'])->name('checkin.checkout');
     Route::resource('checkin',AdminCheckinController::class);
     Route::resource('/events', AdminEventController::class);
+    Route::resource('/gallery', AdminGalleryController::class);
 });
 
 Auth::routes();
