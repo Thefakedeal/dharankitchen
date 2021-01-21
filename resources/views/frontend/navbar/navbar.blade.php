@@ -51,7 +51,7 @@
             <a class="nav-link" href="dining.html">Dining</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="meeting.html">Meeting & Events</a>
+            <a class="nav-link" href="{{ route('meeting') }}">Meeting & Events</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Gallery</a>
