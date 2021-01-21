@@ -94,6 +94,7 @@ Route::get('/rooms',function(){
 Route::get('/room-profile/{id}',function($id){
     $roomtype = RoomType::findOrFail($id);
     $roomtypes = RoomType::all();
+    $roomtype->load('images');
     $roomtypes->load('images');
     return view('frontend.room-profile',compact('roomtype','roomtypes'));
 })->name('room.profile');
@@ -102,7 +103,7 @@ Route::get('/room-profile/{id}',function($id){
 Route::get('/booking/{id}',function($id){
     $roomtype = RoomType::findOrFail($id);
     return view('frontend.booking', compact('roomtype'));
-});
+})->name('room.booking');
 
 //Menues
 
