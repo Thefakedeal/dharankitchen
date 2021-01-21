@@ -102,6 +102,7 @@ Route::get('/room-profile/{id}',function($id){
 //Booking Page
 Route::get('/booking/{id}',function($id){
     $roomtype = RoomType::findOrFail($id);
+    $roomtype->load('images');
     return view('frontend.booking', compact('roomtype'));
 })->name('room.booking');
 

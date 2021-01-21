@@ -6,7 +6,7 @@
           {{ session('success') }}
       </div>
     @endif
-    <div class="container mx-auto mt-10">
+    <div class="container py-5">
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
@@ -122,7 +122,7 @@
                             <div class="row mt-4">
                                 <div class="col">
                                     <label for=""></label>
-                                   <button type="submit" id='submit' class="btn btn-success form-control" >Send Passcode</button>
+                                   <button type="submit" id='submit' class="btn btn-danger form-control" >Send Passcode</button>
                                 </div>
                             </div>
                         </form>
@@ -138,7 +138,7 @@
                                 <p class="font-bold text-sm"><span id="nights"> 1 </span> Night</p>
                             </div>
                             <div class="col-md-2">
-                                <img src="https://images.pexels.com/photos/3659683/pexels-photo-3659683.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" width="60" height="60">
+                                <img src="{{ $roomtype->images->first()->image??'' }}" alt="" class="img-thumbnail">
                             </div>
                         </div>
 
