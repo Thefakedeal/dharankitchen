@@ -134,6 +134,10 @@ Route::get('/dining',function(){
     return view('frontend.dining');
 })->name('dining');
 
+Route::get('/packages', function(){
+    return view('frontend.packages');
+})->name('packages');
+
 Route::post('/book',BookingController::class)->name('book');
 Route::post('/query',SendQueryController::class)->name('query');
 

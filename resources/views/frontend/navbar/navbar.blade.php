@@ -45,7 +45,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Packages</a>
+            <a class="nav-link" href="{{ route('packages') }}">Packages</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('dining') }}">Dining</a>
