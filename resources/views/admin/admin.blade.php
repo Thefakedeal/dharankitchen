@@ -65,6 +65,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('query.index') }}" class="nav-link">
+                                <i class="fas fa-sticky-note"></i>
+                                <p class="ml-2">
+                                    Queries
+                                </p>
+                            </a>
+                        </li>
                         {{-- User Menu --}}
                         <li class="nav-item has-treeview">
                             <a href="{{ route('venue.index') }}" class="nav-link active">

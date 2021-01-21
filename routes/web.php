@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminMenuController;
+use App\Http\Controllers\Admin\AdminQueryController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
 use App\Http\Controllers\Admin\AdminUserController;
@@ -177,6 +178,7 @@ Route::group([
     Route::resource('checkin',AdminCheckinController::class);
     Route::resource('/events', AdminEventController::class);
     Route::resource('/gallery', AdminGalleryController::class);
+    Route::resource('/query',AdminQueryController::class);
 });
 
 Auth::routes();
