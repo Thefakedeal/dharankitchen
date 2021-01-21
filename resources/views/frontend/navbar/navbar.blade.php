@@ -54,7 +54,7 @@
             <a class="nav-link" href="{{ route('meeting') }}">Meeting & Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Gallery</a>
+            <a class="nav-link" href="{{ route('galleries') }}">Gallery</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('contact') }}">Contact</a>

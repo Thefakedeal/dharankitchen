@@ -18,6 +18,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\SendQueryController;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Gallery;
 use App\Models\Menu;
 use App\Models\Room;
 use App\Models\RoomImage;
@@ -140,6 +141,18 @@ Route::get('/packages', function(){
 
 Route::post('/book',BookingController::class)->name('book');
 Route::post('/query',SendQueryController::class)->name('query');
+
+Route::get('/gallery',function(){
+    $galleryQuery = Gallery::query();
+    $galleries = $galleryQuery->has('images')->get();
+    return view('frontend.gallery.index',compact('galleries'));
+})->name('galleries');
+
+Route::get('/gallery/{id}',function($id){
+    $gallery = Gallery::findOrFail($id);
+    $gallery->load('images');
+    return view('frontend.gallery.show',compact('gallery'));
+})->name('gallery');
 
 Route::group([
     'prefix' => 'admin',
