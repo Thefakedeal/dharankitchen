@@ -16,8 +16,10 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminVenueController;
 use App\Http\Controllers\BookingController;
 use App\Models\Category;
+use App\Models\Event;
 use App\Models\Menu;
 use App\Models\Room;
+use App\Models\RoomImage;
 use App\Models\RoomType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,10 +36,49 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $roomtypes = RoomType::take(4)->get();
-    $roomtypes->load('images');
-    return view('frontend.welcome', compact('roomtypes'));
+    $events = Event::take(4)->get();
+    $events->load('images');
+    return view('frontend.welcome', compact(['events']));
 });
+
+Route::group([
+    'prefix'=>'rooms'
+],function($router){
+    Route::get('/deluxe',function(){
+        $imagesQuery = RoomImage::query();
+        $imagesQuery->whereHas('room_type',function($query){
+            $query->where('name','like','%deluxe%');
+        });
+        $images = $imagesQuery->get();
+        $roomtypes = RoomType::all();
+        $roomtypes->load('images');
+        return view('frontend.rooms.deluxe',compact('roomtypes','images'));
+    })->name('room.deluxe');
+    
+    Route::get('/standard',function(){
+        $imagesQuery = RoomImage::query();
+        $imagesQuery->whereHas('room_type',function($query){
+            $query->where('name','like','%standard%');
+        });
+        $images = $imagesQuery->get();
+        $roomtypes = RoomType::all();
+        $roomtypes->load('images');
+        return view('frontend.rooms.standard',compact('roomtypes','images'));
+    })->name('room.standard');
+    
+    Route::get('/normal',function(){
+        $imagesQuery = RoomImage::query();
+        $imagesQuery->whereHas('room_type',function($query){
+            $query->where('name','like','%normal%');
+        });
+        $images = $imagesQuery->get();
+        $roomtypes = RoomType::all();
+        $roomtypes->load('images');
+        return view('frontend.rooms.normal',compact('roomtypes','images'));
+    })->name('room.normal');
+}
+);
+
 
 // All Rooms
 Route::get('/rooms',function(){
@@ -52,7 +93,7 @@ Route::get('/room-profile/{id}',function($id){
     $roomtypes = RoomType::all();
     $roomtypes->load('images');
     return view('frontend.room-profile',compact('roomtype','roomtypes'));
-});
+})->name('room.profile');
 
 //Booking Page
 Route::get('/booking/{id}',function($id){
