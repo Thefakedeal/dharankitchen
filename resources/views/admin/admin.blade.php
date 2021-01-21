@@ -352,6 +352,32 @@
                             </ul>
                         </div>
                         {{-- End Gallery Menu --}}
+                        {{-- Place Menu --}}
+
+                        <div class="nav-item has-treeview">
+                            <a href="{{ route('places.index') }}" class="nav-link active">
+                                <i class="fas fa-map-marked"></i>
+                                <p>
+                                    Places
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('places.index') }}" class="nav-link">
+                                        <i class="far fa-map nav-icon"></i>
+                                        <p>Places List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('places.create') }}" class="nav-link">
+                                        <i class="fas fa-map-pin nav-icon"></i>
+                                        <p>Add Place</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {{-- End Place Menu --}}
                             <form action="{{ route('logout') }}" onsubmit="return confirm('Do You Want To Logout?')"
                                 method="post">
                                 @csrf
