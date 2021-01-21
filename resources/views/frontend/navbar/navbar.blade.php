@@ -57,7 +57,7 @@
             <a class="nav-link" href="#">Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="{{ route('contact') }}">Contact</a>
           </li>
        
         </ul>

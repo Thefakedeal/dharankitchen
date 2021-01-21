@@ -79,6 +79,9 @@ Route::group([
 }
 );
 
+Route::get('/contact',function(){
+    return view('frontend.contact');
+})->name('contact');
 
 // All Rooms
 Route::get('/rooms',function(){
