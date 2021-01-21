@@ -170,8 +170,20 @@
           </div>
 
             <div class="row mt-5">
-              <!-- Budda Subba -->
+
+              @foreach ($places as $place)
               <div class="col-md-3">
+                <div class="card">
+                  <img src="{{ $place->image }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $place->name }}</h5>
+                    <p class="card-text">{{ $place->description }}</p>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+              <!-- Budda Subba -->
+              {{-- <div class="col-md-3">
                 <div class="card">
                   <img src="https://images.pexels.com/photos/507932/pexels-photo-507932.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -211,7 +223,7 @@
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
-              </div>
+              </div> --}}
             </div>
         </div>
     </div>

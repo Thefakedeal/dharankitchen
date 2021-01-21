@@ -22,6 +22,7 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Menu;
+use App\Models\Place;
 use App\Models\Room;
 use App\Models\RoomImage;
 use App\Models\RoomType;
@@ -42,7 +43,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $events = Event::take(4)->get();
     $events->load('images');
-    return view('frontend.welcome', compact(['events']));
+    $places = Place::take(4)->get();
+    return view('frontend.welcome', compact(['events','places']));
 });
 
 Route::group([
