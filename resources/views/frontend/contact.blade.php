@@ -44,6 +44,11 @@
 
       <div class="mt-5" style="background:#f8edeb;">
         <div class="container">
+          @if (session('success'))
+          <div class="alert alert-primary m-2">
+              {{ session('success') }}
+          </div>
+          @endif
           <div class="row py-4 justify-content-center">
             <div class="col-md-8">
                <h1 class="text-center fw-light text-uppercase display-6 fs-3">Send Message</h1>
@@ -53,7 +58,8 @@
 
           <div class="row py-4 justify-content-center">
             <div class="col-md-4">
-              <form action="" method="post">
+              <form action="{{ route('query') }}" method="post">
+                @csrf
                 <div class="form-group">
                   <label for="name" class="fw-light">Your Name</label>
                   <input id="name" class="form-control" type="text" name="name" required >

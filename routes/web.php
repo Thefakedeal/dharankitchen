@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\AdminRoomTypeController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminVenueController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\SendQueryController;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Menu;
@@ -134,6 +135,7 @@ Route::get('/dining',function(){
 })->name('dining');
 
 Route::post('/book',BookingController::class)->name('book');
+Route::post('/query',SendQueryController::class)->name('query');
 
 Route::group([
     'prefix' => 'admin',
