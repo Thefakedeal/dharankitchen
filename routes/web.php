@@ -10,14 +10,21 @@ use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminMenuController;
+use App\Http\Controllers\Admin\AdminPlacesController;
+use App\Http\Controllers\Admin\AdminQueryController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminRoomTypeController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminVenueController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\SendQueryController;
 use App\Models\Category;
+use App\Models\Event;
+use App\Models\Gallery;
 use App\Models\Menu;
+use App\Models\Place;
 use App\Models\Room;
+use App\Models\RoomImage;
 use App\Models\RoomType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,10 +41,53 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $roomtypes = RoomType::take(4)->get();
-    $roomtypes->load('images');
-    return view('frontend.welcome', compact('roomtypes'));
+    $events = Event::take(4)->get();
+    $events->load('images');
+    $places = Place::take(4)->get();
+    return view('frontend.welcome', compact(['events','places']));
 });
+
+Route::group([
+    'prefix'=>'rooms'
+],function($router){
+    Route::get('/deluxe',function(){
+        $imagesQuery = RoomImage::query();
+        $imagesQuery->whereHas('room_type',function($query){
+            $query->where('name','like','%deluxe%');
+        });
+        $images = $imagesQuery->get();
+        $roomtypes = RoomType::all();
+        $roomtypes->load('images');
+        return view('frontend.rooms.deluxe',compact('roomtypes','images'));
+    })->name('room.deluxe');
+    
+    Route::get('/standard',function(){
+        $imagesQuery = RoomImage::query();
+        $imagesQuery->whereHas('room_type',function($query){
+            $query->where('name','like','%standard%');
+        });
+        $images = $imagesQuery->get();
+        $roomtypes = RoomType::all();
+        $roomtypes->load('images');
+        return view('frontend.rooms.standard',compact('roomtypes','images'));
+    })->name('room.standard');
+    
+    Route::get('/normal',function(){
+        $imagesQuery = RoomImage::query();
+        $imagesQuery->whereHas('room_type',function($query){
+            $query->where('name','like','%normal%');
+        });
+        $images = $imagesQuery->get();
+        $roomtypes = RoomType::all();
+        $roomtypes->load('images');
+        return view('frontend.rooms.normal',compact('roomtypes','images'));
+    })->name('room.normal');
+}
+);
+
+Route::get('/contact',function(){
+    return view('frontend.contact');
+})->name('contact');
 
 // All Rooms
 Route::get('/rooms',function(){
@@ -50,15 +100,17 @@ Route::get('/rooms',function(){
 Route::get('/room-profile/{id}',function($id){
     $roomtype = RoomType::findOrFail($id);
     $roomtypes = RoomType::all();
+    $roomtype->load('images');
     $roomtypes->load('images');
     return view('frontend.room-profile',compact('roomtype','roomtypes'));
-});
+})->name('room.profile');
 
 //Booking Page
 Route::get('/booking/{id}',function($id){
     $roomtype = RoomType::findOrFail($id);
+    $roomtype->load('images');
     return view('frontend.booking', compact('roomtype'));
-});
+})->name('room.booking');
 
 //Menues
 
@@ -79,7 +131,32 @@ Route::get('/menues/{id}',function($id){
 });
 
 
+Route::get('/meeting',function(){
+    return view('frontend.meeting');
+})->name('meeting');
+
+Route::get('/dining',function(){
+    return view('frontend.dining');
+})->name('dining');
+
+Route::get('/packages', function(){
+    return view('frontend.packages');
+})->name('packages');
+
 Route::post('/book',BookingController::class)->name('book');
+Route::post('/query',SendQueryController::class)->name('query');
+
+Route::get('/gallery',function(){
+    $galleryQuery = Gallery::query();
+    $galleries = $galleryQuery->has('images')->get();
+    return view('frontend.gallery.index',compact('galleries'));
+})->name('galleries');
+
+Route::get('/gallery/{id}',function($id){
+    $gallery = Gallery::findOrFail($id);
+    $gallery->load('images');
+    return view('frontend.gallery.show',compact('gallery'));
+})->name('gallery');
 
 Route::group([
     'prefix' => 'admin',
@@ -104,6 +181,8 @@ Route::group([
     Route::resource('checkin',AdminCheckinController::class);
     Route::resource('/events', AdminEventController::class);
     Route::resource('/gallery', AdminGalleryController::class);
+    Route::resource('/query',AdminQueryController::class);
+    Route::resource('/places',AdminPlacesController::class);
 });
 
 Auth::routes();

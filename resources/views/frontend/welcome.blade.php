@@ -2,290 +2,376 @@
 
 {{-- Carousel --}}
 @section('carousel')
-    @include('frontend.carousel.carousel')
+    @include('frontend.carousel.carousel-final')
 @endsection
 
 {{-- Main Section --}}
 @section('main')
-
-    {{-- Welcome Message --}}
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-8">
-                <h1 class="text-2xl">Welcome to <span class="text-red-500">Hotel Dharan Kitchen</span></h1>
-                <p class="text-gray-600">Nestled within 10 acres of exquisitely landscaped grounds, Hotel Himalaya is conveniently located 8 km away from the Tribhuban International Airport and only 2 km from the Kathmandu city centre. We have always been an ideal haven for business and leisure travelers alike, offering resort ambience with an intimate touch. Since many of the distinguished NGO’s and INGO’s in Kathmandu are in the vicinity and the UN head office is only a few minutes walking distance.</p>
-
-                <a href="#" class="btn btn-primary">[+] Readmore</a>
-            </div>
-
-            <div class="col-md-4 mt-2">
-                <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="md:w-96">
+<!-- main Section -->
+<main>
+    <!-- Welcome Section -->
+    <div class="py-5" style="background: #FEF9FF;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="text-uppercase">Redefines the <span class="text-danger">luxury</span> <br> <span class="text-danger">hospitality</span> experience</h1>
+                    <p>Dharan Kitchen is prestigious name since 2062 BS (2005 AD) for serving healthy and tasty foods in reasonable price. Your fun destination for food and beverages. We care about your taste and health. We promise in intimate and relaxed dining experience that offers something different to local and foreign dishes and ensures you enjoy a memoriable food experiencene every time.</p>
+    
+                    <div class="btn btn-danger">Read more</div>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://cdn.pixabay.com/photo/2013/04/11/19/46/building-102840_1280.jpg" alt="" class="img-thumbnail">
+                </div>
             </div>
         </div>
     </div>
-   
-     <!-- Highlights -->
-    <div class="text-center mt-10 bg-gray-100 py-4">
-        <h1 class="text-4xl mt-2 font-bold font-serif">Highlights</h1>
-        <p class="text-gray-600 font-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, cum.</p>
-        
-            <div class="container mx-auto grid sm:grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
-                <!-- Highlights -->
-                <div class="shadow-2xl h-auto overflow-hidden ">
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipNiI8jU5Mmz1QCYBTy6dzoA_uGx5i0vW7D1zU4s=s1600-w400" alt="" class="h-62 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
-                </div>
+    <!-- End -->
 
-                <div class="shadow-2xl h-auto overflow-hidden ">
-                    <img src="https://mk0hotrodum5xf2n5ib6.kinstacdn.com/wp-content/uploads/2018/04/honey-barbecue-sriracha-wings.jpeg" alt="" class="h-62 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
-                
-                </div>
-
-                <div class="shadow-2xl h-auto overflow-hidden ">
-                <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-62 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
-                
-                </div>
-                <!-- End of Room Card -->
-            </div>
-    </div>
-<!-- Highlight Ends -->
-
-
-<!-- Book a Room -->
-<div class="text-center">
-    <h1 class="text-4xl mt-10 font-bold font-serif">ACCOMMODATION</h1>
-    <p class="text-gray-600 font-light"> 
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur obcaecati 
-    </p>
-    <div class="w-10 h-2 border-red-500 border-blue-50"></div>
-    {{-- <form action="">
-        <div class="lg:flex justify-center bg-gray-100 w-full mx-auto my-auto items-end mt-10">
-            <div class="p-4 ">
-                <h1 class="font-medium text-xl">Check in</h1>
-                <input type="date" name="" id="" class="p-2 w-60">
-            </div>
-            <div class="p-4">
-                <h1 class="text-xl">Check out</h1>
-                <input type="date" name="" id="" class="p-2 w-60">
-            </div>  
-            <button type="submit" class="bg-blue-500 px-10 py-2 m-4 text-white rounded hover:bg-blue-600">Book Now</button>
-        </div>
-    </form> --}}
-</div>
-<!-- Book a Room Ends -->
-
-<!-- Main-->
-<div class="lg:container mx-auto mt-10">
-   <!-- Our Room -->
-    <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-4">
-        <!-- Room Card Start -->
-        {{-- <a href="" class="no-underline text-gray-800 hover:text-gray-800">
-            <div class="shadow-2xl h-auto">
-                <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="h-48 w-full object-cover object-center">
-                <div class="p-2">
-                    <h1 class="text-2xl mb-2 mt-2 font-weight-bold">Delux Double Room</h1>
-                    <p class="font-light">Lorem ipsum dolor sit amet.</p>
-                    <div class=" flex justify-between items-center">
-                        <h3 class="text-red-500 mb-0 font-bold">NPR5000</h3>
-                        <p class="line-through text-sm">NPR7000</p>
-                        <p class="text-red-500 text-sm">28% off</p>
+    <!-- Explore More Rooms -->
+    <div class="py-5" style="background: #ffffff;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h4 class="text-uppercase text-center">Discover our rooms</h4>
+                    <h1 class="text-uppercase text-center">Explore <span class="text-danger">Rooms & Suits</span></h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid odio facilis, dolore consectetur quae quam culpa vero, fugiat iusto repudiandae beatae et debitis. Laudantium laboriosam cupiditate eveniet molestiae repellat!</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <a href="" class="btn btn-danger btn-lg text-uppercase">Explore More Rooms</a>
+                        </div>
                     </div>
-                    <p class="font-light mt-0 text-sm">per room per night</p>
+                   
                 </div>
-            </a> --}}
-            @foreach ($roomtypes as $roomtype)
-            <a href="/room-profile/{{ $roomtype->id }}" class="no-underline text-gray-800 hover:text-gray-800">
-              <div class="shadow-2xl h-auto overflow-hidden">
-                @if (count($roomtype->images)>0)
-                <img src="{{ $roomtype->images[0]->image }}" alt="" class="h-48 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
-                @else
-                <img src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="" class="h-48 w-full object-cover object-center transform hover:scale-110 transition ease-in-out duration 2s">
-                @endif
-                  <div class="p-2">
-                      <h1 class="text-2xl mb-2 mt-2 font-weight-bold">{{ $roomtype->name??'Room' }}</h1>
-                      <p class="font-light">{{ \Illuminate\Support\Str::limit($roomtype->description, 50, $end='...') }}
-                      </p>
-                      <div class=" flex justify-between items-center">
-                          <h3 class="text-red-500 mb-0 font-bold">NRS{{ $roomtype->room_charge }}</h3>
-                          @if ($roomtype->discount>0)
-                          <p class="line-through text-sm">NRS{{ $roomtype->price }}</p>
-                          <p class="text-red-500 text-sm">-{{ $roomtype->discount }}% off</p>
-                          @endif
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Rooms Details -->
+    <div class="py-5" style="background: #FEF9FF;">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://cdn.pixabay.com/photo/2015/03/26/09/42/bedroom-690129_1280.jpg" alt="" class="img-thumbnail">
+                </div>
+                <div class="col-md-6">
+                    <h1>Deluxe Room</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsam cumque veniam suscipit mollitia fuga repudiandae quam rem similique aspernatur nemo cum non voluptate laborum facilis iure voluptas ad debitis repellat magnam velit aut, odit unde alias! Libero, maiores adipisci.</p>
+                    <h3>Facilities</h3>
+                    <hr>
+                      <div class="d-flex flex-row align-self-auto justify-content-md-evenly">
+                          <div><span class="fa fa-wifi"> Free Wifi</span></div>
+                          <div><span class="fa fa-tv"> Television</span></div>
+                          <div><span class="fa fa-couch"> Sofa</span></div>
+                          <div><span class="fa fa-parking"> Parking</span></div>
                       </div>
-                      <p class="font-light mt-0 text-sm">per room per night</p>
-                  </div>
-                 
-              
-          </div>
-        </a>  
-        @endforeach
-        
+                    <hr>
 
-       
-
-        
-        <!-- End of Room Card -->
-    </div>
-  <!-- Our Ends -->
-
-    <!-- More Button -->
-    <div class="flex justify-center">
-        <a href="" class="bg-blue-500 text-white px-6 py-2 mt-10 rounded hover:bg-blue-600 no-underline">See More [+]</a>
-    </div>
-    <!-- More Button Ends -->
-
-    <!-- Party Palace Summary -->
-    <div class="lg:flex sm:m-2 lg:mt-10 bg-gray-100 rounded shadow p-2">
-        <img src="https://media.weddingz.in/images/f8189586e9bbd70a31f49bba8f44a9de/hvps-banquet-hall-hvps-banquet-album-2.jpg" alt="" class="lg:w-1/2">
-        <div class="p-2">
-            <h1 class="text-3xl mb-4">Party Palace</h1>
-            <h2 class="text-xl font-serif">All in one venue for seminars, celebration & conferences</h2>
-
-            <p class="mb-10 font-light">
-              We got a 300 seating capacity based Conference Hall suitable for all purposes depending upon the seating arrangement.
-              The hall can be used for a conference or seminars with our well equipped facilities such as projector, screen, adjustible air conditioner, white boards, stage, mic and sound system.
-              If your conference is set along with the lunch or dinner, we have a private rooftop dining hall.
-              The banquet setting is suitable for celebrations such as weaning ceremonies, wedding parties amongst others meanwhile the theatre setting is suitable for conferences and presentation based seminars.
-              The banquet hall can be prebooked 60 hours earlier to your booking time based upon the availablility. You can leave us a message on our contact form on this website or call us to book the venue along with your preferred choice of menu and number of guests.
-            </p>
-        </div>
-    </div>
-    <!-- Party Palace Ends -->
-
-    <!-- Dining -->
-    <div class="lg:flex m-2 bg-gray-100 rounded shadow">
-      <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" class="lg:w-1/2 lg:order-last">
-      <div class="p-2">
-          <h1 class="text-3xl mb-4">Dining</h1>
-          <h2 class="text-xl font-serif">Enjoy the best dishes with great tastes</h2>
-          <p class="mb-10 font-light">
-            A warm and intimate atmosphere, excellent service and exquisite cuisine is what you will experience when you visit our restaurant cum bar. Our restaurant is divided between private and public dining. Private dining and bar is a 35 seater restaurant meanwhile a public dining is available in our lobby space.
-            We offer an unpretentious escape from the everyday schedule with a classic, produce-driven menu, a convivial atmosphere fueled by the warmth, friendly staff , and entertainment such as of selected music and sports channel on demand. Whether nestled inside the dining room, relaxing in the lounge or outside on your room overlooking the georgeous Biratnagar, the mysterious alchemy of Hotel Ratna's food, ambience and service create a habit-forming experience.
-            The restaurant can be prebooked 24 hours earlier to your booking time.You can leave us a message on our contact form on this website or call us to book your table along with your preferred choice of menu and number of guests.
-          </p>
-      </div>
-    </div>
-    <!-- Dining Ends -->
-
-    <!-- Meeting Hall -->
-    <div class="lg:flex m-2 bg-gray-100 rounded shadow">
-      <img src="https://images.pexels.com/photos/260689/pexels-photo-260689.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" class="lg:w-1/2 object-cover">
-      <div class="p-2">
-          <h1 class="text-3xl mb-4">Meeting</h1>
-          <h2 class="text-xl font-serif">We provide greate services for your meetings</h2>
-          <p class="mb-10 font-light">
-            Our board room is a 50 pax capacity hall, which is fully functional to operate as a meeting hall for the board of directors. Equipped with latest of technology, we have most of the resources at your disposal.
-            The Bord of Director Meeting room comes with an adjustible air conditioner for any weather types. It includes a projector, a screen for the projector, an attached washroom, white board and extra chairs for the board members.
-            We also supply food directly to the board of directors table and the meeting room comes with a separate tea space with table and chairs.
-            One of the most important feature of our board room is it's sound proof walls, maintaining complete secrecy of your meetings.
-            The meeting room can be prebooked 24 hours earlier to your booking time. You can leave us a message on our contact form on this website or call us to book the venue along with your preferred choice of menu and number of guests.
-          </p>
-      </div>
-    </div>
-    <!-- Meeting Hall Ends -->
-
-    <!-- Sightseens -->
-    <div class="mt-10 text-center bg-gray-100 p-2">
-        <h1 class="text-4xl mt-10 font-bold">SIGHTSEEING</h1>
-        <p class="text-gray-600 font-light"> 
-            Nearby places of attraction
-        </p>
-         <!-- Places Detail -->
-         <!-- Buddha Subba -->
-        <div class="lg:flex ml-2 mt-10 mb-10 mr-2">
-            <img src="https://i.pinimg.com/originals/9b/d8/7e/9bd87e67f09c4274a72411da57b892f4.jpg" alt="" class="order-last lg:w-1/2">
-            <div class="text-left p-2">
-                <h1 class="text-3xl mb-4">Budda Subba Temple</h1>
-                <p class="text-gray-600 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consectetur quia expedita nesciunt similique cumque libero ea pariatur neque alias ratione, porro et, fugit cum assumenda saepe culpa nulla minima sit aut labore dolor deleniti sunt. Nemo adipisci alias voluptate delectus consequuntur suscipit magni illo voluptates deserunt? Nobis, distinctio officia.</p>
-
-                <ul class="mt-10">
-                    <li>Location: <span class="font-bold">Bijayapur, Dharan-14</span></li>
-                    <li>Distance: <span class="font-bold">3 Kilometer from Dharan </span></li>
-                    <li>Time: <span class="font-bold">10-15 Min from Vehicles</span></li>
-                </ul>
-
+                    <a href="{{ route('room.deluxe') }}" class="btn btn-warning btn-lg">View Details</a>
+                </div>
             </div>
         </div>
 
-         <!-- Dantakali Temple -->
-         <div class="lg:flex m-2">
-            <img src="https://i1.wp.com/notesnepal.com/wp-content/uploads/2020/11/74865412dantakali_sunsari-ph.jpeg?resize=720%2C514&ssl=1" alt="" class="lg:w-1/2">
-            <div class="text-left p-2">
-                <h1 class="text-3xl mb-4">Dantakali Temple</h1>
-                <p class="text-gray-600 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consectetur quia expedita nesciunt similique cumque libero ea pariatur neque alias ratione, porro et, fugit cum assumenda saepe culpa nulla minima sit aut labore dolor deleniti sunt. Nemo adipisci alias voluptate delectus consequuntur suscipit magni illo voluptates deserunt? Nobis, distinctio officia.</p>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 order-md-last">
+                    <img src="https://cdn.pixabay.com/photo/2014/07/10/17/17/bedroom-389254_1280.jpg" alt="" class="img-thumbnail">
+                </div>
 
-                <ul class="mt-10">
-                    <li>Location: <span class="font-bold">Bijayapur, Dharan-14</span></li>
-                    <li>Distance: <span class="font-bold">3 Kilometer from Dharan </span></li>
-                    <li>Time: <span class="font-bold">10-15 Min from Vehicles</span></li>
-                </ul>
-            </div>
-            
-        </div>
+                <div class="col-md-6">
+                    <h1>Standard Room</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsam cumque veniam suscipit mollitia fuga repudiandae quam rem similique aspernatur nemo cum non voluptate laborum facilis iure voluptas ad debitis repellat magnam velit aut, odit unde alias! Libero, maiores adipisci.</p>
 
-        <!-- Pindeswori Temple -->
-        <div class="lg:flex m-2">
-            <img src="https://www.holidify.com/images/cmsuploads/compressed/Pindeshwor_Temple-Dharan_31_20190718102448.jpg" alt="" class="order-last lg:w-1/2">
-            <div class="text-left p-2">
-                <h1 class="text-3xl mb-4">Pindeswori Temple</h1>
-                <p class="text-gray-600 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consectetur quia expedita nesciunt similique cumque libero ea pariatur neque alias ratione, porro et, fugit cum assumenda saepe culpa nulla minima sit aut labore dolor deleniti sunt. Nemo adipisci alias voluptate delectus consequuntur suscipit magni illo voluptates deserunt? Nobis, distinctio officia.</p>
+                    <h3>Facilities</h3>
+                    <hr>
+                      <div class="d-flex flex-row align-self-auto justify-content-md-evenly">
+                          <div><span class="fa fa-wifi"> Free Wifi</span></div>
+                          <div><span class="fa fa-tv"> Television</span></div>
+                          <div><span class="fa fa-couch"> Sofa</span></div>
+                          <div><span class="fa fa-parking"> Parking</span></div>
+                      </div>
+                    <hr>
 
-                <ul class="mt-10">
-                    <li>Location: <span class="font-bold">Bijayapur, Dharan-14</span></li>
-                    <li>Distance: <span class="font-bold">3 Kilometer from Dharan </span></li>
-                    <li>Time: <span class="font-bold">10-15 Min from Vehicles</span></li>
-                </ul>
+                    <a href="{{ route('room.standard') }}" class="btn btn-warning btn-lg">View Details</a>
+                </div>
+
+                
             </div>
         </div>
 
-         <!-- Namastee Waterfall -->
-         <div class="lg:flex m-2">
-            <img src="https://www.altitudehimalaya.com/wp-content/uploads/2020/09/tindhare.jpg" alt="" class="lg:w-1/2">
-            <div class="text-left p-2">
-                <h1 class="text-3xl mb-4">Namastee Jharna</h1>
-                <p class="text-gray-600 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consectetur quia expedita nesciunt similique cumque libero ea pariatur neque alias ratione, porro et, fugit cum assumenda saepe culpa nulla minima sit aut labore dolor deleniti sunt. Nemo adipisci alias voluptate delectus consequuntur suscipit magni illo voluptates deserunt? Nobis, distinctio officia.</p>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062_1280.jpg" alt="" class="img-thumbnail">
+                </div>
 
-                <ul class="mt-10">
-                    <li>Location: <span class="font-bold">Bijayapur, Dharan-14</span></li>
-                    <li>Distance: <span class="font-bold">3 Kilometer from Dharan </span></li>
-                    <li>Time: <span class="font-bold">10-15 Min from Vehicles</span></li>
-                </ul>
+                <div class="col-md-6">
+                    <h1>Normal Room</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsam cumque veniam suscipit mollitia fuga repudiandae quam rem similique aspernatur nemo cum non voluptate laborum facilis iure voluptas ad debitis repellat magnam velit aut, odit unde alias! Libero, maiores adipisci.</p>
+
+                    <h3>Facilities</h3>
+                    <hr>
+                      <div class="d-flex flex-row align-self-auto justify-content-md-evenly">
+                          <div><span class="fa fa-wifi"> Free Wifi</span></div>
+                          <div><span class="fa fa-tv"> Television</span></div>
+                          <div><span class="fa fa-parking"> Parking</span></div>
+                          <div><span class="fa fa-couch"> Sofa</span></div>
+                      </div>
+                    <hr>
+
+                    <a href="{{ route('room.normal') }}" class="btn btn-warning btn-lg">View Details</a>
+                </div>
+
+               
             </div>
-            
         </div>
     </div>
-    <!-- Sightseens Ends -->
 
-    <!-- Events -->
-    <div class="mt-10 text-center">
-        <h1 class="text-4xl mt-10 font-bold">EVENTS</h1>
-        <p class="text-gray-600"> 
-            Recent News and Events
-        </p>
-
-        <!-- Events Card -->
-        <div class="lg:flex justify-between">
-            <!-- Namastee Jharna -->
-            <div class="lg:w-1/2 lg:h-64 bg-gray-100 m-2 lg:flex">
-                <img src="https://images.pexels.com/photos/5272925/pexels-photo-5272925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="lg:w-1/2">
-                <div class="p-2 text-left box-border">
-                  <h1 class="text-xl">Visit Namastee Jharna</h1>
-                  <p class="text-gray-600 font-light">Namaste Falls is located in Bhedetar village development committee of Dhankuta district. It is an attractive place for domestic tourists. The falls is about 80 meters high. Domestic tourists from Jhapa, Dhankuta, Morang and Sunsari visit this falls in large.</p>
-                  <a href="" class="text-red-500 no-underline">CONTINUE READING</a>
+     <!-- Our Services -->
+     <div class="py-5 text-white" style="background-image: url({{ asset('img/bg.jpg') }}); background-repeat: no-repeat; background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="d-flex flex-column justify-content-center align-items-md-center">
+                        <h4 class="text-uppercase fs-lg-3 fs-sm-6">Our Services</h4>
+                        <!-- <div class="border border-white w-25 border-2"></div> -->
+                    </div>
                 </div>
             </div>
 
-            <!-- Paraglyding -->
-            <div class="lg:w-1/2 lg:h-64 bg-gray-100 m-2 lg:flex">
-              <img src="https://images.pexels.com/photos/2162689/pexels-photo-2162689.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" class="lg:w-1/2">
-              <div class="p-2 text-left box-border">
-                <h1 class="text-xl">Dharan sky adventure paragliding</h1>
-                <p class="text-gray-600 font-light">Dharan sky adventure paragliding - Laxmi Sadak, Dharan-4, Dharan, Nepal 56700 - Rated 4.8 based on 1 Review "It's amazing to be parts of u awesome flight...</p>
-                <a href="" class="text-red-500 no-underline">CONTINUE READING</a>
+            <div class="row justify-content-md-center mt-5">
+              <div class="col-md-4">
+                <ul>
+                  <li>Family Restaurant and Bar</li>
+                  <li>Sekuwa Corner and Thakali Bhansa</li>
+                  <li>Organize Conference/Meeting</li>
+                </ul>
               </div>
-          </div>
+
+              <div class="col-md-4">
+                <ul>
+                  <li>Organize Wedding/Birthday/Anniversary and Cultural Parties</li>
+                  <li>Lodging</li>
+                </ul>
+              </div>
+            </div>
+  
         </div>
     </div>
-    <!-- Events Ends -->
-</div>
+
+    <!-- Tourist Attraction -->
+    <div class="py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h4 class="text-uppercase text-center">Tourist Attraction</h4>
+                <h1 class="text-uppercase text-center">Explorer <span class="text-danger">Dharan</span></h1>
+            </div>  
+          </div>
+
+            <div class="row mt-5">
+
+              @foreach ($places as $place)
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="{{ $place->image }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $place->name }}</h5>
+                    <p class="card-text">{{ $place->description }}</p>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+              <!-- Budda Subba -->
+              {{-- <div class="col-md-3">
+                <div class="card">
+                  <img src="https://images.pexels.com/photos/507932/pexels-photo-507932.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Budda Subba</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dantakali -->
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="https://images.pexels.com/photos/415708/pexels-photo-415708.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Dantakali Temple</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pindesori Temple -->
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="https://images.pexels.com/photos/257092/pexels-photo-257092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Pindesori TEmple</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="https://images.pexels.com/photos/301614/pexels-photo-301614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Namastee Jharna</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div> --}}
+            </div>
+        </div>
+    </div>
+
+    <!-- News & Events -->
+    <div class="py-5" style="background: #FEF9FF;;">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <h4 class="text-center text-uppercase">News & Events</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          @foreach ($events as $event)
+          <div class="col-md-6 bg-white mt-md-2 rounded-3">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="{{ $event->images->first()->image??'' }}" alt="" class="img-fluid">
+              </div>
+              <div class="col-md-6 py-2">
+                <h5 class="card-title">{{ $event->title }}</h5>
+                <p class="card-text">{{ Str::limit($event->description,100, $end='...')  }}</p>
+
+                <div class="row">
+                  <div class="col">
+                    <span class="fa fa-calendar-alt text-secondary">{{ $event->date }}</span>
+                  </div>
+                  <div class="col">
+                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+        {{-- <div class="row">
+          <div class="col-md-6 bg-white mt-md-2 rounded-3">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-fluid">
+              </div>
+              <div class="col-md-6 py-2">
+                <h5 class="card-title">Jungle Safari</h5>
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem optio expedita omnis magni corrupti doloribus iusto eaque,</p>
+
+                <div class="row">
+                  <div class="col">
+                    <span class="fa fa-calendar-alt text-secondary"> 7 Jan 2020</span>
+                  </div>
+                  <div class="col">
+                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 bg-white mt-md-2 rounded-3">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="https://cdn.pixabay.com/photo/2016/03/09/09/30/paragliding-1245837_1280.jpg" alt="" class="img-fluid">
+              </div>
+              <div class="col-md-6 py-2">
+                <h5 class="card-title">Paraglyding</h5>
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem optio expedita omnis magni corrupti doloribus iusto eaque,</p>
+
+                <div class="row">
+                  <div class="col">
+                    <span class="fa fa-calendar-alt text-secondary"> 7 Jan 2020</span>
+                  </div>
+                  <div class="col">
+                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 bg-white mt-md-2 rounded-3">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="https://cdn.pixabay.com/photo/2015/10/12/15/01/mountain-984083_1280.jpg" alt="" class="img-fluid">
+              </div>
+              <div class="col-md-6 py-2">
+                <h5 class="card-title">Hiking</h5>
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem optio expedita omnis magni corrupti doloribus iusto eaque,</p>
+
+                <div class="row">
+                  <div class="col">
+                    <span class="fa fa-calendar-alt text-secondary"> 7 Jan 2020</span>
+                  </div>
+                  <div class="col">
+                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 bg-white mt-md-2 rounded-3">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="https://images.pexels.com/photos/1732280/pexels-photo-1732280.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-fluid">
+              </div>
+              <div class="col-md-6 py-2">
+                <h5 class="card-title">Tamar Rafting</h5>
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem optio expedita omnis magni corrupti doloribus iusto eaque,</p>
+
+                <div class="row">
+                  <div class="col">
+                    <span class="fa fa-calendar-alt text-secondary"> 7 Jan 2020</span>
+                  </div>
+                  <div class="col">
+                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div> --}}
+
+      </div>
+    </div>
+
+    <!-- Our Location -->
+    <div class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h4 class="text-uppercase text-center">Our Location</h4>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.8753919024866!2d87.28645529253524!3d26.801881259588676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef41910d4acb5d%3A0x12a28ac5cb9d6b21!2sDharan%20Kitchens%20Sekuwa%20Corner%20and%20Thakali%20Kitchen!5e0!3m2!1sen!2snp!4v1611157766803!5m2!1sen!2snp"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w-100" height="450"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
 <!-- Main Ends -->
 @endsection
