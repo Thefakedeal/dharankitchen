@@ -129,6 +129,10 @@ Route::get('/meeting',function(){
     return view('frontend.meeting');
 })->name('meeting');
 
+Route::get('/dining',function(){
+    return view('frontend.dining');
+})->name('dining');
+
 Route::post('/book',BookingController::class)->name('book');
 
 Route::group([

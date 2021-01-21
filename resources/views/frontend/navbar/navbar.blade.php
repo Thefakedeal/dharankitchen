@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse mr-auto" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,7 +48,7 @@
             <a class="nav-link" href="#">Packages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="dining.html">Dining</a>
+            <a class="nav-link" href="{{ route('dining') }}">Dining</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('meeting') }}">Meeting & Events</a>
