@@ -67,7 +67,7 @@
                       </div>
                     <hr>
 
-                    <a href="" class="btn btn-warning btn-lg">View Details</a>
+                    <a href="{{ route('room.deluxe') }}" class="btn btn-warning btn-lg">View Details</a>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                       </div>
                     <hr>
 
-                    <a href="" class="btn btn-warning btn-lg">View Details</a>
+                    <a href="{{ route('room.standard') }}" class="btn btn-warning btn-lg">View Details</a>
                 </div>
 
                 
@@ -119,7 +119,7 @@
                       </div>
                     <hr>
 
-                    <a href="" class="btn btn-warning btn-lg">View Details</a>
+                    <a href="{{ route('room.normal') }}" class="btn btn-warning btn-lg">View Details</a>
                 </div>
 
                
