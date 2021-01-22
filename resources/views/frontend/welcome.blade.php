@@ -40,7 +40,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid odio facilis, dolore consectetur quae quam culpa vero, fugiat iusto repudiandae beatae et debitis. Laudantium laboriosam cupiditate eveniet molestiae repellat!</p>
                     <div class="row justify-content-center">
                         <div class="col-md-4 text-center">
-                            <a href="" class="btn btn-danger btn-lg">Explore More Rooms</a>
+                            <a href="{{ route('rooms') }}" class="btn btn-danger btn-lg">Explore More Rooms</a>
                         </div>
                     </div>
                    
