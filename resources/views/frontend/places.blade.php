@@ -12,7 +12,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ $place->name }}</h5>
                   <p class="card-text fw-light">{{ \Illuminate\Support\Str::limit($place->description,150,$end='...') }}</p>
-                  <a href="" class="link-danger text-decoration-none">Readmore <i class="fa fa-arrow-alt-circle-right"></i></a>
+                  <a href="{{ route('place',$place->id) }}" class="link-danger text-decoration-none">Readmore <i class="fa fa-arrow-alt-circle-right"></i></a>
                 </div>
               </div>
             </div>

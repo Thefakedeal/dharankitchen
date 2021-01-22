@@ -148,6 +148,12 @@ Route::get('/places', function(){
     return view('frontend.places',compact('places'));
 })->name('places');
 
+Route::get('/place/{id}',function($id){
+    $place = Place::findOrFail($id);
+    $places = Place::all();
+    return view('frontend.place',compact('place','places'));
+})->name('place');
+
 Route::post('/book',BookingController::class)->name('book');
 Route::post('/query',SendQueryController::class)->name('query');
 
