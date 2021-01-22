@@ -46,7 +46,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -312,17 +312,18 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('events.index') }}" class="nav-link">
-                                        <i class="fas fa-calendar nav-icon"></i>
-                                        <p>All Events</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="{{ route('events.create') }}" class="nav-link">
                                         <i class="far fa-calendar-plus nav-icon"></i>
                                         <p>Add Event</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('events.index') }}" class="nav-link">
+                                        <i class="fas fa-calendar nav-icon"></i>
+                                        <p>All Events</p>
+                                    </a>
+                                </li>
+                               
                             </ul>
                         </div>
                         @auth
@@ -338,17 +339,18 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('gallery.index') }}" class="nav-link">
-                                        <i class="far fa-images nav-icon"></i>
-                                        <p>Galleries</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="{{ route('gallery.create') }}" class="nav-link">
                                         <i class="fas fa-camera-retro nav-icon"></i>
                                         <p>Add Gallery</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('gallery.index') }}" class="nav-link">
+                                        <i class="far fa-images nav-icon"></i>
+                                        <p>Galleries</p>
+                                    </a>
+                                </li>
+                               
                             </ul>
                         </div>
                         {{-- End Gallery Menu --}}
@@ -358,23 +360,24 @@
                             <a href="{{ route('places.index') }}" class="nav-link active">
                                 <i class="fas fa-map-marked"></i>
                                 <p>
-                                    Places
+                                    Tourist Attraction
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('places.index') }}" class="nav-link">
-                                        <i class="far fa-map nav-icon"></i>
-                                        <p>Places List</p>
-                                    </a>
-                                </li>
                                 <li class="nav-item">
                                     <a href="{{ route('places.create') }}" class="nav-link">
                                         <i class="fas fa-map-pin nav-icon"></i>
                                         <p>Add Place</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('places.index') }}" class="nav-link">
+                                        <i class="far fa-map nav-icon"></i>
+                                        <p>Places List</p>
+                                    </a>
+                                </li>
+                               
                             </ul>
                         </div>
                         {{-- End Place Menu --}}
@@ -454,6 +457,13 @@
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+
+    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.ckeditor').ckeditor();
+        });
+    </script>
 </body>
 
 </html>

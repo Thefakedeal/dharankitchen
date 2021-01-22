@@ -115,7 +115,7 @@
 
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" class="form-control" rows="5">  {{ $menu->description }}</textarea>
+                            <textarea name="description" class="ckeditor form-control" rows="5">  {{ $menu->description }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary float-right">

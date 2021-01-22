@@ -8,8 +8,8 @@
                     <strong>Gallery List</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm">
-                        <thead>
+                    <table class="table table-sm table-striped table-bordered">
+                        <thead class="bg-dark">
                             <th>
                                 #
                             </th>

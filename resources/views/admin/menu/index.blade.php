@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-md-10 md-2 mt-2">
-            <div class="card shadow ">
+        <div class="col-md-12 md-2 mt-2">
+            <div class="card">
                 <div class="card-body">
                     <form action="" method="get">
                         <div class="row justify-content-center">
@@ -28,12 +28,12 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card shadow">
+        <div class="col-md-12">
+            <div class="card">
                 <div class="card-header">Menu Items</div>
                 <div class="card-body">
-                    <table class="table table-sm ">
-                        <thead>
+                    <table class="table table-sm table-striped table-bordered">
+                        <thead class="bg-dark">
                             <th>
                                 S.N
                             </th>

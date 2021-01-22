@@ -438,7 +438,7 @@
 
                         <div class="form-group">
                             <label for="description">Room Description (optional)</label>
-                            <textarea name="description" class="form-control" rows="5"> {{ $roomtype->description }}</textarea>
+                            <textarea name="description" class="ckeditor form-control" rows="5"> {{ $roomtype->description }}</textarea>
                             @error('discription')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

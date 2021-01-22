@@ -3,13 +3,13 @@
 @section('content')
     <div class="row pt-4">
         <div class="col">
-            <div class="card shadow">
+            <div class="card">
                 <div class="card-header">
                     <strong> Places </strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm">
-                        <thead>
+                    <table class="table table-sm table-bordered table-striped">
+                        <thead class="bg-dark">
                             <th>#</th>
                             <th>Name</th>
                             <th>Actions</th>

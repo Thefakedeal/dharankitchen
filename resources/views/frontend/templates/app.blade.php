@@ -10,8 +10,8 @@
     <!-- Fontawesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
    @yield('styles')
-   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Dharan Kitchen</title>
+   @yield('customcss')
+  <title>Dharan Kitchen</title>
   </head>
   <body>
   <!-- Navigation Bar -->

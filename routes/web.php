@@ -143,6 +143,11 @@ Route::get('/packages', function(){
     return view('frontend.packages');
 })->name('packages');
 
+Route::get('/places', function(){
+    $places = Place::all();
+    return view('frontend.places',compact('places'));
+})->name('places');
+
 Route::post('/book',BookingController::class)->name('book');
 Route::post('/query',SendQueryController::class)->name('query');
 
@@ -187,4 +192,4 @@ Route::group([
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,20 +1,20 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center pt-2">
+    <div class="row justify-content-center py-2">
         <div class="col-md-12">
             @if (count($bookings) == 0)
                 <div class="alert alert-warning m-2 text-center">
                     No New Bookings
                 </div>
             @endif
-            <div class="card shadow">
+            <div class="card">
                 <div class="card-header">
                     <strong>Online Bookings</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm text-sm">
-                        <thead>
+                    <table class="table table-sm text-sm table-striped table-bordered">
+                        <thead class="bg-dark">
                             <th>
                                 S.N
                             </th>

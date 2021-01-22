@@ -39,7 +39,7 @@
               <div class="row">
                   <div class="col-md-8">
                       <h1 class="text-uppercase">{{ explode(' ',$roomtype->name,2)[0]??'' }}<span class="text-danger"> {{ explode(' ',$roomtype->name,2)[1]??'' }}</span></h1>
-                      <p>{{ $roomtype->description }}</p>
+                      <p>{!! $roomtype->description !!}</p>
 
 
                       <!-- Similar Rroom -->
@@ -61,7 +61,7 @@
                                                 <img src="{{ $roomtype->images->first()->image??'' }}" class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                 <h5 class="card-title">{{ $roomtype->name }}</h5>
-                                                <p class="card-text">{{ Str::limit($roomtype->description, 100, $end = '...') }}</p>
+                                                <p class="card-text">{!! Str::limit($roomtype->description, 100, $end = '...') !!}</p>
                                                 <p>
                                                     <span class="fs-3 text-danger lead">NRS{{ $roomtype->room_charge }}</span>
                                                     @if ($roomtype->discount > 0) <span

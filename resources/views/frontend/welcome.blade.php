@@ -1,5 +1,8 @@
 @extends('frontend.templates.app')
 
+@section('customcss')
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+@endsection
 {{-- Carousel --}}
 @section('carousel')
     @include('frontend.carousel.carousel-final')
@@ -17,7 +20,7 @@
                     <h1 class="text-uppercase">Redefines the <span class="text-danger">luxury</span> <br> <span class="text-danger">hospitality</span> experience</h1>
                     <p>Dharan Kitchen is prestigious name since 2062 BS (2005 AD) for serving healthy and tasty foods in reasonable price. Your fun destination for food and beverages. We care about your taste and health. We promise in intimate and relaxed dining experience that offers something different to local and foreign dishes and ensures you enjoy a memoriable food experiencene every time.</p>
     
-                    <div class="btn btn-danger">Read more</div>
+                   <a href="#" class="link-danger text-decoration-none">Readmore <i class="fa fa-arrow-alt-circle-right"></i></a>
                 </div>
                 <div class="col-md-4">
                     <img src="https://cdn.pixabay.com/photo/2013/04/11/19/46/building-102840_1280.jpg" alt="" class="img-thumbnail">
@@ -37,7 +40,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid odio facilis, dolore consectetur quae quam culpa vero, fugiat iusto repudiandae beatae et debitis. Laudantium laboriosam cupiditate eveniet molestiae repellat!</p>
                     <div class="row justify-content-center">
                         <div class="col-md-4 text-center">
-                            <a href="" class="btn btn-danger btn-lg text-uppercase">Explore More Rooms</a>
+                            <a href="" class="btn btn-danger btn-lg">Explore More Rooms</a>
                         </div>
                     </div>
                    
@@ -174,10 +177,11 @@
               @foreach ($places as $place)
               <div class="col-md-3">
                 <div class="card">
-                  <img src="{{ $place->image }}" class="card-img-top" alt="...">
+                  <img src="{{ $place->image }}" class="card-img-top" alt="..." height="200px" class="object-cover w-100">
                   <div class="card-body">
                     <h5 class="card-title">{{ $place->name }}</h5>
-                    <p class="card-text">{{ $place->description }}</p>
+                    <p class="card-text fw-light">{{ \Illuminate\Support\Str::limit($place->description,150,$end='...') }}</p>
+                    <a href="" class="link-danger text-decoration-none">Readmore <i class="fa fa-arrow-alt-circle-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -225,6 +229,13 @@
                 </div>
               </div> --}}
             </div>
+
+            <div class="text-center pt-4">
+              <a href="" class="btn btn-danger btn-lg">Explore More Places</a>
+
+            </div>
+           
+
         </div>
     </div>
 

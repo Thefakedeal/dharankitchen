@@ -3,7 +3,7 @@
 @section('content')
     <div class="row pt-4">
         <div class="col-md-12">
-            <div class="card shadow">
+            <div class="card">
                 <div class="card-header">
                     <strong>Add Event</strong>
                 </div>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" class="form-control" rows="5" placeholder="Event Description" required> {{ old('description')  }} </textarea>
+                            <textarea name="description" class="ckeditor form-control" rows="5" placeholder="Event Description" required> {{ old('description')  }} </textarea>
                             @error('discription')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

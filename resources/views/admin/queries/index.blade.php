@@ -1,15 +1,15 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row pt-4">
+    <div class="row pt-2">
         <div class="col-md-12">
-            <div class="card shadow">
+            <div class="card">
                 <div class="card-header">
                     <strong>Queries</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm">
-                        <thead>
+                    <table class="table table-sm table-bordered">
+                        <thead class="bg-dark">
                             <th>
                                 #
                             </th>

@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="row justify-content-center pt-4">
-        <div class="col-md-8 ">
-            <div class="card shadow">
+        <div class="col-md-12 ">
+            <div class="card">
                 <div class="card-header"><strong>Categories</strong></div>
                 <div class="card-body">
-                    <table class="table table-sm ">
-                        <thead>
+                    <table class="table table-sm table-bordered table-striped ">
+                        <thead class="bg-dark">
                             <th>
                                 S.N
                             </th>

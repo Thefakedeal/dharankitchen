@@ -34,8 +34,8 @@
             <div class="card shadow">
                 <div class="card-header"><strong>Categories</strong></div>
                 <div class="card-body">
-                    <table class="table table-sm ">
-                        <thead>
+                    <table class="table table-sm table-striped table-bordered ">
+                        <thead class="bg-dark">
                             <th>
                                 S.N
                             </th>

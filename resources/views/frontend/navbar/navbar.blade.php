@@ -21,7 +21,7 @@
 <div class="container-sm sticky-top" style="background: #ffffff;">
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" class="w-25">
+      <a class="navbar-brand" href="/" class="w-25">
         <!-- <img src="https://cdn.freebiesupply.com/logos/large/2x/argos-3-logo-png-transparent.png" alt="" width="80"> -->
         <img src="{{ asset('img/logo.png') }}" class="img-fluid" alt="" width="160" >
       
