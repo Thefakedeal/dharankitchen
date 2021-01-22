@@ -94,7 +94,7 @@ Route::get('/rooms',function(){
     $roomtypes = RoomType::all();
     $roomtypes->load('images');
     return view('frontend.rooms',compact('roomtypes'));
-});
+})->name('rooms');
 
 //Room Profile
 Route::get('/room-profile/{id}',function($id){
