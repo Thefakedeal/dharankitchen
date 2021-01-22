@@ -194,7 +194,7 @@
                                         <h5 class="card-title">{{ $roomtype->name }}</h5>
                                         <p class="card-text">{{ Str::limit($roomtype->description, 100, $end = '...') }}</p>
                                         <p>
-                                            <span class="fs-3 text-danger lead">NRS{{ $roomtype->room_charge }}</span>
+                                            <span class="fs-4 text-danger lead">NRS{{ $roomtype->room_charge }}</span>
                                             @if ($roomtype->discount > 0) <span
                                                     class="text-secondary text-decoration-line-through">NRS{{ $roomtype->price }}</span>
                                                 <span class="text-danger">-{{ $roomtype->discount }}% Off</span>

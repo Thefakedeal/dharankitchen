@@ -23,7 +23,7 @@
                             <div class="card-body">
                               <h1 class="display-6">Skyline</h1>
                               <p class="card-text">Decorated in Neo-classical style, our Skyline Hall is the perfect venue for meetings, workshops and any imaginable banquet experience. Bright and sunny with huge windows overlooking our pristine green lawns, the swimming pool and the mountain range beyond.</p>
-                              <p class="card-text"><small class="text-muted"><a href="" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
+                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
                             </div>
                           </div>
                         </div>
@@ -40,7 +40,7 @@
                             <div class="card-body">
                               <h1 class="display-6">Rato Baithak</h1>
                               <p class="card-text">Our Rato Baithak hall is a spacious and elegant room with upholstered walls and state-of-the-art conference aids. Skyline Hall and Rato Baithak are conveniently located on the same floor which can be used simultaneously for larger events.</p>
-                              <p class="card-text"><small class="text-muted"><a href="" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
+                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
                             </div>
                           </div>
                         </div>
@@ -57,7 +57,7 @@
                             <div class="card-body">
                               <h1 class="display-6">Board Room</h1>
                               <p class="card-text">The Meeting Room, as the name implies is ideal for meetings. The Meeting Room is also on the 3rd floor to allow more privacy for your valued guests.Our most intimate function room where you can hold a private party or meeting whilst enjoying the benefits.</p>
-                              <p class="card-text"><small class="text-muted"><a href="" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
+                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
                             </div>
                           </div>
                         </div>
