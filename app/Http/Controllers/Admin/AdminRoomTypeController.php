@@ -18,7 +18,7 @@ class AdminRoomTypeController extends Controller
     public function index()
     {
         $roomtypequery = RoomType::query();
-        $roomtypes = $roomtypequery->paginate(10);
+        $roomtypes = $roomtypequery->paginate(500000);
         return view('admin.roomtype.index',compact('roomtypes'));
     }
 

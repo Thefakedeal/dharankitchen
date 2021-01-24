@@ -1,38 +1,38 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-12 md-2 mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <form action="" method="get">
-                        <div class="row justify-content-center">
-                            <div class="form-group m-2">
-                                <select name="venue_id" id="venue_id"  class="form-control" >
-                                    <option value="0"> All </option>
-                                    @foreach ($venues as $venue)
-                                        <option value="{{ $venue->id }}"> {{ $venue->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group m-2">
-                                <button type="submit" class="btn btn-secondary">
-                                    <i class="fas fa-search"></i>
-                                    Search
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
+    <!--<div class="row justify-content-center my-2">-->
+    <!--    <div class="col-md-12 md-2 mt-2">-->
+    <!--        <div class="card">-->
+    <!--            <div class="card-body">-->
+    <!--                <form action="" method="get">-->
+    <!--                    <div class="row justify-content-center">-->
+    <!--                        <div class="form-group m-2">-->
+    <!--                            <select name="venue_id" id="venue_id"  class="form-control" >-->
+    <!--                                <option value="0"> All </option>-->
+    <!--                                @foreach ($venues as $venue)-->
+    <!--                                    <option value="{{ $venue->id }}"> {{ $venue->name }}</option>-->
+    <!--                                @endforeach-->
+    <!--                            </select>-->
+    <!--                        </div>-->
+    <!--                        <div class="form-group m-2">-->
+    <!--                            <button type="submit" class="btn btn-secondary">-->
+    <!--                                <i class="fas fa-search"></i>-->
+    <!--                                Search-->
+    <!--                            </button>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </form>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
+    <div class="row justify-content-center py-2">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Menu Items</div>
                 <div class="card-body">
-                    <table class="table table-sm table-striped table-bordered">
+                    <table class="table table-sm table-striped table-bordered" id="datatable">
                         <thead class="bg-dark">
                             <th>
                                 S.N
@@ -87,7 +87,7 @@
                             </tr>
                         @endforeach
                     </table>
-                    {{-- {{ $menues->render('pagination::bootstrap-4') }} --}}
+                  {{ $menues->render('pagination::bootstrap-4') }} 
                 </div>
             </div>
         </div>

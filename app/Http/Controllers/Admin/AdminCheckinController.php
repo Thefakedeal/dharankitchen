@@ -32,7 +32,7 @@ class AdminCheckinController extends Controller
             }
         }
         $checkinsQuery->orderBy('checkin', 'DESC')->orderBy('checkout', 'DESC');
-        $checkins = $checkinsQuery->paginate(10);
+        $checkins = $checkinsQuery->paginate(500000);
         return view('admin.checkin.index', compact('checkins'));
     }
 
@@ -43,7 +43,7 @@ class AdminCheckinController extends Controller
      */
     public function create()
     {
-        $roomtypes = RoomType::all();
+        $roomtypes = RoomType::paginate(500000);
         return view('admin.checkin.create', compact('roomtypes'));
     }
 

@@ -8,7 +8,7 @@
             <div class="col-md-4">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h3>{{ $gallery->name }}</h3>
+                        <h3 class ="display-5 fs-5">{{ $gallery->name }}</h3>
                         <img src="{{ $gallery->images->first()->image ?? '' }}" alt="..." class="img-fluid">
                         <div class="pt-2 float-right">
                             <a href="{{ route('gallery',$gallery->id) }}" class="btn btn-danger float-right"> See More </a>

@@ -24,7 +24,7 @@
                 <img src="{{ $place->image }}" class="card-img-top" alt="..." height="200px" class="object-cover w-100">
                 <div class="card-body">
                   <h5 class="card-title">{{ $place->name }}</h5>
-                  <p class="card-text fw-light">{{ \Illuminate\Support\Str::limit($place->description,150,$end='...') }}</p>
+                  <p class="card-text fw-light">{!! \Illuminate\Support\Str::limit($place->description,150,$end='...') !!}</p>
                   <a href="{{ route('place',$place->id) }}" class="link-danger text-decoration-none">Readmore <i class="fa fa-arrow-alt-circle-right"></i></a>
                 </div>
               </div>

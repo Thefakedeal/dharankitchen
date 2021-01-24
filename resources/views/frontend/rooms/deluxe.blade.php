@@ -53,10 +53,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="text-uppercase">Deluxe<span class="text-danger"> Room</span></h1>
-                        <p>We offer deluxe room with king size bed and well equipped with all the facilities and equipments
-                            you need for a comfortable stay. Spend quality time in our room fulfilled with a luxurious
-                            bathroom along with view of mountains and city. Spend your leisure time and make your stay a
-                            memorable stay. Feel like home and away in a silent environment.</p>
+                        <p>
+                            So let's continue what does deluxe room mean? This term was borrowed from the French language " De luxe" and is translated as" luxury ". Deluxe room in hotel - this is a room, improved in all its qualities, and larger than the usual Standard room, and even than the Superior room.
+                        </p>
 
 
                     </div>
@@ -192,7 +191,7 @@
                                     <img src="{{ $roomtype->images->first()->image ?? '' }}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $roomtype->name }}</h5>
-                                        <p class="card-text">{!! Str::limit($roomtype->description, 100, $end = '...') !!}</p>
+                                        <p class="card-text fw-light">{!! Str::limit($roomtype->description, 100, $end = '...') !!}</p>
                                         <p>
                                             <span class="fs-4 text-danger lead">NRS{{ $roomtype->room_charge }}</span>
                                             @if ($roomtype->discount > 0) <span

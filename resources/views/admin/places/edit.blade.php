@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" class="form-control" rows="5" placeholder="Event Description" required> {{ $place->description }} </textarea>
+                            <textarea name="description" class="ckeditor form-control" rows="5" placeholder="Event Description" required> {{ $place->description }} </textarea>
                             @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

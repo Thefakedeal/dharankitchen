@@ -8,7 +8,7 @@
                     <strong>Queries</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm table-bordered">
+                    <table class="table table-sm table-bordered" id="datatable">
                         <thead class="bg-dark">
                             <th>
                                 #

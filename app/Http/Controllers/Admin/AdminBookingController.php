@@ -15,7 +15,7 @@ class AdminBookingController extends Controller
         $bookingquery->where('confirmed',FALSE);
         $bookingquery->where('cancelled',FALSE);
         $bookingquery->orderBy('checkin','DESC')->orderBy('checkout','DESC');
-        $bookings = $bookingquery->paginate(10);
+        $bookings = $bookingquery->paginate(500000);
         // $bookings = BookingResource::collection($bookingspage);
         // $bookings = $bookingspage;
         $bookings->load('roomtype');
@@ -31,7 +31,7 @@ class AdminBookingController extends Controller
         $bookingquery->where('confirmed',TRUE);
         $bookingquery->where('cancelled',FALSE);
         $bookingquery->orderBy('checkin','DESC')->orderBy('checkout','DESC');
-        $bookings = $bookingquery->paginate(10);
+        $bookings = $bookingquery->paginate(500000);
         $bookings->load('roomtype');
         return view('admin.booking.confirmed',compact('bookings'));
     }

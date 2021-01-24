@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header"><strong>Room List</strong></div>
                 <div class="card-body">
-                    <table class="table table-sm table-striped table-bordered ">
+                    <table class="table table-sm table-striped table-bordered" id='datatable'>
                         <thead class="bg-dark">
                             <th>
                                 S.N

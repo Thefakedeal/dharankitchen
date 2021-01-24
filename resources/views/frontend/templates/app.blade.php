@@ -34,29 +34,26 @@
         <div class="row pt-4">
           <div class="col-md-5 text-white">
             <h1 class="fs-5">About us</h1>
-            <p style="font-size: .8rem;">Dharan Kitchen is prestigious name since 2062 BS (2005 AD) for serving healthy and tasty foods in reasonable price. Your fun destination for food and beverages. We care about your taste and health. We promise in intimate and relaxed dining experience that offers something different to local and foreign dishes and ensures you enjoy a memoriable food experiencene every time.</p>
+            <p style="font-size: .8rem;" class="fw-light">Dharan Kitchen is prestigious name since 2062 BS (2005 AD) for serving healthy and tasty foods in reasonable price. Your fun destination for food and beverages. We care about your taste and health. We promise in intimate and relaxed dining experience that offers something different to local and foreign dishes and ensures you enjoy a memoriable food experiencene every time.</p>
           </div>
           <div class="col-md-3 text-white">
             <h1 class="fs-5">Address</h1>
-            <address style="font-size: .8rem;">
-              P.O. Box: 2141 <br>
-              Street: Baircahhi <br>
-              Ward Number: 8 <br>
-              Municipality: Dharan <br>
-              District: Sunsari <br>
-              Country: Nepal <br>
-              Tel: 977-25-5523900, Fax : 977-25-5523909 <br>
-              Email : reservation@dharankitchen.com <br>
+            <address style="font-size: .8rem;" class="fw-light">
+              Dharan-15,Dashrath marg <br>
+              Sunsari, Nepal <br>
+              Tel: 977-25-532580, <br>
+              Mobile:9852056606 / 9852056607 <br>
+              Email : info@dharankitchen.com <br>
             </address>
           </div>
 
           <div class="col-md-2 text-white">
             <h1 class="fs-5">Menu</h1>
               <div class="d-flex flex-column" style="font-size: .8rem;">
-                <a href="" class="text-decoration-none text-white">Terms & Condition</a>
-                <a href="" class="text-decoration-none text-white">Privacy & Policy</a>
-                <a href="" class="text-decoration-none text-white">Gallery</a>
-                <a href="" class="text-decoration-none text-white">Contact</a>
+                <a href="https://www.termsfeed.com/live/89dcfffa-4462-4e33-bc1b-425692af721d" class="text-decoration-none text-white fw-light" target="_blank">Terms & Condition</a>
+                <a href="https://www.privacypolicygenerator.info/live.php?token=U3I0UFEV5MrZeZAitmMBkS3QC9uOniwu" class="text-decoration-none text-white fw-light" target="_blank">Privacy & Policy</a>
+                <a href="/gallery" class="text-decoration-none text-white fw-light">Gallery</a>
+                <a href="/contact" class="text-decoration-none text-white fw-light">Contact</a>
               </div>
           </div>
 
@@ -68,8 +65,8 @@
       </div>
 
       <div class="row">
-        <div class="col bg-danger text-center text-white">
-            Powered by: <a href="http://www.codeitapps.com" class="text-white text-decoration-none">Code IT</a> | Dharan, Sunsari Nepal
+        <div class="col bg-danger text-center text-white fw-light">
+            Powered by: <a href="http://www.codeitapps.com" class="text-white text-decoration-none fw-bold">Code IT</a> | Dharan, Sunsari Nepal
         </div>
       </div>
   </footer>
@@ -95,5 +92,19 @@
       return new bootstrap.Popover(popoverTriggerEl)
     })
   </script>
+  
+  <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/600b9b4cc31c9117cb71980b/1esmld9en';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>

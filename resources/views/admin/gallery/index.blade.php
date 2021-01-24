@@ -1,14 +1,14 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row pt-4">
+    <div class="row py-4">
         <div class="col-md-12">
             <div class="card shadow">
                 <div class="card-header">
                     <strong>Gallery List</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm table-striped table-bordered">
+                    <table class="table table-sm table-striped table-bordered" id="datatable">
                         <thead class="bg-dark">
                             <th>
                                 #

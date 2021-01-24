@@ -20,9 +20,11 @@
                          </div>
                          <div class="card-body">
                             <p class="card-text fw-light">Have any Queries? Let us know. We will clear it for you at the best.</p>
-                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-map-marker-alt"></span> Dharan, Bairgachhi, Sunsari Nepal</p>
+                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-map-marker-alt"></span> Dharan, Dashrat Marg</p>
+                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-map"></span> Sunsari, Province No 1</p>
                             <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-envelope"></span> <a href="mailto:info@dharankitchen.com" class="text-decoration-none" style="color:#f58634;">info@dharankitchen.com</a></p>
-                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-phone-alt"></span> <a href="tel:+97725521810" class="text-decoration-none" style="color:#f58634;">977-25-521810</a></p>
+                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-phone-alt"></span> <a href="tel:+97725521810" class="text-decoration-none" style="color:#f58634;">977-25-532580</a></p>
+                             <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-mobile"></span> <a href="tel:+9779852056606" class="text-decoration-none" style="color:#f58634;">9852056606</a> / <a href="tel:+9779852056607" class="text-decoration-none" style="color:#f58634;">9852056607</a></p>
                          </div>
                      </div>
                  </div>
@@ -31,7 +33,7 @@
                    <p class="fw-light">We are being involved in below social media an excellent platform to enhance communication and understanding. Please do see our post, comment on it , like it and share it and more. It will help us to improve our services and extend customer satisfaction.</p>
 
                    <p>
-                    <a href="#"><span class="fab fa-facebook-f fa-2x" title="Facebook"></span></a> &nbsp;
+                    <a href="https://www.facebook.com/HOTEL-Dharan-Kitchen-Pvtltd-107117241328706" target="_blank"><span class="fab fa-facebook-f fa-2x" title="Facebook"></span></a> &nbsp;
                     <a href="#"><span class="fab fa-youtube text-danger fa-2x" title="YouTube"></span></a> &nbsp;
                     <a href="#"><span class="fab fa-instagram text-danger fa-2x" title="Instagram"></span></a> &nbsp;
                    </p>

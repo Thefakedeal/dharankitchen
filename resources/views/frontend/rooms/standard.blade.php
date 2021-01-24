@@ -53,10 +53,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="text-uppercase">Standard<span class="text-danger"> Room</span></h1>
-                        <p>We offer deluxe room with king size bed and well equipped with all the facilities and equipments
-                            you need for a comfortable stay. Spend quality time in our room fulfilled with a luxurious
-                            bathroom along with view of mountains and city. Spend your leisure time and make your stay a
-                            memorable stay. Feel like home and away in a silent environment.</p>
+                        <p>A standard room comes in the category of the hotel's cheapest room. It is a type of single room, which has a king-size bed, or as two beds — this room is decorated with two queen-size beds.</p>
 
 
                     </div>
@@ -192,7 +189,7 @@
                                     <img src="{{ $roomtype->images->first()->image ?? '' }}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $roomtype->name }}</h5>
-                                        <p class="card-text">{{ Str::limit($roomtype->description, 100, $end = '...') }}</p>
+                                        <p class="card-text">{!! Str::limit($roomtype->description, 100, $end = '...') !!}</p>
                                         <p>
                                             <span class="fs-4 text-danger lead">NRS{{ $roomtype->room_charge }}</span>
                                             @if ($roomtype->discount > 0) <span

@@ -12,7 +12,7 @@
                     <strong>Confirmed Bookings</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm text-sm table-striped table-bordered">
+                    <table class="table table-sm text-sm table-striped table-bordered" id="datatable">
                         <thead class="bg-dark">
                             <th>
                                 S.N
