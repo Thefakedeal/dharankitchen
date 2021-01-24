@@ -41,7 +41,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $events = Event::take(4)->get();
+    $events = Event::orderby('created_at','desc')->take(4)->get();
     $events->load('images');
     $places = Place::take(4)->get();
     return view('frontend.welcome', compact(['events','places']));
@@ -153,6 +153,19 @@ Route::get('/place/{id}',function($id){
     $places = Place::all();
     return view('frontend.place',compact('place','places'));
 })->name('place');
+
+Route::get('/events', function(){
+    $events = Event::all();
+    return view('frontend.events',compact('events'));
+})->name('events');
+
+Route::get('/event/{id}',function($id){
+    $event = Event::findOrFail($id);
+    $events = Event::all();
+    $event->load('images');
+    $events->load('images');
+    return view('frontend.events',compact('event','events'));
+})->name('event');
 
 Route::post('/book',BookingController::class)->name('book');
 Route::post('/query',SendQueryController::class)->name('query');

@@ -1,7 +1,7 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center pt-4">
+    <div class="row justify-content-center py-4">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -10,7 +10,7 @@
                     </strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm table-bordered table-striped">
+                    <table class="table table-sm table-bordered table-striped" id="datatable">
                         <thead class="bg-dark">
                             <th>S.N.</th>
                             <th>Name</th>

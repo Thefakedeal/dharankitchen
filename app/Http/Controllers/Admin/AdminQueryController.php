@@ -17,7 +17,7 @@ class AdminQueryController extends Controller
     {
         $queriesQuery = Query::query();
         $queriesQuery->orderBy('created_at','DESC');
-        $queries = $queriesQuery->paginate(10);
+        $queries = $queriesQuery->paginate(500000);
         return view('admin.queries.index',compact('queries'));
     }
 

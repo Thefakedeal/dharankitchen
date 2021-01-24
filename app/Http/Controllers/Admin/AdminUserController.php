@@ -17,7 +17,7 @@ class AdminUserController extends Controller
     public function index()
     {
         $usersquery = User::query();
-        $users = $usersquery->paginate(10);
+        $users = $usersquery->paginate(10000);
         return view('admin.users.index',compact('users'));
     }
 

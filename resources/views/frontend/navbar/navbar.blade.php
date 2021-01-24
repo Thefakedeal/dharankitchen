@@ -5,11 +5,11 @@
             <div>
                <span class="fas fa-map-marker-alt"></span> <span class="fw-light">Dharan,Sunsari Nepal</span> &nbsp;
                <a href="email:info@dharankitchen.com" class="text-white text-decoration-none"><span class="fa fa-envelope"></span></a> &nbsp;
-               <a href="tel:+97725521810" class="text-white text-decoration-none"><span class="fa fa-phone-square"></span></a> &nbsp;
+               <a href="tel:+97725532580" class="text-white text-decoration-none"><span class="fa fa-phone-square"></span></a> &nbsp;
                
             </div>
             <div>
-                <a href="#  "><span class="fab fa-facebook-f text-white"></span></a> &nbsp;
+                <a href="https://www.facebook.com/HOTEL-Dharan-Kitchen-Pvtltd-107117241328706" target="_blank"><span class="fab fa-facebook-f text-white"></span></a> &nbsp;
                 <a href=""><span class="fab fa-youtube text-white"></span></a> &nbsp;
                 <a href=""><span class="fab fa-instagram text-white"></span></a> &nbsp;
             </div>

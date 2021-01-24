@@ -23,7 +23,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="name" class="font-bold">Full Name</label>
-                                        <input id="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Enter first and last name" required>
+                                        <input id="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Full Name" required>
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -35,7 +35,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="email" class="font-bold">Email</label>
-                                        <input id="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="name@domain.com" required>
+                                        <input id="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Your email" required>
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -105,9 +105,12 @@
                                     @enderror
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="mobile" class="font-bold">Mobile Number</label>
+                            </div>
+                            
+                             <div class="row mt-4">
+                                     <div class="col">
+                                          <div class="form-group">
+                                        <label for="mobile" class="font-bold">Mobile</label>
                                         <input id="mobile" value="{{ old('mobile') }}" class="form-control @error('mobile') is-invalid @enderror" type="number" name="mobile" placeholder="Mobile Number" required>
                                         @error('mobile')
                                         <span class="invalid-feedback" role="alert">
@@ -115,9 +118,8 @@
                                         </span>
                                     @enderror
                                     </div>
-                                
-                                </div>
-                            </div>
+                                     </div>
+                                 </div>
 
                             <div class="row mt-4">
                                 <div class="col">
@@ -138,13 +140,14 @@
                                 <p class="font-bold text-sm"><span id="nights"> 1 </span> Night</p>
                             </div>
                             <div class="col-md-2">
+                                <!--echo {{ $roomtype->images->first()->image??'' }}-->
                                 <img src="{{ $roomtype->images->first()->image??'' }}" alt="" class="img-thumbnail">
                             </div>
                         </div>
 
                         <p><span class="font-semibold text-sm"> <span id='checkindate'> Fri,8 Jan </span>  - <span id='checkoutdate'> Wed,12 Jan </span>  </span></p>
                         <hr>
-                        <p>Deluxe(2x)</p>
+                        <p>{{ $roomtype->name }}</p>
 
                         <table class="table table-sm table-borderless">
                             <tr>
@@ -166,7 +169,7 @@
                                         Payable Amount
                                     </div>
                                     <div>
-                                       <span class="text-sm text-gray-600"> inclusive of all taxes</span>
+                                      <small class="text-secondary">inclusive of all taxes</small>
                                     </div>
                                 </td>
                                 <td class="text-gray-600 text-xl text-center">

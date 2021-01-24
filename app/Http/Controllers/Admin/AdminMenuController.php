@@ -23,7 +23,7 @@ class AdminMenuController extends Controller
             $menuequery->where('venue_id',$request->venue_id);
         }
         $venues = Venue::all();
-        $menues = $menuequery->paginate(15);
+        $menues = $menuequery->paginate(500000);
         return view('admin.menu.index',compact('menues','venues'));
         
     }

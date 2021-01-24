@@ -22,7 +22,7 @@
                             <div class="card-body">
                               <h1 class="display-6">By The Waterfall Lounge</h1>
                               <p class="card-text">By The Waterfall Lounge offers scrumptious pastries and tasty snacks to accompany your tea or coffee. Our comfortable lounge in the lobby is where all the action is. You can surf the net or catch up on your mail while admiring our beautiful Japanese water garden next to it.</p>
-                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
+                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end my-2">Enquiry</a></small></p>
                             </div>
                           </div>
                         </div>
@@ -39,7 +39,7 @@
                             <div class="card-body">
                               <h1 class="display-6">Cafe Horizon</h1>
                               <p class="card-text">By The Waterfall Lounge offers scrumptious pastries and tasty snacks to accompany your tea or coffee. Our comfortable lounge in the lobby is where all the action is. You can surf the net or catch up on your mail while admiring our beautiful Japanese water garden next to it.</p>
-                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
+                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end my-2">Enquiry</a></small></p>
                             </div>
                           </div>
                         </div>
@@ -56,7 +56,7 @@
                             <div class="card-body">
                               <h1 class="display-6">Base Camp Bar</h1>
                               <p class="card-text">Our Base Camp Bar is just what you need to un-wind yourself with a glass of deluxe wine, exotic cocktails or premium spirits. The plush and cozy furnishings set against a backdrop of memorabilia of legendary singers from yesteryears.</p>
-                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end">Enquiry</a></small></p>
+                              <p class="card-text"><small class="text-muted"><a href="/contact" class="btn btn-outline-danger float-end my-2">Enquiry</a></small></p>
                             </div>
                           </div>
                         </div>

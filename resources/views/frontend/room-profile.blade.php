@@ -45,7 +45,7 @@
                       <!-- Similar Rroom -->
                        <!-- Similar Room Heading -->
                           <div class="py-5" style="background: #ffffff;">
-                              <div class="container">
+                              
                                   <div class="row justify-content-center">
                                       <div class="col-md-8">
                                           <h4 class="text-uppercase text-center">Similar Rooms</h4>
@@ -53,26 +53,26 @@
                                   </div>
 
                                   
-                                  <div class="container py-4">
+                               
                                       <div class="row">
-                                          @foreach ($roomtypes as $roomtype)
+                                          @foreach ($roomtypes as $room)
                                           <div class="col-md-6 my-2">
                                             <div class="card">
-                                                <img src="{{ $roomtype->images->first()->image??'' }}" class="card-img-top" alt="...">
+                                                <img src="{{ $room->images->first()->image??'' }}" class="card-img-top" alt="...">
                                                 <div class="card-body">
-                                                <h5 class="card-title">{{ $roomtype->name }}</h5>
+                                                <h5 class="card-title">{{ $room->name }}</h5>
                                                 <p class="card-text">{!! Str::limit($roomtype->description, 100, $end = '...') !!}</p>
                                                 <p>
-                                                    <span class="fs-3 text-danger lead">NRS{{ $roomtype->room_charge }}</span>
-                                                    @if ($roomtype->discount > 0) <span
-                                                            class="text-secondary text-decoration-line-through">NRS{{ $roomtype->price }}</span>
-                                                        <span class="text-danger">-{{ $roomtype->discount }}% Off</span>
+                                                    <span class="fs-3 text-danger lead">NRS{{ $room->room_charge }}</span>
+                                                    @if ($room->discount > 0) <span
+                                                            class="text-secondary text-decoration-line-through">NRS{{ $room->price }}</span>
+                                                        <span class="text-danger">-{{ $room->discount }}% Off</span>
                                                     @endif
                                                 </p>
-                                                <a href="{{ route('room.profile', $roomtype->id) }}" class="link-danger text-decoration-none">Details <span class="fa fa-arrow-circle-right"></span></a>
+                                                <a href="{{ route('room.profile', $room->id) }}" class="link-danger text-decoration-none">Details <span class="fa fa-arrow-circle-right"></span></a>
                                                 </div>
                                             </div>
-                                        </div>
+                                            </div>
                                           @endforeach
                                           <!-- Deluxe (3x) -->
                                           {{-- <div class="col-md-6 my-2">
@@ -134,9 +134,9 @@
                                               </div>
                                           </div> --}}
                                       </div>
-                                  </div>
+                                 
                                   
-                              </div>
+                              
                           </div>
                   </div>
 

@@ -17,7 +17,7 @@ class AdminPlacesController extends Controller
     public function index()
     {
         $placeQuery = Place::query();
-        $places = $placeQuery->paginate(10);
+        $places = $placeQuery->paginate(500000);
         return view('admin.places.index',compact('places'));
     }
 

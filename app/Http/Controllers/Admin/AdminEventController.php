@@ -20,7 +20,7 @@ class AdminEventController extends Controller
     {
         $eventsquery = Event::query();
         $eventsquery->orderBy('date','DESC');
-        $events = $eventsquery->paginate(10);
+        $events = $eventsquery->paginate(500000);
         return view('admin.events.index',compact('events'));   
     }
 

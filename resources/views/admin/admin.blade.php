@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    
+    <!--Datatable-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -380,6 +383,16 @@
                                
                             </ul>
                         </div>
+                        
+                         <li class="nav-item">
+                            <a href="https://dashboard.tawk.to/login" target ="_blank" class="nav-link">
+                                <i class="fas fa-comments"></i>
+                                <p class="ml-2">
+                                    Live Chat
+                                </p>
+                            </a>
+                        </li>
+                        
                         {{-- End Place Menu --}}
                             <form action="{{ route('logout') }}" onsubmit="return confirm('Do You Want To Logout?')"
                                 method="post">
@@ -443,7 +456,7 @@
 
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2021 <a href="https://codeit.com.np/" target="_blank">Code-IT</a>.</strong>
+            <strong class="fw-light">Copyright &copy; 2014-{{ now()->year }} <a href="https://codeitapps.com/" target="_blank">Code-IT</a>.</strong>
             All rights reserved.
         </footer>
     </div>
@@ -457,10 +470,15 @@
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+    
+    <!--Datatable-->
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
 
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#datatable').DataTable();
             $('.ckeditor').ckeditor();
         });
     </script>

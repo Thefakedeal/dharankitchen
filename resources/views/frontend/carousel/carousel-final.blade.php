@@ -9,24 +9,24 @@
             </ol>
             <div class="carousel-inner" style="max-height: 90vh;">
               <div class="carousel-item active" style="max-height: 90vh;">
-                <img src="https://cdn.pixabay.com/photo/2016/11/21/16/21/bed-1846251_1280.jpg" class="d-block w-100" alt="...">
+                <img src="{{ asset('img/slide1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Namastee</h5>
                   <p>Welcome to Dharan Kitchen</p>
                 </div>
               </div>
               <div class="carousel-item" style="max-height: 90vh;">
-                <img src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062_1280.jpg" class="d-block w-100" alt="...">
+                 <img src="{{ asset('img/slide2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <h5>Dharan Kitchen Restaurant</h5>
+                  <p>Stay Healthy & Eat Great!</p>
                 </div>
               </div>
               <div class="carousel-item" style="max-height: 90vh;">
-                <img src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062_1280.jpg" class="d-block w-100" alt="...">
+                 <img src="{{ asset('img/slide3.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  <h5>Open Kitchen</h5>
+                  <p>An open kitchen concept has to have the combination of all details in a restaurant operation that lead to a certain image with our customers</p>
                 </div>
               </div>
             </div>

@@ -35,7 +35,7 @@
                     <strong>Categories</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm table-bordered table-striped">
+                    <table class="table table-sm table-bordered table-striped" id="datatable">
                         <thead class="bg-dark">
                             <th>
                                 S.N
@@ -72,6 +72,7 @@
                             </tr>
                         @endforeach
                     </table>
+                    {{ $categories->render('pagination::bootstrap-4')}}
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ class AdminVenueController extends Controller
     public function index()
     {
         $venuesquery = Venue::query();
-        $venues = $venuesquery->paginate(10);
+        $venues = $venuesquery->paginate(1000);
         return view('admin.venue.index',compact('venues'));
     }
 

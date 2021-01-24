@@ -23,7 +23,7 @@
                    <a href="#" class="link-danger text-decoration-none">Readmore <i class="fa fa-arrow-alt-circle-right"></i></a>
                 </div>
                 <div class="col-md-4">
-                    <img src="https://cdn.pixabay.com/photo/2013/04/11/19/46/building-102840_1280.jpg" alt="" class="img-thumbnail">
+                    <img src="{{ asset('img/IMG_0206.jpg') }}" alt="" class="img-thumbnail">
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <div class="col-md-8">
                     <h4 class="text-uppercase text-center">Discover our rooms</h4>
                     <h1 class="text-uppercase text-center">Explore <span class="text-danger">Rooms & Suits</span></h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid odio facilis, dolore consectetur quae quam culpa vero, fugiat iusto repudiandae beatae et debitis. Laudantium laboriosam cupiditate eveniet molestiae repellat!</p>
+                    <p>Hotel Dharan Kitchen provides accommodations with a bar and a terrace. Among the facilities of this property are a restaurant, a 24-hour front desk and room service, along with free WiFi. Private parking can be arranged at an extra charge. The rooms in the hotel are fitted with a kettle. At Dharan Kitchen Hotel, rooms include air conditioning and a TV. Guests at the accommodations can enjoy an Asian breakfast. The nearest airport is Biratnagar Airport, 40km from Dharan Kitchen Hotel.</p>
                     <div class="row justify-content-center">
                         <div class="col-md-4 text-center">
                             <a href="{{ route('rooms') }}" class="btn btn-danger btn-lg">Explore More Rooms</a>
@@ -55,14 +55,14 @@
         <div class="container ">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="https://cdn.pixabay.com/photo/2015/03/26/09/42/bedroom-690129_1280.jpg" alt="" class="img-thumbnail">
+                    <img src="{{ asset('img/deluxe3.jpg') }}" alt="" class="img-thumbnail">
                 </div>
                 <div class="col-md-6">
                     <h1>Deluxe Room</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsam cumque veniam suscipit mollitia fuga repudiandae quam rem similique aspernatur nemo cum non voluptate laborum facilis iure voluptas ad debitis repellat magnam velit aut, odit unde alias! Libero, maiores adipisci.</p>
+                    <p>So let's continue what does deluxe room mean? This term was borrowed from the French language " De luxe"and is translated as" luxury ". Deluxe room in hotel - this is a room, improved in all its qualities, and larger than the usual Standard room, and even than the Superior room.</p>
                     <h3>Facilities</h3>
                     <hr>
-                      <div class="d-flex flex-row align-self-auto justify-content-md-evenly">
+                      <div class="d-flex flex-row align-self-auto justify-content-evenly">
                           <div><span class="fa fa-wifi"> Free Wifi</span></div>
                           <div><span class="fa fa-tv"> Television</span></div>
                           <div><span class="fa fa-couch"> Sofa</span></div>
@@ -78,16 +78,16 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6 order-md-last">
-                    <img src="https://cdn.pixabay.com/photo/2014/07/10/17/17/bedroom-389254_1280.jpg" alt="" class="img-thumbnail">
+                    <img src="{{ asset('img/standard1.jpg') }}" alt="" class="img-thumbnail">
                 </div>
 
                 <div class="col-md-6">
                     <h1>Standard Room</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsam cumque veniam suscipit mollitia fuga repudiandae quam rem similique aspernatur nemo cum non voluptate laborum facilis iure voluptas ad debitis repellat magnam velit aut, odit unde alias! Libero, maiores adipisci.</p>
+                    <p>A standard room comes in the category of the hotel's cheapest room. It is a type of single room, which has a king-size bed, or as two beds — this room is decorated with two queen-size beds.</p>
 
                     <h3>Facilities</h3>
                     <hr>
-                      <div class="d-flex flex-row align-self-auto justify-content-md-evenly">
+                      <div class="d-flex flex-row align-self-auto justify-content-evenly">
                           <div><span class="fa fa-wifi"> Free Wifi</span></div>
                           <div><span class="fa fa-tv"> Television</span></div>
                           <div><span class="fa fa-couch"> Sofa</span></div>
@@ -105,16 +105,16 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062_1280.jpg" alt="" class="img-thumbnail">
+                    <img src="{{ asset('img/normal1.jpg') }}" alt="" class="img-thumbnail">
                 </div>
 
                 <div class="col-md-6">
                     <h1>Normal Room</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsam cumque veniam suscipit mollitia fuga repudiandae quam rem similique aspernatur nemo cum non voluptate laborum facilis iure voluptas ad debitis repellat magnam velit aut, odit unde alias! Libero, maiores adipisci.</p>
+                    <p>A Normal room comes in the category of the hotel's cheapest room. It is a type of single room, which has a king-size bed, or as two beds — this room is decorated with two queen-size beds.</p>
 
                     <h3>Facilities</h3>
                     <hr>
-                      <div class="d-flex flex-row align-self-auto justify-content-md-evenly">
+                      <div class="d-flex flex-row align-self-auto justify-content-evenly">
                           <div><span class="fa fa-wifi"> Free Wifi</span></div>
                           <div><span class="fa fa-tv"> Television</span></div>
                           <div><span class="fa fa-parking"> Parking</span></div>
@@ -180,7 +180,7 @@
                   <img src="{{ $place->image }}" class="card-img-top" alt="..." height="200px" class="object-cover w-100">
                   <div class="card-body">
                     <h5 class="card-title">{{ $place->name }}</h5>
-                    <p class="card-text fw-light">{{ \Illuminate\Support\Str::limit($place->description,150,$end='...') }}</p>
+                    <p class="fw-light">{!! \Illuminate\Support\Str::limit($place->description,150,$end='...') !!}</p>
                     <a href="{{ route('place',$place->id) }}" class="link-danger text-decoration-none">Readmore <i class="fa fa-arrow-alt-circle-right"></i></a>
                   </div>
                 </div>
@@ -257,14 +257,14 @@
               </div>
               <div class="col-md-6 py-2">
                 <h5 class="card-title">{{ $event->title }}</h5>
-                <p class="card-text">{{ Str::limit($event->description,100, $end='...')  }}</p>
+                <p class="card-text fw-light">{!! Str::limit($event->description,100, $end='...')  !!}</p>
 
                 <div class="row">
                   <div class="col">
-                    <span class="fa fa-calendar-alt text-secondary">{{ $event->date }}</span>
+                    <span class="fa fa-calendar-alt text-secondary"> {{ $event->date }}</span>
                   </div>
                   <div class="col">
-                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
+                    <a href="/event/{{ $event->id }}" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
                   </div>
                 </div>
                 
@@ -273,96 +273,7 @@
           </div>
           @endforeach
         </div>
-        {{-- <div class="row">
-          <div class="col-md-6 bg-white mt-md-2 rounded-3">
-            <div class="row">
-              <div class="col-md-6">
-                <img src="https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-fluid">
-              </div>
-              <div class="col-md-6 py-2">
-                <h5 class="card-title">Jungle Safari</h5>
-                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem optio expedita omnis magni corrupti doloribus iusto eaque,</p>
-
-                <div class="row">
-                  <div class="col">
-                    <span class="fa fa-calendar-alt text-secondary"> 7 Jan 2020</span>
-                  </div>
-                  <div class="col">
-                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 bg-white mt-md-2 rounded-3">
-            <div class="row">
-              <div class="col-md-6">
-                <img src="https://cdn.pixabay.com/photo/2016/03/09/09/30/paragliding-1245837_1280.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="col-md-6 py-2">
-                <h5 class="card-title">Paraglyding</h5>
-                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem optio expedita omnis magni corrupti doloribus iusto eaque,</p>
-
-                <div class="row">
-                  <div class="col">
-                    <span class="fa fa-calendar-alt text-secondary"> 7 Jan 2020</span>
-                  </div>
-                  <div class="col">
-                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 bg-white mt-md-2 rounded-3">
-            <div class="row">
-              <div class="col-md-6">
-                <img src="https://cdn.pixabay.com/photo/2015/10/12/15/01/mountain-984083_1280.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="col-md-6 py-2">
-                <h5 class="card-title">Hiking</h5>
-                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem optio expedita omnis magni corrupti doloribus iusto eaque,</p>
-
-                <div class="row">
-                  <div class="col">
-                    <span class="fa fa-calendar-alt text-secondary"> 7 Jan 2020</span>
-                  </div>
-                  <div class="col">
-                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 bg-white mt-md-2 rounded-3">
-            <div class="row">
-              <div class="col-md-6">
-                <img src="https://images.pexels.com/photos/1732280/pexels-photo-1732280.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-fluid">
-              </div>
-              <div class="col-md-6 py-2">
-                <h5 class="card-title">Tamar Rafting</h5>
-                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem optio expedita omnis magni corrupti doloribus iusto eaque,</p>
-
-                <div class="row">
-                  <div class="col">
-                    <span class="fa fa-calendar-alt text-secondary"> 7 Jan 2020</span>
-                  </div>
-                  <div class="col">
-                    <a href="" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-
-        </div> --}}
+        
 
       </div>
     </div>

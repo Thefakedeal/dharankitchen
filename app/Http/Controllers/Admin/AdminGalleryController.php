@@ -19,7 +19,7 @@ class AdminGalleryController extends Controller
     public function index()
     {
         $galleriesquery = Gallery::query();
-        $galleries = $galleriesquery->paginate(10);
+        $galleries = $galleriesquery->paginate(500000);
         return view('admin.gallery.index',compact('galleries'));
     }
 
@@ -30,7 +30,7 @@ class AdminGalleryController extends Controller
      */
     public function create()
     {
-        $galleries = Gallery::all();
+        $galleries = Gallery::paginate(500000);
         return view('admin.gallery.create',compact('galleries'));
     }
 
