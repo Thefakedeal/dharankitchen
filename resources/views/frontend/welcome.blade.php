@@ -273,7 +273,9 @@
           </div>
           @endforeach
         </div>
-        
+        <div class="text-center pt-4">
+          <a href="{{ route('events') }}" class="btn btn-danger btn-lg">See More</a>
+        </div>
 
       </div>
     </div>
