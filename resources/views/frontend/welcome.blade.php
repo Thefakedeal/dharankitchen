@@ -261,7 +261,7 @@
 
                 <div class="row">
                   <div class="col">
-                    <span class="fa fa-calendar-alt text-secondary"> {{ $event->date }}</span>
+                    <span class="fw-light"> <i class="fa fa-calendar-alt text-secondary"></i> {{ $event->date }}</span>
                   </div>
                   <div class="col">
                     <a href="/event/{{ $event->id }}" class="link-danger">Readmore <span class="fa fa-arrow-alt-circle-right"></span></a>
