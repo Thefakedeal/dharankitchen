@@ -164,7 +164,7 @@ Route::get('/event/{id}',function($id){
     $events = Event::all();
     $event->load('images');
     $events->load('images');
-    return view('frontend.events',compact('event','events'));
+    return view('frontend.event',compact('event','events'));
 })->name('event');
 
 Route::post('/book',BookingController::class)->name('book');
