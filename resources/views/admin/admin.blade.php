@@ -383,6 +383,31 @@
                                
                             </ul>
                         </div>
+
+                        <div class="nav-item has-treeview">
+                            <a href="{{ route('notice.index') }}" class="nav-link active">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <p>
+                                    Notice
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('notice.create') }}" class="nav-link">
+                                        <i class="fas fa-plus nav-icon"></i>
+                                        <p>Add Notice</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('notice.index') }}" class="nav-link">
+                                        <i class="fas fa-exclamation-triangle nav-icon"></i>
+                                        <p>Notice List</p>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
                         
                          <li class="nav-item">
                             <a href="https://dashboard.tawk.to/login" target ="_blank" class="nav-link">

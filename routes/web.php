@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminDeleteImage;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminMenuController;
+use App\Http\Controllers\Admin\AdminNoticeController;
 use App\Http\Controllers\Admin\AdminPlacesController;
 use App\Http\Controllers\Admin\AdminQueryController;
 use App\Http\Controllers\Admin\AdminRoomController;
@@ -22,6 +23,7 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Menu;
+use App\Models\Notice;
 use App\Models\Place;
 use App\Models\Room;
 use App\Models\RoomImage;
@@ -44,7 +46,8 @@ Route::get('/', function () {
     $events = Event::orderby('created_at','desc')->take(4)->get();
     $events->load('images');
     $places = Place::take(4)->get();
-    return view('frontend.welcome', compact(['events','places']));
+    $notice = Notice::where('show',TRUE)->orderBy('created_at','DESC')->first();
+    return view('frontend.welcome', compact(['events','places','notice']));
 });
 
 Route::group([
@@ -207,6 +210,7 @@ Route::group([
     Route::resource('/gallery', AdminGalleryController::class);
     Route::resource('/query',AdminQueryController::class);
     Route::resource('/places',AdminPlacesController::class);
+    Route::resource('/notice',AdminNoticeController::class);
 });
 
 Auth::routes();

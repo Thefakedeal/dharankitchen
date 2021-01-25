@@ -8,8 +8,38 @@
     @include('frontend.carousel.carousel-final')
 @endsection
 
+@section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script type="text/javascript">
+  $(window).on('load', function() {
+      $('#myModal').modal('show');
+  });
+</script>
+
+@endsection
+
 {{-- Main Section --}}
 @section('main')
+{{-- Modal Display --}}
+@if ($notice)
+<div class="modal" tabindex="-1" id='myModal'>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ $notice->title }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        @if ($notice->image)
+          <img src="{{ $notice->image }}" alt="..." class="img-fluid">
+        @endif
+        <p>{!! $notice->message !!}</p>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+{{-- End Modal Display --}}
 <!-- main Section -->
 <main>
     <!-- Welcome Section -->
