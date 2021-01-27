@@ -43,6 +43,7 @@
 <!-- main Section -->
 <main>
     <!-- Welcome Section -->
+    
     <div class="py-5" style="background: #FEF9FF;">
         <div class="container">
             <div class="row">
@@ -57,6 +58,7 @@
                 </div>
             </div>
         </div>
+        <img src="{{ asset('img/addresses.jpg') }}" class=" pt-4 img-fluid" alt="">
     </div>
     <!-- End -->
 
