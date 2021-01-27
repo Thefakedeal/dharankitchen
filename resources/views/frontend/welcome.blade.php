@@ -43,7 +43,6 @@
 <!-- main Section -->
 <main>
     <!-- Welcome Section -->
-    
     <div class="py-5" style="background: #FEF9FF;">
         <div class="container">
             <div class="row">
@@ -59,6 +58,7 @@
             </div>
         </div>
         <img src="{{ asset('img/addresses.jpg') }}" class=" pt-4 img-fluid" alt="">
+
     </div>
     <!-- End -->
 
@@ -163,7 +163,7 @@
     </div>
 
      <!-- Our Services -->
-     <div class="py-5 text-white" style="background-image: url({{ asset('img/bg.jpg') }}); background-repeat: no-repeat; background-size: cover; background-position: center;">
+     <div class="py-5 text-white" style="background-image: url({{ asset('img/bg.jpg') }}); background-repeat: no-repeat; background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -322,7 +322,8 @@
         </div>
         <div class="row my-4">
           <div class="col">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.8753919024866!2d87.28645529253524!3d26.801881259588676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef41910d4acb5d%3A0x12a28ac5cb9d6b21!2sDharan%20Kitchens%20Sekuwa%20Corner%20and%20Thakali%20Kitchen!5e0!3m2!1sen!2snp!4v1611157766803!5m2!1sen!2snp"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w-100" height="450"></iframe>
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.8753919024866!2d87.28645529253524!3d26.801881259588676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef41910d4acb5d%3A0x12a28ac5cb9d6b21!2sDharan%20Kitchens%20Sekuwa%20Corner%20and%20Thakali%20Kitchen!5e0!3m2!1sen!2snp!4v1611157766803!5m2!1sen!2snp"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w-100" height="450"></iframe>-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28488.822945555647!2d87.2722191395508!3d26.804852999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef41917a885599%3A0x9159c0877ac61226!2sHotel%20Dharan%20Kitchen!5e0!3m2!1sen!2snp!4v1611724920066!5m2!1sen!2snp" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0" class="w-100" height="450"></iframe>
           </div>
         </div>
       </div>
