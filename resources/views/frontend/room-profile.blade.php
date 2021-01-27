@@ -41,6 +41,87 @@
                       <h1 class="text-uppercase">{{ explode(' ',$roomtype->name,2)[0]??'' }}<span class="text-danger"> {{ explode(' ',$roomtype->name,2)[1]??'' }}</span></h1>
                       <p>{!! $roomtype->description !!}</p>
 
+                    <!-- Facilities -->
+                        <div class="py-5" style="background:#FEF9FF;">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+                                        <h4 class="text-uppercase text-center">Room Facilities</h4>
+                                    </div>
+                                </div>
+
+                                <div class="row text-start mt-4">
+                                    @if ($roomtype->ac)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/air-condition.png') }}" alt="" width="32"><span> Air Condition </span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->fridge)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/fridge.png') }}" alt="" width="32"><span> Fridge </span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->pickup)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/taxi.png') }}" alt="" width="32"><span> Pick Up</span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->wardrobe)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/closet.png') }}" alt="" width="32"><span> Wardrobe</span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->sofa)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/sofa.png') }}" alt="" width="32"><span> Sofa</span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->tv)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/led-tv.png') }}" alt="" width="32"><span> Led TV </span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->hot_cold_shower)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/hot-cold-water.png') }}" alt="" width="32"><span> 24 hr Hot & Cold Water
+                                        </span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->wifi)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/high-speed-wifi.png') }}" alt="" width="32"><span> High Speed Wifi</span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->bottled_water)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/water.svg') }}" alt="" width="32"><span> Bottled Water </span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->parking)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/parking-area.png') }}" alt="" width="32"><span> Free Parking </span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    @if ($roomtype->hot_drinking_water)
+                                    <div class="col-md-4 py-2">
+                                        <img src="{{ asset('img/kettle.png') }}" alt="" width="32"><span> Hot Drinking Water </span>
+                                        <hr>
+                                    </div>
+                                    @endif
+                                    
+                                </div>
+                            </div>
+                        </div>
 
                       <!-- Similar Rroom -->
                        <!-- Similar Room Heading -->

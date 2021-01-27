@@ -18,8 +18,8 @@
               <div class="carousel-item" style="max-height: 90vh;">
                  <img src="{{ asset('img/slide2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Dharan Kitchen Restaurant</h5>
-                  <p>Stay Healthy & Eat Great!</p>
+                  <h5>Dharan Kitchen</h5>
+                  <p>A Complete Falily Restaurant</p>
                 </div>
               </div>
               <div class="carousel-item" style="max-height: 90vh;">
