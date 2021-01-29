@@ -1,13 +1,13 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row">
+    <div class="row justify-content-center py-2">
         <div class="col-md-12">
-            <div class="card shadow">
-                <div class="card-header">Category List</div>
+            <div class="card">
+                <div class="card-header"><strong>Room List</strong></div>
                 <div class="card-body">
-                    <table class="table table-sm ">
-                        <thead>
+                    <table class="table table-sm table-striped table-bordered" id='datatable'>
+                        <thead class="bg-dark">
                             <th>
                                 S.N
                             </th>
@@ -24,7 +24,7 @@
                                 Price
                             </th>
                             <th>
-                                Discount 
+                                Dis(%)
                             </th>
                             <th>
                                 Charge
@@ -48,24 +48,24 @@
                                     {{ $roomtype->available_rooms }}
                                 </td>
                                 <td>
-                                    {{ $roomtype->price }}
+                                    NRs {{ number_format($roomtype->price) }}.00
                                 </td>
                                 <td> 
-                                    {{ $roomtype->discount }} %
+                                    {{ $roomtype->discount }}%
                                 </td>
                                 <td>
-                                    {{ $roomtype->room_charge }}
+                                    NRs {{ number_format($roomtype->room_charge) }}.00
                                 </td>
                                 <td>
                                     <form action="{{ route('roomtype.destroy', $roomtype->id) }}" method="post"
                                         onsubmit="return confirm('Are You Sure You Want To Delete {{ $roomtype->name }} ?')">
                                         <a href="{{ route('roomtype.edit', $roomtype->id) }}"
-                                            title="Edit {{ $roomtype->name }}">
-                                            <i class="fas fa-pen"></i>
+                                            title="Edit {{ $roomtype->name }}" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-pen"></i> Edit
                                         </a>
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-danger ml-2" title="Delete {{ $roomtype->name }}">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm ml-2" title="Delete {{ $roomtype->name }}">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>

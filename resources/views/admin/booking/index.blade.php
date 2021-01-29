@@ -1,17 +1,25 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
+    <div class="row justify-content-center py-2">
         <div class="col-md-12">
-            <div class="card shadow">
+            @if (count($bookings) == 0)
+                <div class="alert alert-warning m-2 text-center">
+                    No New Bookings
+                </div>
+            @endif
+            <div class="card">
                 <div class="card-header">
-                    Booking List
+                    <strong>Online Bookings</strong>
                 </div>
                 <div class="card-body">
-                    <table class="table table-sm">
-                        <thead>
+                    <table class="table table-sm text-sm table-striped table-bordered" id="datatable">
+                        <thead class="bg-dark">
                             <th>
                                 S.N
+                            </th>
+                            <th>
+                                Requested
                             </th>
                             <th>
                                 Name
@@ -23,38 +31,39 @@
                                 Room Type
                             </th>
                             <th>
+                                Qty
+                            </th>
+                            <th>
                                 Guests
                             </th>
                             <th>
-                                Rooms
+                                Arrival
                             </th>
                             <th>
-                                Total
+                                Departure
                             </th>
                             <th>
-                                Confirmed
+                                Amount
+                            </th>
+                            <th>
+                                Status
                             </th>
                             <th>
                                 Paid
                             </th>
-                            <th>
-                                Check In 
-                            </th>
-                            <th>
-                                Check Out
-                            </th>
-                            <th>
-                                Requested
-                            </th>
+
                             <th>
                                 Action
                             </th>
                         </thead>
                         <tbody>
-                            @foreach ($bookings as $index=>$booking)
+                            @foreach ($bookings as $index => $booking)
                                 <tr>
                                     <td>
                                         {{ ++$index }}
+                                    </td>
+                                    <td>
+                                        {{ $booking->created_at->diffForHumans() }}
                                     </td>
                                     <td>
                                         {{ $booking->name }}
@@ -63,22 +72,13 @@
                                         {{ $booking->mobile }}
                                     </td>
                                     <td>
-                                        {{ $booking->roomtype->name??'' }}
-                                    </td>
-                                    <td>
-                                        {{ $booking->guests }}
+                                        {{ $booking->roomtype->name ?? '' }}
                                     </td>
                                     <td>
                                         {{ $booking->totalroom }}
                                     </td>
                                     <td>
-                                        {{ $booking->total }}
-                                    </td>
-                                    <td>
-                                        {{ $booking->confirmed==0?'No':'Yes' }}
-                                    </td>
-                                    <td>
-                                        {{ $booking->paid==0?'No':'Yes' }}
+                                        {{ $booking->guests }}
                                     </td>
                                     <td>
                                         {{ $booking->checkin }}
@@ -86,17 +86,44 @@
                                     <td>
                                         {{ $booking->checkout }}
                                     </td>
+
                                     <td>
-                                        {{ $booking->created_at->diffForHumans() }}
+                                        NRs {{ $booking->total }}
                                     </td>
                                     <td>
-                                        <form action="{{ route('admin.booking.confirm') }}" onsubmit="return confirm('Do You Want To Confirm This Booking?')" method="post">
+                                        {{ $booking->confirmed == 0 ? 'Pending  ' : 'Comfirmed' }}
+                                    </td>
+                                    <td>
+                                        {{ $booking->paid == 0 ? 'No' : 'Yes' }}
+                                    </td>
+
+
+                                    <td>
+                                        <div class="row">
+                                            <div class="col">
+                                                <form action="{{ route('admin.booking.confirm') }}"
+                                                onsubmit="return confirm('Do You Want To Confirm This Booking?')" method="post">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $booking->id }}">
+                                                <button type="submit" class="btn btn-sm btn-primary" title="Confirm Booking">
+                                                    <i class="fas fa-user-check"></i>
+                                                    {{-- Confirm --}}
+                                                </button>
+                                            </form>
+                                            </div>
+                                            <div class="col">
+                                                <form action="{{ route('admin.booking.cancel') }}" onsubmit="return confirm('Do You Want To Cancel This Booking?')"
+                                            method="post" >
                                             @csrf
-                                            <input type="hidden" name="id" value="{{ $booking->id }}">
-                                            <button  type='submit' class="btn btn-link">
-                                                Confirm
-                                            </button>
-                                        </form>
+                                            @method('delete')
+                                                <input type="hidden" name="id" value="{{ $booking->id }}">
+                                                <button type='submit' title='Cancel booking' class="btn btn-sm btn-danger">
+                                                    <i class="fas fa-ban"></i>
+                                                </button>
+                                            </form> 
+                                            </div>
+                                           
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

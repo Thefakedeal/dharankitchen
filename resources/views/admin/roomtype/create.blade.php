@@ -1,20 +1,20 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row">
+    <div class="row justify-content-center py-2">
         <div class="col-md-12">
             <div class="card shadow">
                 <div class="card-header">
-                    <strong>Add Room Category</strong>
+                    <strong>Add Room</strong>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('roomtype.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         {{-- Full Name --}}
                         <div class="form-group">
-                            <label for="name">{{ __('Name') }}</label>
+                            <label for="name">{{ __('Room Type') }}</label>
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                name="name" value="{{ old('name') }}" placeholder="Deluxe (3x)" required autocomplete="name" autofocus>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -26,8 +26,8 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="beds">No. Of Beds</label>
-                                    <input type="number" class="form-control" name="beds" min="1" value="{{ old('beds') }}"
+                                    <label for="beds">Room Capacity</label>
+                                    <input type="number" class="form-control" placeholder="Number of guests (eg. 3)" name="beds" min="1" value="{{ old('beds') }}"
                                         id="beds">
                                     @error('beds')
                                         <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="avaibable">Available Rooms</label>
+                                    <label for="avaibable">Number of Room(s) Available</label>
                                     <input type="number" class="form-control @error('available_rooms') is-invalid @enderror" name="available" min="0" value="0"
                                         id="avaibable">
                                     @error('available_rooms')
@@ -50,7 +50,7 @@
                             </div>
                         </div>
 
-                        <label for="" class="font-bold">Services</label>
+                        <label for="" class="font-bold">Amenities</label>
                         {{-- Row Three --}}
                         <div class="row">
                             <div class="col">
@@ -73,7 +73,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="pickup">Pick Up</label>
+                                    <label for="pickup">Pick Up Service</label>
                                     <select name="pickup" id='pickup' class="form-control">
                                         <option value=0>Not Available</option>
                                         <option value=1>Available</option>
@@ -149,7 +149,17 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="hot_drinking_water">Hot Drinking Water</label>
+                                    <select name="hot_drinking_water" id='hot_drinking_water' class="form-control">
+                                        <option value=0>Not Available</option>
+                                        <option value=1>Available</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         {{-- Row Five --}}
                         <div class="row">
                            
@@ -159,8 +169,8 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="price">Price</label>
-                                    <input type="number" class="form-control" name="price" value="{{ old('price') }}" id="price"
+                                    <label for="price">Room Price (NRs.)</label>
+                                    <input type="number" class="form-control" placeholder="eg. 4000 " name="price" value="{{ old('price') }}" id="price"
                                         min="1" required>
                                     @error('price')
                                         <span class="invalid-feedback" role="alert">
@@ -171,8 +181,8 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="discount">Discount % </label>
-                                    <input type="number" class="form-control" name="discount" value="{{ old('discount') }}" id="discount"
+                                    <label for="discount">Discount(%) </label>
+                                    <input type="number" class="form-control" placeholder="eg. 10" name="discount" value="{{ old('discount') }}" id="discount"
                                         min="0" max="100">
                                     @error('discount')
                                         <span class="invalid-feedback" role="alert">
@@ -184,8 +194,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea name="description" class="form-control" rows="5"></textarea>
+                            <label for="description">Room Description (optional)</label>
+                            <textarea name="description" class="ckeditor form-control" rows="5"></textarea>
                             @error('discription')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -196,9 +206,11 @@
                             <input type="file" name="images[]" accept="image/*" multiple>
                         </div>
                         <button type="submit" class="btn btn-success float-right ml-2">
-                            Save Record
+                            <i class="fa fa-save"></i> Save
                         </button>
-                        <button type="reset" class="btn btn-primary float-right">New Record</button>
+                        <button type="reset" class="btn btn-primary float-right">
+                            <i class="fa fa-undo"></i> Reset
+                        </button>
                         
                     </form>
                 </div>

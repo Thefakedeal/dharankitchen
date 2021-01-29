@@ -16,7 +16,7 @@ class AdminCategoryController extends Controller
     public function index()
     {
         $categoriesquery = Category::query();
-        $categories = $categoriesquery->paginate(10);
+        $categories = $categoriesquery->paginate(500000);
         return view('admin.category.index',compact('categories'));
     }
 
@@ -27,7 +27,8 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $categories = Category::paginate(500000);
+        return view('admin.category.create',compact('categories'));
     }
 
     /**
@@ -67,7 +68,8 @@ class AdminCategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        return view('admin.category.edit',compact('category'));
+        $categories = Category::paginate(500000);
+        return view('admin.category.edit',compact('category','categories'));
     }
 
     /**

@@ -250,7 +250,7 @@
         <div class="col-md-12">
             <div class="card shadow">
                 <div class="card-header">
-                    <strong>Edit Room Category</strong>
+                    <strong>Edit Room</strong>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('roomtype.update',$roomtype->id) }}" method="post" enctype="multipart/form-data">
@@ -258,7 +258,7 @@
                         @method('put')
                         {{-- Full Name --}}
                         <div class="form-group">
-                            <label for="name">{{ __('Name') }}</label>
+                            <label for="name">{{ __('Room Type') }}</label>
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                 name="name" value="{{ $roomtype->name }}" required autocomplete="name" autofocus>
                             @error('name')
@@ -272,7 +272,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="beds">No. Of Beds</label>
+                                    <label for="beds">Room Capacity</label>
                                     <input type="number" class="form-control" name="beds" min="1" value="{{ $roomtype->beds }}"
                                         id="beds">
                                     @error('beds')
@@ -284,7 +284,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="avaibable">Available Rooms</label>
+                                    <label for="avaibable">Number of Room(s) Available</label>
                                     <input type="number" value="{{ $roomtype->available_rooms }}" class="form-control @error('available') is-invalid @enderror" name="available" min="0" value="0"
                                         id="avaibable">
                                     @error('available_rooms')
@@ -296,7 +296,7 @@
                             </div>
                         </div>
 
-                        <label for="" class="font-bold">Services</label>
+                        <label for="" class="font-bold">Amenities</label>
                         {{-- Row Three --}}
                         <div class="row">
                             <div class="col">
@@ -395,17 +395,23 @@
                                 </div>
                             </div>
                         </div>
-                        
                         {{-- Row Five --}}
                         <div class="row">
-                           
-                            
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="hot_drinking_water">Hot Drinking Water</label>
+                                    <select name="hot_drinking_water" id='hot_drinking_water' class="form-control">
+                                        <option value=0 @if($roomtype->hot_drinking_water==0) selected @endif>Not Available</option>
+                                        <option value=1 @if($roomtype->hot_drinking_water==1) selected @endif>Available</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                        
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="price">Price</label>
+                                    <label for="price">Room Price (NRs.)</label>
                                     <input type="number" class="form-control" name="price" value="{{ $roomtype->price }}" id="price"
                                         min="1" required>
                                     @error('price')
@@ -417,7 +423,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="discount">Discount % </label>
+                                    <label for="discount">Discount(%)</label>
                                     <input type="number" class="form-control" name="discount" value="{{ $roomtype->discount }}" id="discount"
                                         min="0" max="100">
                                     @error('discount')
@@ -430,8 +436,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea name="description" class="form-control" rows="5"> {{ $roomtype->description }}</textarea>
+                            <label for="description">Room Description (optional)</label>
+                            <textarea name="description" class="ckeditor form-control" rows="5"> {{ $roomtype->description }}</textarea>
                             @error('discription')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -442,7 +448,7 @@
                             <input type="file" name="images[]" accept="image/*" multiple>
                         </div>
                         <button type="submit" class="btn btn-success float-right ml-2">
-                            Update Record
+                            <i class="fa fa-sync-alt"></i> Update
                         </button>
                         
                     </form>
@@ -467,7 +473,7 @@
                         <img  src="{{ $image->image }}" class="image-fluid" style="max-width: 100%;height: auto;" data-toggle="modal">
                     </div>
                     <div class="modal-footer">
-                        <form action="{{ route('image.delete') }}" onsubmit="return confirm('Do Ypu Want To Delete This Photo?')" method="post">
+                        <form action="{{ route('room.image.delete') }}" onsubmit="return confirm('Do Ypu Want To Delete This Photo?')" method="post">
                             @csrf
                             @method('delete')
                             <input type="hidden" name="id" value="{{ $image->id }}">

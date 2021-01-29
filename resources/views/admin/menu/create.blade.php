@@ -1,11 +1,11 @@
 @extends('admin.admin')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card shadow">
+    <div class="row justify-content-center py-2">
+        <div class="col-md-12">
+            <div class="card">
                 <div class="card-header">
-                    Add Item
+                    <strong>Add Item</strong>
                 </div>
                 <div class="card-body">
                     
@@ -81,7 +81,7 @@
                         
 
                         <div class="form-group">
-                            <label for="image">Image</label>
+                            <label for="image">Image (Optional)</label>
                             <input id="image" type="file" name="image" class="form-control" accept="image/*">
                             @error('image')
                             <span class="invalid-feedback" role="alert">
@@ -91,13 +91,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea name="description" class="form-control" rows="5"> {{ old('description') }} </textarea>
+                            <label for="description">Description (Optional)</label>
+                            <textarea name="description" class="ckeditor form-control" rows="5"> {{ old('description') }} </textarea>
                         </div>
                         <button type="submit" class="btn btn-primary float-right">
-                            Save
+                            <i class="fa fa-save"></i> Save
                         </button>
-                        <button type="reset" class="btn btn-secondary float-right mr-2"> Reset </button>
+                        <button type="reset" class="btn btn-secondary float-right mr-2">
+                          <i class="fa fa-undo"></i>  Reset
+                        </button>
                     </form>
                 </div>
 

@@ -9,14 +9,13 @@ use Illuminate\Http\Request;
 
 class AdminBookingController extends Controller
 {
-    public function index(Request $request){
+    public function new_bookings(Request $request){
         // $bookings = Booking::all();
         $bookingquery = Booking::query();
-        if($request->has('confirmed')){
-            $bookingquery->where('confirmed',$request->confirmed);
-        }
+        $bookingquery->where('confirmed',FALSE);
+        $bookingquery->where('cancelled',FALSE);
         $bookingquery->orderBy('checkin','DESC')->orderBy('checkout','DESC');
-        $bookings = $bookingquery->paginate(10);
+        $bookings = $bookingquery->paginate(500000);
         // $bookings = BookingResource::collection($bookingspage);
         // $bookings = $bookingspage;
         $bookings->load('roomtype');
@@ -24,6 +23,19 @@ class AdminBookingController extends Controller
         return view('admin.booking.index',compact('bookings'));
     }
 
+    public function confirmed_bookings(Request $request){
+        $bookingquery = Booking::query();
+        if($request->has('name')){
+            $bookingquery->where('name','LIKE','%'.$request->name.'%');
+        }
+        $bookingquery->where('confirmed',TRUE);
+        $bookingquery->where('cancelled',FALSE);
+        $bookingquery->orderBy('checkin','DESC')->orderBy('checkout','DESC');
+        $bookings = $bookingquery->paginate(500000);
+        $bookings->load('roomtype');
+        return view('admin.booking.confirmed',compact('bookings'));
+    }
+    
     public function confirm(Request $request){
         $request->validate(
             [
@@ -31,14 +43,40 @@ class AdminBookingController extends Controller
             ]
         );
         $booking = Booking::findOrFail($request->id);
-        $roomtype = $booking->roomtype;
         if($booking->confirmed == TRUE){
             return redirect()->back()->with('fail','Booking Already Confirmed');
         }
         $booking->confirmed = TRUE;
-        $roomtype->available_rooms -= $booking->totalroom; 
-        $roomtype->update();
         $booking->update();
         return redirect()->back()->with('success','Booking Confirmed');
+    }
+
+    public function cancel(Request $request){
+        $request->validate(
+            [
+                'id'=> 'required|exists:bookings,id',
+            ]
+        );
+        $booking = Booking::findOrFail($request->id);
+        $booking->cancelled = TRUE;
+        $booking->save();
+        return redirect()->back()->with('success','Booking Cancelled');
+    }
+    
+    public function checkin(Request $request){
+        $request->validate(
+            [
+                'id'=> 'required|exists:bookings,id',
+            ]
+        );
+        $booking = Booking::findOrFail($request->id);
+        return redirect(route('checkin.create'))
+            ->with('name',$booking->name)
+            ->with('email',$booking->email)
+            ->with('mobile',$booking->mobile)
+            ->with('guests',$booking->guests)
+            ->with('room_type_id',$booking->room_type_id)
+            ->with('totalroom',$booking->totalroom)
+            ;
     }
 }

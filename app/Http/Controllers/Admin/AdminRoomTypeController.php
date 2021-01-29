@@ -18,7 +18,7 @@ class AdminRoomTypeController extends Controller
     public function index()
     {
         $roomtypequery = RoomType::query();
-        $roomtypes = $roomtypequery->paginate(10);
+        $roomtypes = $roomtypequery->paginate(500000);
         return view('admin.roomtype.index',compact('roomtypes'));
     }
 
@@ -61,6 +61,7 @@ class AdminRoomTypeController extends Controller
         $roomtype->wifi = $request->wifi;
         $roomtype->bottled_water = $request->bottled_water;
         $roomtype->parking = $request->parking;
+        $roomtype->hot_drinking_water = $request->hot_drinking_water;
         $roomtype->price = $request->price;
         $discount = 0;
         if($request->discount){
@@ -136,6 +137,7 @@ class AdminRoomTypeController extends Controller
         $roomtype->hot_cold_shower = $request->hot_cold_shower;
         $roomtype->wifi = $request->wifi;
         $roomtype->bottled_water = $request->bottled_water;
+        $roomtype->hot_drinking_water = $request->hot_drinking_water;
         $roomtype->parking = $request->parking;
         $roomtype->price = $request->price;
         $discount = 0;
