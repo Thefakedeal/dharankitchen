@@ -385,7 +385,7 @@
                         </div>
                         <div class="nav-item has-treeview">
                             <a href="{{ route('package.index') }}" class="nav-link active">
-                                <i class="fas fa-map-marked"></i>
+                                <i class="fas fa-asterisk"></i>
                                 <p>
                                     Our Packages
                                     <i class="right fas fa-angle-left"></i>
@@ -394,13 +394,13 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ route('package.create') }}" class="nav-link">
-                                        <i class="fas fa-map-pin nav-icon"></i>
+                                        <i class="fas fa-plus nav-icon"></i>
                                         <p>Add Package</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('package.index') }}" class="nav-link">
-                                        <i class="far fa-map nav-icon"></i>
+                                        <i class="fas fa-asterisk nav-icon"></i>
                                         <p>Package List</p>
                                     </a>
                                 </li>
