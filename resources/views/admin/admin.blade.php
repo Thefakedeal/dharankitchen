@@ -408,6 +408,54 @@
                             </ul>
                         </div>
                         <div class="nav-item has-treeview">
+                            <a href="{{ route('meeting.index') }}" class="nav-link active">
+                                <i class="fas fa-asterisk"></i>
+                                <p>
+                                    Meeting
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('meeting.create') }}" class="nav-link">
+                                        <i class="fas fa-plus nav-icon"></i>
+                                        <p>Add Meeting Hall</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('meeting.index') }}" class="nav-link">
+                                        <i class="fas fa-asterisk nav-icon"></i>
+                                        <p>Meeting Hall</p>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                        <div class="nav-item has-treeview">
+                            <a href="{{ route('dining.index') }}" class="nav-link active">
+                                <i class="fas fa-asterisk"></i>
+                                <p>
+                                    Dining
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('dining.create') }}" class="nav-link">
+                                        <i class="fas fa-plus nav-icon"></i>
+                                        <p>Add Dining Hall</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('dining.index') }}" class="nav-link">
+                                        <i class="fas fa-asterisk nav-icon"></i>
+                                        <p>Dining Hall</p>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                        <div class="nav-item has-treeview">
                             <a href="{{ route('notice.index') }}" class="nav-link active">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <p>

@@ -7,8 +7,10 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDeleteEventPhoto;
 use App\Http\Controllers\Admin\AdminDeleteGalleryPhoto;
 use App\Http\Controllers\Admin\AdminDeleteImage;
+use App\Http\Controllers\Admin\AdminDiningController;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminGalleryController;
+use App\Http\Controllers\Admin\AdminMeetingController;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminNoticeController;
 use App\Http\Controllers\Admin\AdminPackageController;
@@ -215,6 +217,8 @@ Route::group([
     Route::resource('/places',AdminPlacesController::class);
     Route::resource('/notice',AdminNoticeController::class);
     Route::resource('package',AdminPackageController::class);
+    Route::resource('meeting',AdminMeetingController::class);
+    Route::resource('dining', AdminDiningController::class);
 });
 
 Auth::routes();

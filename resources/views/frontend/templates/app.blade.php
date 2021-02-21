@@ -31,45 +31,65 @@
 
     <footer style="background: #e63946;">
       <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-5 text-white">
-            <h1 class="fs-5">About us</h1>
-            <p style="font-size: .8rem;" class="fw-light">Dharan Kitchen is prestigious name since 2062 BS (2005 AD) for serving healthy and tasty foods in reasonable price. Your fun destination for food and beverages. We care about your taste and health. We promise in intimate and relaxed dining experience that offers something different to local and foreign dishes and ensures you enjoy a memoriable food experiencene every time.</p>
-          </div>
-          <div class="col-md-3 text-white">
-            <h1 class="fs-5">Address</h1>
-            <address style="font-size: .8rem;" class="fw-light">
-              Dharan-15,Dashrath marg <br>
-              Sunsari, Nepal <br>
-              Tel: 977-25-532580, <br>
-              Mobile:9852056606 / 9852056607 <br>
-              Email : info@dharankitchen.com <br>
-            </address>
-          </div>
+      <div class="row pt-4">
+        <div class="col-md-8 text-white">
+          <h1 class="fs-5">About us</h1>
+          <p style="font-size: .8rem;" class="fw-light">Dharan Kitchen is prestigious name since 2062 BS (2005 AD) for serving healthy and tasty foods in reasonable price. Your fun destination for food and beverages. We care about your taste and health. We promise in intimate and relaxed dining experience that offers something different to local and foreign dishes and ensures you enjoy a memoriable food experiencene every time.</p>
+        </div>
+        <div class="col-md-2 text-white">
+          <h1 class="fs-5">Menu</h1>
+            <div class="d-flex flex-column" style="font-size: .8rem;">
+              <a href="https://www.termsfeed.com/live/89dcfffa-4462-4e33-bc1b-425692af721d" class="text-decoration-none text-white fw-light" target="_blank">Terms & Condition</a>
+              <a href="https://www.privacypolicygenerator.info/live.php?token=U3I0UFEV5MrZeZAitmMBkS3QC9uOniwu" class="text-decoration-none text-white fw-light" target="_blank">Privacy & Policy</a>
+              <a href="/gallery" class="text-decoration-none text-white fw-light">Gallery</a>
+              <a href="/contact" class="text-decoration-none text-white fw-light">Contact</a>
+            </div>
+        </div>
 
-          <div class="col-md-2 text-white">
-            <h1 class="fs-5">Menu</h1>
-              <div class="d-flex flex-column" style="font-size: .8rem;">
-                <a href="https://www.termsfeed.com/live/89dcfffa-4462-4e33-bc1b-425692af721d" class="text-decoration-none text-white fw-light" target="_blank">Terms & Condition</a>
-                <a href="https://www.privacypolicygenerator.info/live.php?token=U3I0UFEV5MrZeZAitmMBkS3QC9uOniwu" class="text-decoration-none text-white fw-light" target="_blank">Privacy & Policy</a>
-                <a href="/gallery" class="text-decoration-none text-white fw-light">Gallery</a>
-                <a href="/contact" class="text-decoration-none text-white fw-light">Contact</a>
-              </div>
-          </div>
-
-          <div class="col-md-2 text-white">
-            <h1 class="fs-5">Payment Option</h1>
-            <img src="{{ asset('img/debitcard.png') }}" alt="" width="120">
-          </div>
+        <div class="col-md-2 text-white">
+          <h1 class="fs-5">Payment Option</h1>
+          <img src="{{ asset('img/debitcard.png') }}" alt="" width="120">
         </div>
       </div>
-
-      <div class="row">
-        <div class="col bg-danger text-center text-white fw-light">
-            Powered by: <a href="http://www.codeitapps.com" class="text-white text-decoration-none fw-bold">Code IT</a> | Dharan, Sunsari Nepal
-        </div>
       </div>
-  </footer>
+    <div class="container">
+      <div class="row pt-4 text-white">
+          <div class="col-md-4">
+              <h1 class="fs-5">Hotel Dharan Kitchen</h1>
+              <address style="font-size: .8rem;" class="fw-light">
+                  Dashrath marg, Dharan-15 <br>
+                  Sunsari, Nepal <br>
+                 <a href="tel:+97725532580" class="text-decoration-none text-white">  Tel: +977-25-532580 </a>, <br>
+              <a href="mailto:info@dharankitchen.com" class="text-decoration-none text-white">    Email : info@dharankitchen.com </a> <br>
+              </address>
+           </div>
+           <div class="col-md-4">
+              <h1 class="fs-5">Dharan Kitchen</h1>
+              <address style="font-size: .8rem;" class="fw-light">
+                  Bhanu chowk, Dharan-2 <br>
+                  Sunsari, Nepal <br>
+                  <a href="tel:+97725521580" class="text-decoration-none text-white"> Tel: +977-25-521580 </a>, <br>
+                  <a href="mailto:info@dharankitchen.com" class="text-decoration-none text-white">    Email : info@dharankitchen.com </a> <br>
+              </address>
+           </div>
+           <div class="col-md-4">
+              <h1 class="fs-5">Dharan Kitchen's Sekuwa Corner</h1>
+              <address style="font-size: .8rem;" class="fw-light">
+                  Bargachhi,Dharan-8 <br>
+                  Sunsari, Nepal <br>
+                  <a href="tel:+97725524580" class="text-decoration-none text-white"> Tel: +977-25-524580 </a>, <br>
+                  <a href="mailto:info@dharankitchen.com" class="text-decoration-none text-white">    Email : info@dharankitchen.com </a> <br>
+              </address>
+           </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col bg-danger text-center text-white fw-light">
+          Powered by: <a href="http://www.codeitapps.com" class="text-white text-decoration-none fw-bold">Code IT</a> | Dharan, Sunsari Nepal
+      </div>
+    </div>
+</footer>
   
   <!-- End -->
  
