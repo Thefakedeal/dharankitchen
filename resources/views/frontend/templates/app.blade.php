@@ -1,9 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="ne">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="robots" content="index,follow">
+    <meta name="Googlebot" content="index, follow"/>
+    <meta name="distribution" content="Global">
+    <meta name="revisit-after" content="2 Days" />
+    <meta name="classification" content="Hotel, Hotels in Nepal" />
+    <meta name="category" content="Hotel, Hotels in Nepal" />
+    <meta name="language" content="en-ne" />
+    <meta name="keywords" content="Hotels in dharan. Dharan Hotel. Hotels. Hotels Near Bhedetar.Best Hotels in Dharan. Bundle Travel and Save. Expedia Rewards. Secure Booking. Limited Time Offers. Same Day Availability. Instant Confirmation. Recommended. 24/7 Customer Support. restaurant. dharan. booking hotel">
+    <meta name="description" content="Hotels in dharan. Dharan Hotel. Hotels. Hotels Near Bhedetar Best Hotels in Dharan. Bundle Travel and Save. Expedia Rewards. Secure Booking. Limited Time Offers. Same Day Availability. Instant Confirmation. Recommended. 24/7 Customer Support. restaurant. dharan. booking hotel">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -12,6 +22,16 @@
    @yield('styles')
    @yield('customcss')
   <title>Dharan Kitchen</title>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHVK0GTRKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-JHVK0GTRKP');
+    </script>
   </head>
   <body>
   <!-- Navigation Bar -->
@@ -30,23 +50,12 @@
     @yield('main')
 
     <footer style="background: #e63946;">
-      <div class="container">
+        <div class="container">
         <div class="row pt-4">
-          <div class="col-md-5 text-white">
+          <div class="col-md-8 text-white">
             <h1 class="fs-5">About us</h1>
             <p style="font-size: .8rem;" class="fw-light">Dharan Kitchen is prestigious name since 2062 BS (2005 AD) for serving healthy and tasty foods in reasonable price. Your fun destination for food and beverages. We care about your taste and health. We promise in intimate and relaxed dining experience that offers something different to local and foreign dishes and ensures you enjoy a memoriable food experiencene every time.</p>
           </div>
-          <div class="col-md-3 text-white">
-            <h1 class="fs-5">Address</h1>
-            <address style="font-size: .8rem;" class="fw-light">
-              Dharan-15,Dashrath marg <br>
-              Sunsari, Nepal <br>
-              Tel: 977-25-532580, <br>
-              Mobile:9852056606 / 9852056607 <br>
-              Email : info@dharankitchen.com <br>
-            </address>
-          </div>
-
           <div class="col-md-2 text-white">
             <h1 class="fs-5">Menu</h1>
               <div class="d-flex flex-column" style="font-size: .8rem;">
@@ -61,6 +70,37 @@
             <h1 class="fs-5">Payment Option</h1>
             <img src="{{ asset('img/debitcard.png') }}" alt="" width="120">
           </div>
+        </div>
+        </div>
+      <div class="container">
+        <div class="row pt-4 text-white">
+            <div class="col-md-4">
+                <h1 class="fs-5">Hotel Dharan Kitchen</h1>
+                <address style="font-size: .8rem;" class="fw-light">
+                    Dashrath marg, Dharan-15 <br>
+                    Sunsari, Nepal <br>
+                   <a href="tel:+97725532580" class="text-decoration-none text-white">  Tel: +977-25-532580 </a>, <br>
+                <a href="mailto:info@dharankitchen.com" class="text-decoration-none text-white">    Email : info@dharankitchen.com </a> <br>
+                </address>
+             </div>
+             <div class="col-md-4">
+                <h1 class="fs-5">Dharan Kitchen</h1>
+                <address style="font-size: .8rem;" class="fw-light">
+                    Bhanu chowk, Dharan-2 <br>
+                    Sunsari, Nepal <br>
+                    <a href="tel:+97725521580" class="text-decoration-none text-white"> Tel: +977-25-521580 </a>, <br>
+                    <a href="mailto:info@dharankitchen.com" class="text-decoration-none text-white">    Email : info@dharankitchen.com </a> <br>
+                </address>
+             </div>
+             <div class="col-md-4">
+                <h1 class="fs-5">Dharan Kitchen's Sekuwa Corner</h1>
+                <address style="font-size: .8rem;" class="fw-light">
+                    Bargachhi,Dharan-8 <br>
+                    Sunsari, Nepal <br>
+                    <a href="tel:+97725524580" class="text-decoration-none text-white"> Tel: +977-25-524580 </a>, <br>
+                    <a href="mailto:info@dharankitchen.com" class="text-decoration-none text-white">    Email : info@dharankitchen.com </a> <br>
+                </address>
+             </div>
         </div>
       </div>
 

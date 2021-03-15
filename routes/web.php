@@ -7,10 +7,13 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDeleteEventPhoto;
 use App\Http\Controllers\Admin\AdminDeleteGalleryPhoto;
 use App\Http\Controllers\Admin\AdminDeleteImage;
+use App\Http\Controllers\Admin\AdminDiningController;
 use App\Http\Controllers\Admin\AdminEventController;
 use App\Http\Controllers\Admin\AdminGalleryController;
+use App\Http\Controllers\Admin\AdminMeetingController;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminNoticeController;
+use App\Http\Controllers\Admin\AdminPackageController;
 use App\Http\Controllers\Admin\AdminPlacesController;
 use App\Http\Controllers\Admin\AdminQueryController;
 use App\Http\Controllers\Admin\AdminRoomController;
@@ -24,6 +27,7 @@ use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Menu;
 use App\Models\Notice;
+use App\Models\Package;
 use App\Models\Place;
 use App\Models\Room;
 use App\Models\RoomImage;
@@ -143,7 +147,8 @@ Route::get('/dining',function(){
 })->name('dining');
 
 Route::get('/packages', function(){
-    return view('frontend.packages');
+    $packages = Package::all();
+    return view('frontend.packages',compact('packages'));
 })->name('packages');
 
 Route::get('/places', function(){
@@ -211,6 +216,9 @@ Route::group([
     Route::resource('/query',AdminQueryController::class);
     Route::resource('/places',AdminPlacesController::class);
     Route::resource('/notice',AdminNoticeController::class);
+    Route::resource('package',AdminPackageController::class);
+    Route::resource('meeting',AdminMeetingController::class);
+    Route::resource('dining', AdminDiningController::class);
 });
 
 Auth::routes();

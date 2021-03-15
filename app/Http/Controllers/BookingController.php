@@ -7,6 +7,7 @@ use App\Models\RoomType;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class BookingController extends Controller
 {
@@ -43,7 +44,16 @@ class BookingController extends Controller
         $booking->totalroom = $request->totalroom;
         $booking->mobile = $request->mobile;
         $booking->total = $request->totalroom * $roomtype->room_charge * $days;
+        
+        $response = Http::post('http://sms.codeitapps.com/api/v3/sms?',[
+            'token' => 'dlYJsMLKNHTCNNai1446Rv41VrAplMv0ImHN',
+            'to' => $request->mobile,
+            'sender' => 'DRN_KITCHEN',
+            'message' => "Dear {$request->name}\nWe have received your request, be patient,we will call you within 45 minutes.Thank you\nDharan Kitchen" 
+        ]);
+        
         $booking->save();
-        return redirect()->back()->with('success','Hello '.$request->name.','.'Your Request Has Been Sent We Will Contact You Within 45 minutes.');
+        
+        return redirect()->back()->with('success','Hello '.$request->name.','.'Your request has been sent we will contact you within 45 minutes.');
     }
 }

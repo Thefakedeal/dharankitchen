@@ -5,7 +5,8 @@
     <div class="row">
       <div class="container">
         <div class="col-md-12">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.8753919024866!2d87.28645529253524!3d26.801881259588676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef41910d4acb5d%3A0x12a28ac5cb9d6b21!2sDharan%20Kitchens%20Sekuwa%20Corner%20and%20Thakali%20Kitchen!5e0!3m2!1sen!2snp!4v1611157766803!5m2!1sen!2snp"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w-100" height="450"></iframe>
+          <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.8753919024866!2d87.28645529253524!3d26.801881259588676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef41910d4acb5d%3A0x12a28ac5cb9d6b21!2sDharan%20Kitchens%20Sekuwa%20Corner%20and%20Thakali%20Kitchen!5e0!3m2!1sen!2snp!4v1611157766803!5m2!1sen!2snp"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w-100" height="450"></iframe>-->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7122.3861549079475!2d87.28254027853025!3d26.801980164468166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef41917a885599%3A0x9159c0877ac61226!2sHotel%20Dharan%20Kitchen!5e0!3m2!1sen!2snp!4v1611803141585!5m2!1sen!2snp" class="w-100" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
       </div>
     </div>
@@ -20,10 +21,10 @@
                          </div>
                          <div class="card-body">
                             <p class="card-text fw-light">Have any Queries? Let us know. We will clear it for you at the best.</p>
-                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-map-marker-alt"></span> Dharan, Dashrat Marg</p>
+                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-map-marker-alt"></span> Dasharath Marg,Dharan-15 </p>
                             <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-map"></span> Sunsari, Province No 1</p>
                             <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-envelope"></span> <a href="mailto:info@dharankitchen.com" class="text-decoration-none" style="color:#f58634;">info@dharankitchen.com</a></p>
-                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-phone-alt"></span> <a href="tel:+97725521810" class="text-decoration-none" style="color:#f58634;">977-25-532580</a></p>
+                            <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-phone-alt"></span> <a href="tel:+97725521810" class="text-decoration-none" style="color:#f58634;">25-532580</a> / <a href="tel:+97725524580" class="text-decoration-none" style="color:#f58634;">25-524580</a> / <a href="tel:+97725521580" class="text-decoration-none" style="color:#f58634;">25-521580</a></p>
                              <p class="card-text fw-light" style="color:#f58634;"><span class="fas fa-mobile"></span> <a href="tel:+9779852056606" class="text-decoration-none" style="color:#f58634;">9852056606</a> / <a href="tel:+9779852056607" class="text-decoration-none" style="color:#f58634;">9852056607</a></p>
                          </div>
                      </div>
@@ -33,9 +34,9 @@
                    <p class="fw-light">We are being involved in below social media an excellent platform to enhance communication and understanding. Please do see our post, comment on it , like it and share it and more. It will help us to improve our services and extend customer satisfaction.</p>
 
                    <p>
-                    <a href="https://www.facebook.com/HOTEL-Dharan-Kitchen-Pvtltd-107117241328706" target="_blank"><span class="fab fa-facebook-f fa-2x" title="Facebook"></span></a> &nbsp;
-                    <a href="#"><span class="fab fa-youtube text-danger fa-2x" title="YouTube"></span></a> &nbsp;
-                    <a href="#"><span class="fab fa-instagram text-danger fa-2x" title="Instagram"></span></a> &nbsp;
+                    <a href="https://www.facebook.com/HOTEL-Dharan-Kitchen-Pvtltd-107117241328706" target="social"><span class="fab fa-facebook-f fa-2x" title="Facebook"></span></a> &nbsp;
+                    <a href="https://www.youtube.com/channel/UC-4imPCTXMfZsO-uDz0TiiQ" target="social"><span class="fab fa-youtube text-danger fa-2x" title="YouTube"></span></a> &nbsp;
+                    <a href="https://www.instagram.com/hdharankitchen/" target = "social"><span class="fab fa-instagram text-danger fa-2x" title="Instagram"></span></a> &nbsp;
                    </p>
                    
                  </div>

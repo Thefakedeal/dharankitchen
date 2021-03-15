@@ -6,7 +6,6 @@
         <h1 class="text-center display-6">News & Events</h1>
         <h5 class="text-center fs-4 fw-light">Get updated with recent news & events</h5>
         <hr>
-
         <div class="row">
             
             @foreach ($events as $event)

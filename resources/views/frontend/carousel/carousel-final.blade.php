@@ -11,15 +11,15 @@
               <div class="carousel-item active" style="max-height: 90vh;">
                 <img src="{{ asset('img/slide1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Namastee</h5>
-                  <p>Welcome to Dharan Kitchen</p>
+                  <h5>Namaste</h5>
+                  <p>Welcome to Hotel Dharan Kitchen</p>
                 </div>
               </div>
               <div class="carousel-item" style="max-height: 90vh;">
                  <img src="{{ asset('img/slide2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Dharan Kitchen Restaurant</h5>
-                  <p>Stay Healthy & Eat Great!</p>
+                  <h5>Hotel Dharan Kitchen</h5>
+                  <p>A Complete Family Restaurant</p>
                 </div>
               </div>
               <div class="carousel-item" style="max-height: 90vh;">
