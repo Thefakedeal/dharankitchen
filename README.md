@@ -1,62 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Dharan Kitchen
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A hotel and restaurant website with online room booking and a full admin panel, built with Laravel 8.
 
-## About Laravel
+Guests can browse room types, check dining menus, explore events and places, and submit booking requests. Staff manage bookings, check-ins and site content from a protected `/admin` area.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<!-- Add 2-3 screenshots here: home page, room booking form, admin bookings view.
+![Home page](docs/home.png) -->
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Public site
 
-## Learning Laravel
+- **Home page** with the latest events, featured places and an optional site-wide notice that admins can switch on or off
+- **Rooms**: all room types, dedicated Deluxe / Standard / Normal pages, and a profile page per room type with its image gallery
+- **Online booking**: booking form for each room type, submitted to the admin team for confirmation
+- **Dining and menus**: menus for each venue, grouped by category
+- **Meetings, packages, events and places**: listing and detail pages for each
+- **Photo gallery** and a **contact / query form**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Admin panel (`/admin`)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Protected by an `admin` middleware.
 
-## Laravel Sponsors
+- **Bookings**: new and confirmed lists; confirm, cancel, check in and check out
+- **Rooms**: manage room types and their images
+- **Dining**: categories, venues and menu items
+- **Content**: events, gallery, places, packages, meeting and dining pages, and notices
+- **Inbox** for customer queries, plus **user management**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Tech stack
 
-### Premium Partners
+- PHP 7.3+ / 8.0 and Laravel 8
+- Laravel UI for authentication
+- MySQL 8 and Redis
+- Laravel Mix for front-end assets
+- Docker via Laravel Sail (app, MySQL, Redis and Mailhog)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+## Getting started
 
-## Contributing
+### Option 1: Local setup
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Requirements: PHP 7.3+ (or 8.0), Composer, Node.js and MySQL.
 
-## Code of Conduct
+```bash
+git clone https://github.com/Thefakedeal/dharankitchen.git
+cd dharankitchen
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+composer install
+cp .env.example .env
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+Create a database, set the `DB_*` values in `.env`, then run:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan migrate
+php artisan storage:link
+npm install
+npm run dev
+php artisan serve
+```
 
-## License
+The site is now available at http://127.0.0.1:8000.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Option 2: Docker (Laravel Sail)
+
+Requirements: Docker. Run `composer install` first so the Sail files exist in `vendor/`.
+
+```bash
+cp .env.example .env
+composer install
+./vendor/bin/sail up -d
+./vendor/bin/sail artisan key:generate
+./vendor/bin/sail artisan migrate
+```
+
+| Service | Address |
+| --- | --- |
+| App | http://localhost (set `APP_PORT` in `.env` to change) |
+| MySQL | port 3306 |
+| Redis | port 6379 |
+| Mailhog (catches outgoing mail) | http://localhost:8025 |
+
+## Running tests
+
+```bash
+php artisan test
+```
+
+## Project layout
+
+| Path | Contents |
+| --- | --- |
+| `routes/web.php` | Public routes and the `/admin` route group |
+| `app/Http/Controllers/Admin` | Admin controllers (bookings, rooms, menus, events and so on) |
+| `app/Models` | Room, RoomType, RoomImage, Category, Menu, Event, Gallery, Package, Place, Notice |
+| `resources/views/frontend` | Public pages |
+| `database` | Migrations, factories and seeders |
+| `docker-compose.yml` | Sail services |
