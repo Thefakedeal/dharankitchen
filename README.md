@@ -1,8 +1,12 @@
 # Dharan Kitchen
 
-A hotel and restaurant website with online room booking and a full admin panel, built with Laravel 8.
+A comprehensive hotel and restaurant management website built with Laravel 8, featuring an intuitive public-facing interface and a secure, full-featured administrative panel. The platform allows guests to explore available room types, browse restaurant menus, discover local attractions and events, and submit room booking requests through an online reservation system.
 
-Guests can browse room types, check dining menus, explore events and places, and submit booking requests. Staff manage bookings, check-ins and site content from a protected `/admin` area.
+The website includes dedicated sections for hotel accommodations, dining services, events, and nearby places of interest, providing visitors with a convenient way to explore the hotel's offerings and plan their stay. Guests can view room details, review available amenities, explore dining options, and submit booking inquiries online without needing to contact the hotel directly.
+
+On the administrative side, the system provides a protected `/admin` dashboard where authorized staff can manage room information, review and process booking requests, coordinate guest check-ins, and maintain website content. Administrators can update room listings, manage restaurant menus, publish events, and maintain information about nearby attractions, keeping the website's content accurate and up to date.
+
+Built using Laravel 8, the application follows a structured backend architecture with server-side functionality for managing reservations, handling administrative operations, and organizing website content. The integration of guest-facing features and administrative tools provides a centralized platform for managing hotel and restaurant information while improving the overall booking experience and simplifying day-to-day operations.
 
 <!-- Add 2-3 screenshots here: home page, room booking form, admin bookings view.
 ![Home page](docs/home.png) -->
